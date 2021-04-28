@@ -1,0 +1,127 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Fonts\fa-solid-900.ttf" />
+    <None Remove="Resources\Fonts\OpenSans-Regular.ttf" />
+    <None Remove="Resources\Fonts\OpenSans-SemiBold.ttf" />
+    <None Remove="Resources\Images\add_icon.svg" />
+    <None Remove="Resources\Images\checkmark_icon.svg" />
+    <None Remove="Resources\Images\compass_background.svg" />
+    <None Remove="Resources\Images\compass_needle.svg" />
+    <None Remove="Resources\Images\desktop_favorites_icon.svg" />
+    <None Remove="Resources\Images\desktop_home_icon.svg" />
+    <None Remove="Resources\Images\desktop_map_icon.svg" />
+    <None Remove="Resources\Images\desktop_settings_icon.svg" />
+    <None Remove="Resources\Images\fluent_weather_cloudy_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_drizzle_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_fog_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_hail_day_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_hail_night_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_haze_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_moon_16_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_moon_off_16_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_partly_cloudy.svg" />
+    <None Remove="Resources\Images\fluent_weather_partly_cloudy_night_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_rain_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_rain_showers_day_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_rain_showers_night_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_rain_snow_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_snowflake_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_snow_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_snow_shower_day_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_snow_shower_night_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_squalls_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_sunny_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_sunny_high_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_sunny_low_20_filled.svg" />
+    <None Remove="Resources\Images\fluent_weather_thunderstorm_20_filled.svg" />
+    <None Remove="Resources\Images\humidity_icon.svg" />
+    <None Remove="Resources\Images\rain_icon.svg" />
+    <None Remove="Resources\Images\sm_solid_umbrella.svg" />
+    <None Remove="Resources\Images\solid_humidity.svg" />
+    <None Remove="Resources\Images\solid_umbrella.svg" />
+    <None Remove="Resources\Images\solid_wind.svg" />
+    <None Remove="Resources\Images\sunrise_icon.svg" />
+    <None Remove="Resources\Images\sunset_icon.svg" />
+    <None Remove="Resources\Images\umbrella_icon.svg" />
+    <None Remove="Resources\Images\wind_icon.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\fa-solid-900.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\OpenSans-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\OpenSans-SemiBold.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Resizetizer.NT" Version="0.2.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SharedImage Include="Resources\Images\add_icon.svg" />
+    <SharedImage Include="Resources\Images\checkmark_icon.svg" />
+    <SharedImage Include="Resources\Images\compass_background.svg" BaseSize="212" />
+    <SharedImage Include="Resources\Images\compass_needle.svg" />
+    <SharedImage Include="Resources\Images\desktop_favorites_icon.svg" BaseSize="40" />
+    <SharedImage Include="Resources\Images\desktop_home_icon.svg" BaseSize="40" />
+    <SharedImage Include="Resources\Images\desktop_map_icon.svg" BaseSize="40" />
+    <SharedImage Include="Resources\Images\desktop_settings_icon.svg" BaseSize="40" />
+    <SharedImage Include="Resources\Images\fluent_weather_cloudy_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_drizzle_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_fog_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_hail_day_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_hail_night_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_haze_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_moon_16_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_moon_off_16_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_partly_cloudy_night_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_rain_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_rain_showers_day_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_rain_showers_night_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_rain_snow_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_snow_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_snow_shower_day_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_snow_shower_night_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_snowflake_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_squalls_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_sunny_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_sunny_high_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_sunny_low_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_thunderstorm_20_filled.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\fluent_weather_partly_cloudy.svg" BaseSize="140" />
+    <SharedImage Include="Resources\Images\humidity_icon.svg" BaseSize="40" />
+    <SharedImage Include="Resources\Images\rain_icon.svg" BaseSize="40" />
+    <SharedImage Include="Resources\Images\sm_solid_umbrella.svg" />
+    <SharedImage Include="Resources\Images\solid_humidity.svg" />
+    <SharedImage Include="Resources\Images\solid_umbrella.svg" />
+    <SharedImage Include="Resources\Images\solid_wind.svg" />
+    <SharedImage Include="Resources\Images\sunrise_icon.svg" />
+    <SharedImage Include="Resources\Images\sunset_icon.svg" />
+    <SharedImage Include="Resources\Images\umbrella_icon.svg" BaseSize="40" />
+    <SharedImage Include="Resources\Images\wind_icon.svg" BaseSize="40" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Styles\DefaultTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CurrentWidget.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\WindLiveWidget.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

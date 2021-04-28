@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherTwentyOne.Views.WindLiveWidget">
+    <Grid HeightRequest="300" FlexLayout.Basis="50%">
+        <Image VerticalOptions="Start"
+                            HeightRequest="212"
+                            Source="compass_background.png"/>
+
+        <Image Source="compass_needle.png" VerticalOptions="End" Margin="0,0,80,70"/>
+
+        <StackLayout
+                            VerticalOptions="End">
+            <Label Text="Winds"
+                                   HorizontalOptions="Center"
+                                   class="SubContent"
+                                   />
+            <Label Text="14|25" 
+                                   HorizontalOptions="Center"
+                                   class="Headline"/>
+        </StackLayout>
+    </Grid>
+</ContentView>

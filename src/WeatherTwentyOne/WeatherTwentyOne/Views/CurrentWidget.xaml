@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherTwentyOne.Views.CurrentWidget">
+    <StackLayout>
+        <Image 
+            HeightRequest="115"
+            Aspect="AspectFit"
+            Source="fluent_weather_moon_16_filled.png"/>
+        <Label Text="18℉" 
+                HorizontalOptions="Center"
+                class="Title1"/>
+        <Frame
+                            CornerRadius="15"
+                            HeightRequest="30"
+                            VerticalOptions="Start"
+                            HorizontalOptions="Center"
+                            Padding="15,0"
+                            BackgroundColor="{StaticResource Primary}"
+                            >
+            <Label Text="Clear"
+                                   VerticalOptions="Center"
+                                   class="Headline"
+                                   />
+        </Frame>
+    </StackLayout>
+</ContentView>
