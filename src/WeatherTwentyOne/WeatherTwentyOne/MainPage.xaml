@@ -39,130 +39,21 @@
                          >
                 <!-- top widgets -->
                 <FlexLayout Direction="Row"
-                            AlignItems="Center"
-                            >
+                            AlignItems="Center">
                     <v:CurrentWidget FlexLayout.Basis="50%"/>
                     <v:WindLiveWidget HeightRequest="300" FlexLayout.Basis="50%"/>
                 </FlexLayout>
-                
-                <!-- next 24 hrs hscroll -->
-                <Label Text="Next 24 Hours"
-                       class="SectionTitle"/>
-                <ScrollView Orientation="Horizontal">
-                    <StackLayout Orientation="Horizontal" Spacing="12">
-                        <BindableLayout.ItemsSource>
-                            <x:Array Type="{x:Type m:Metric}">
-                                <m:Metric Title="10 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="11 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="12 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="1 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="2 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="3 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="4 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="5 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="6 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="7 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="8 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="9 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="10 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="11 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="12 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="1 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="2 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="3 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="4 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="5 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="6 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="7 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="8 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="9 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                            </x:Array>
-                        </BindableLayout.ItemsSource>
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate>
-                                <StackLayout>
-                                    <Label Text="{Binding Title}" class="Small" HorizontalOptions="Center"/>
-                                    <Image Source="{Binding Icon}" HeightRequest="40" HorizontalOptions="Center"/>
-                                    <Label Text="{Binding Value}" class="Subhead" HorizontalOptions="Center"/>
-                                </StackLayout>
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
 
-                    </StackLayout>
-                </ScrollView>
-
-                <!-- daily forecast hscroll -->
-                <Label Text="Daily Forecasts"
-                       class="SectionTitle"/>
-                <ScrollView Orientation="Horizontal">
-                    <StackLayout Orientation="Horizontal" Spacing="12">
-                        <BindableLayout.ItemsSource>
-                            <x:Array Type="{x:Type m:Metric}">
-                                <m:Metric Title="M" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="T" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="W" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="T" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="F" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="S" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                <m:Metric Title="S" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                                
-                            </x:Array>
-                        </BindableLayout.ItemsSource>
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate>
-                                <Grid RowDefinitions="34,34,34,200,1,40">
-                                    <Label Grid.Row="0" Text="{Binding Title}" class="Subhead" HorizontalOptions="Center"/>
-                                    <Label Grid.Row="1" Text="{Binding Value}" class="Subhead" HorizontalOptions="Center"/>
-                                    <Image Grid.Row="2" Source="{Binding Icon}" HorizontalOptions="Center"/>
-                                    <Grid Grid.Row="3" 
-                                          RowDefinitions="20,*,20"
-                                          >
-                                        <BoxView Grid.Row="1" 
-                                                BackgroundColor="{StaticResource Accent_Blue100}"
-                                                 WidthRequest="10"
-                                                 CornerRadius="5"
-                                                 HorizontalOptions="Center"/>
-                                        <Label Grid.Row="0" Text="24°" class="Subhead" HorizontalOptions="Center"/>
-                                        <Label Grid.Row="2" Text="14°" class="Subhead" HorizontalOptions="Center"/>
-                                    </Grid>
-                                    <BoxView Grid.Row="4" class="HRule"/>
-                                    <StackLayout Grid.Row="5" Orientation="Horizontal"
-                                                 HorizontalOptions="Center"
-                                                 >
-                                        <Image Source="sm_solid_umbrella.png" VerticalOptions="Center"/>
-                                        <Label Text="13%" class="SubContent" VerticalOptions="Center"/>
-
-                                    </StackLayout>
-                                </Grid>
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
-
-                    </StackLayout>
-                </ScrollView>
+                <v:Next24HrWidget/>
+                <v:Next7DWidget/>
 
             </StackLayout>
             
         </ScrollView>
         
         <!-- Desktop Menu -->
-        <Grid BackgroundColor="{StaticResource Background_Mid}"
-              Grid.Column="0"
-              Grid.RowSpan="2"
-              >
-            <StackLayout Orientation="Vertical"
-                         Margin="0,50"
-                         Spacing="50">
-                <ImageButton 
-                    Source="desktop_home_icon.png"/>
-                <ImageButton Source="desktop_favorites_icon.png"/>
-                <ImageButton Source="desktop_map_icon.png"/>
-            </StackLayout>
-            <ImageButton Source="desktop_settings_icon.png"
-                         VerticalOptions="End"
-                         Margin="0,0,0,40"
-                         />
-        </Grid>
-        
+        <v:NavBar_Desktop Grid.Column="0" Grid.RowSpan="2" />
+
         <!-- widget panel -->
         <ScrollView Grid.Row="1" Grid.Column="2">
             <Grid>

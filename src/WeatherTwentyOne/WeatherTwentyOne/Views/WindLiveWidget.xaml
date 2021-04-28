@@ -7,7 +7,9 @@
                             HeightRequest="212"
                             Source="compass_background.png"/>
 
-        <Image Source="compass_needle.png" VerticalOptions="End" Margin="0,0,80,70"/>
+        <Image Source="compass_needle.png" 
+               WidthRequest="51"
+               VerticalOptions="End" Margin="0,0,80,70"/>
 
         <StackLayout
                             VerticalOptions="End">

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:m="clr-namespace:WeatherTwentyOne.Models"
+             x:Class="WeatherTwentyOne.Views.Next24HrWidget">
+  <ContentView.Content>
+      <StackLayout>
+            <!-- next 24 hrs hscroll -->
+            <Label Text="Next 24 Hours"
+                       class="SectionTitle"/>
+            <ScrollView Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Spacing="12">
+                    <BindableLayout.ItemsSource>
+                        <x:Array Type="{x:Type m:Metric}">
+                            <m:Metric Title="10 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="11 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="12 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="1 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="2 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="3 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="4 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="5 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="6 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="7 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="8 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="9 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="10 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="11 PM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="12 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="1 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="2 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="3 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="4 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="5 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="6 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="7 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="8 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                            <m:Metric Title="9 AM" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
+                        </x:Array>
+                    </BindableLayout.ItemsSource>
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding Title}" class="Small" HorizontalOptions="Center"/>
+                                <Image Source="{Binding Icon}" HeightRequest="40" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Value}" class="Subhead" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>
