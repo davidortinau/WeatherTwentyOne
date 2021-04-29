@@ -225,6 +225,11 @@
         </Setter>
     </Style>
 
+    <Style TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+    </Style>
+
     <Style TargetType="StackLayout" Class="CheckBoxContainer">
         <Setter Property="Spacing" Value="0"/>
         <Setter Property="Orientation" Value="Horizontal"/>

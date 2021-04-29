@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:v="clr-namespace:WeatherTwentyOne.Views" xmlns:m="clr-namespace:WeatherTwentyOne.Models"
              NavigationPage.HasNavigationBar="False"
              x:Class="WeatherTwentyOne.Pages.FavoritesPage">
-    
-    <Grid ColumnDefinitions="114,*"
-          RowDefinitions="80,*"
+
+    <Grid ColumnDefinitions="{OnIdiom Phone=*, Default='68,*'}"
+          RowDefinitions="{OnIdiom Phone='80,*,68', Default='80,*'}"
           >
         <Grid 
-            Grid.Column="1"
+            Grid.Column="{OnIdiom Phone=0,Default=1}"
             >
             <Label Text="Favorites"
                    StyleClass="LargeTitle"
@@ -20,11 +20,12 @@
                 StyleClass="HRule"/>
         </Grid>
 
-        <!-- desktop main content -->
-        <ScrollView Grid.Column="1"
+        <!-- main content -->
+        <ScrollView Grid.Column="{OnIdiom Phone=0,Default=1}"
                     Grid.Row="1"
                     >
-            <FlexLayout Wrap="Wrap" Direction="Row" Margin="25"
+            <FlexLayout Wrap="Wrap" Direction="Row"
+                        Margin="{OnIdiom Phone=15,Default=25}"
                             JustifyContent="Start"
                             AlignItems="Start"
                             AlignContent="Start"
@@ -41,7 +42,7 @@
                 </BindableLayout.ItemsSource>
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <Frame Margin="25"
+                        <Frame Margin="{OnIdiom Phone=15,Default=25}"
                                 HorizontalOptions="Start"
                                 HeightRequest="124" 
                                 WidthRequest="124"
@@ -90,7 +91,10 @@
 
         </ScrollView>
 
-        <!-- Desktop Menu -->
-        <v:NavBar_Desktop Grid.Column="0" Grid.RowSpan="2" />
+        <!-- Menu -->
+        <v:NavBar_Desktop
+            Grid.Column="0"
+            Grid.Row="{OnIdiom Phone=2, Default=0}"
+            Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
     </Grid>
 </ContentPage>

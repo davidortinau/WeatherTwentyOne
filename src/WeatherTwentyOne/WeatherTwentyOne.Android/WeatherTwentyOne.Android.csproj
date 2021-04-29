@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -91,7 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WeatherTwentyOne\WeatherTwentyOne.csproj">
-      <Project>{4120CDF2-4D6B-433E-B009-3265429AC329}</Project>
+      <Project>{F9CEB58F-EDE5-4DCF-8B40-D43B25370BD5}</Project>
       <Name>WeatherTwentyOne</Name>
     </ProjectReference>
   </ItemGroup>

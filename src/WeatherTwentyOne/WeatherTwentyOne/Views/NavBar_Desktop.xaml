@@ -2,15 +2,20 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherTwentyOne.Views.NavBar_Desktop">
-    <Grid BackgroundColor="{StaticResource Background_Mid}"
-              
-              >
-        <StackLayout Orientation="Vertical"
-                         Margin="0,50"
-                         Spacing="50">
+    <FlexLayout
+        Direction="{OnIdiom Phone=Row,Default=Column}"
+        JustifyContent="{OnIdiom Phone=Center, Default=Start}"
+        BackgroundColor="{StaticResource Background_Mid}">
+        <FlexLayout.Resources>
+            <Style TargetType="ImageButton">
+                <Setter Property="Margin"
+                        Value="{OnIdiom Phone='25,0',Default='0,50,0,25'}"/>
+            </Style>
+        </FlexLayout.Resources>
+
             <ImageButton x:Name="HomeTab"
                     Source="desktop_home_icon.png"
-                         Clicked="HomeTab_Clicked"
+                    Clicked="HomeTab_Clicked"
                 />
             <ImageButton x:Name="FavoritesTab" Source="desktop_favorites_icon.png"
                          Clicked="FavoritesTab_Clicked"
@@ -18,12 +23,15 @@
             <ImageButton x:Name="MapTab" Source="desktop_map_icon.png"
                          Clicked="MapTab_Clicked"
                          />
-        </StackLayout>
+        <BoxView Color="Transparent"
+                 FlexLayout.Grow="1"
+                 IsVisible="{OnIdiom Phone=False, Default=True}"
+                 />
         <ImageButton x:Name="SettingsTab" 
                      Source="desktop_settings_icon.png"
-                     VerticalOptions="End"
-                     Margin="0,0,0,40"
+                     VerticalOptions="{OnIdiom Phone=Center,Default=End}"
+                     Margin="{OnIdiom Phone='25,0',Default='0,0,0,40'}"
                      Clicked="SettingsTab_Clicked"
                     />
-    </Grid>
+    </FlexLayout>
 </ContentView>

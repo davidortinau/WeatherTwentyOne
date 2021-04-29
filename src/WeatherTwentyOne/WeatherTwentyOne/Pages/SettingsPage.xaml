@@ -4,11 +4,11 @@
              xmlns:v="clr-namespace:WeatherTwentyOne.Views"
              NavigationPage.HasNavigationBar="False"
              x:Class="WeatherTwentyOne.Pages.SettingsPage">
-    <Grid ColumnDefinitions="114,*"
-          RowDefinitions="80,*"
+    <Grid ColumnDefinitions="{OnIdiom Phone=*, Default='68,*'}"
+          RowDefinitions="{OnIdiom Phone='80,*,68', Default='80,*'}"
           >
         <Grid 
-            Grid.Column="1"
+            Grid.Column="{OnIdiom Phone=0,Default=1}"
             >
             <Label Text="Settings"
                    StyleClass="LargeTitle"
@@ -20,10 +20,10 @@
                 StyleClass="HRule"/>
         </Grid>
 
-        <!-- desktop main content -->
-        <ScrollView Grid.Column="1"
+        <!-- main content -->
+        <ScrollView Grid.Column="{OnIdiom Phone=0,Default=1}"
                     Grid.Row="1"
-                    Margin="25"
+                    Margin="{OnIdiom Phone=15, Default=25}"
                     >
             <StackLayout>
                 <v:CurrentWidget/>
@@ -46,6 +46,9 @@
         </ScrollView>
 
         <!-- Desktop Menu -->
-        <v:NavBar_Desktop Grid.Column="0" Grid.RowSpan="2" />
+        <v:NavBar_Desktop
+            Grid.Column="0"
+            Grid.Row="{OnIdiom Phone=2, Default=0}"
+            Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
     </Grid>
 </ContentPage>
