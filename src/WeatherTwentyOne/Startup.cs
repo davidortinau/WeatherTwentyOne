@@ -2,6 +2,7 @@
 using Microsoft.Maui.Hosting;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui.Controls.Hosting;
 
 namespace WeatherTwentyOne
 {
@@ -12,6 +13,7 @@ namespace WeatherTwentyOne
 			appBuilder
 				.UseFormsCompatibility()
 				.UseMauiApp<App>()
+				.UseMauiControlsHandlers()
 				.ConfigureFonts((fonts)=>{
 					fonts.AddFont("fa-solid-900.ttf", "FontAwesome");
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
