@@ -10,7 +10,7 @@ using Microsoft.Maui.Controls.Xaml;
 namespace WeatherTwentyOne.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WindLiveWidget : ContentView
+    public partial class WindLiveWidget : Grid
     {
         Random rand;
         private Timer aTimer;

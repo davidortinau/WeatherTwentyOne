@@ -10,7 +10,7 @@ using Microsoft.Maui.Controls.Xaml;
 namespace WeatherTwentyOne.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CurrentWidget : ContentView
+    public partial class CurrentWidget : StackLayout
     {
         public CurrentWidget()
         {
