@@ -20,7 +20,11 @@ namespace WeatherTwentyOne
 				.SetImageDirectory("Assets");
 
 
-			return new Microsoft.Maui.Controls.Window(new NavigationPage(new HomePage()));
+			return new Microsoft.Maui.Controls.Window(
+				new NavigationPage(
+					new HomePage()
+				)
+			);
 		}
 	}
 }

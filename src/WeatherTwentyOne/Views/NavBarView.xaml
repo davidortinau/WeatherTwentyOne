@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+<FlexLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WeatherTwentyOne.Views.NavBarView">
+             x:Class="WeatherTwentyOne.Views.NavBarView"
+             Direction="{OnIdiom Phone=Row,Default=Column}"
+        JustifyContent="{OnIdiom Phone=Center, Default=Start}"
+        BackgroundColor="{OnIdiom Phone=Transparent, Default={StaticResource Background_Mid}}">
     
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="NavigationStates">
@@ -41,10 +44,6 @@
     </VisualStateManager.VisualStateGroups>
 
     
-    <FlexLayout
-        Direction="{OnIdiom Phone=Row,Default=Column}"
-        JustifyContent="{OnIdiom Phone=Center, Default=Start}"
-        BackgroundColor="{OnIdiom Phone=Transparent, Default={StaticResource Background_Mid}}">
         <FlexLayout.Resources>
             <Style TargetType="ImageButton">
                 <Setter Property="Margin"
@@ -71,5 +70,4 @@
                      Margin="{OnIdiom Phone='25,0',Default='0,0,0,40'}"
                      Clicked="SettingsTab_Clicked"
                     />
-    </FlexLayout>
-</ContentView>
+</FlexLayout>

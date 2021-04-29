@@ -11,16 +11,13 @@ namespace WeatherTwentyOne
 		{
 			appBuilder
 				.UseFormsCompatibility()
+				.UseMauiApp<App>()
 				.ConfigureFonts((fonts)=>{
 					fonts.AddFont("fa-solid-900.ttf", "FontAwesome");
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 					fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");
-				})
-				// .UseMauiServiceProviderFactory(true)
-				// .ConfigureServices(services => {
-				// 	services.AddTransient<IWindow, Microsoft.Maui.Controls.Window>();
-				// })
-				.UseMauiApp<App>();
+				});
+				
 		}
 	}
 }
