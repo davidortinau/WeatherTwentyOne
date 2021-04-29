@@ -5,7 +5,7 @@
     <FlexLayout
         Direction="{OnIdiom Phone=Row,Default=Column}"
         JustifyContent="{OnIdiom Phone=Center, Default=Start}"
-        BackgroundColor="{StaticResource Background_Mid}">
+        BackgroundColor="{OnIdiom Phone=Transparent, Default={StaticResource Background_Mid}}">
         <FlexLayout.Resources>
             <Style TargetType="ImageButton">
                 <Setter Property="Margin"

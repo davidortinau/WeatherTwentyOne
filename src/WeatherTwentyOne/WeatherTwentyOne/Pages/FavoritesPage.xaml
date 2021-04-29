@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:v="clr-namespace:WeatherTwentyOne.Views" xmlns:m="clr-namespace:WeatherTwentyOne.Models"
              NavigationPage.HasNavigationBar="False"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
              x:Class="WeatherTwentyOne.Pages.FavoritesPage">
 
     <Grid ColumnDefinitions="{OnIdiom Phone=*, Default='68,*'}"
