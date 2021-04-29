@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using WeatherTwentyOne.Services;
 
 namespace WeatherTwentyOne.Pages
 {
@@ -13,6 +15,12 @@ namespace WeatherTwentyOne.Pages
         public HomePage()
         {
             InitializeComponent();
+
+            var trayService = ServiceProvider.GetService<ITrayService>();
+            var notificationService = ServiceProvider.GetService<INotificationService>();
+
+            trayService?.Initialize();
+            trayService.ClickHandler = () => notificationService.ShowNotification("Tray Clicked");
         }
 
         protected override void OnAppearing()

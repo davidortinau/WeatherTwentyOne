@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
+	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
 		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
@@ -9,16 +9,19 @@
 		<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
 		<EnableDefaultPageItems>False</EnableDefaultPageItems>
 		<EnableDefaultApplicationDefintition>False</EnableDefaultApplicationDefintition>
-  </PropertyGroup>
+	</PropertyGroup>
 
-  <ItemGroup>
+	<ItemGroup>
 		<PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.6]">
 			<IncludeAssets>build</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.4.462" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="6.0.100-preview.4.462" />
-    <PackageReference Include="Microsoft.Maui.Resizetizer" Version="6.0.100-preview.4.462" />
-  </ItemGroup>
+		<PackageReference Include="Microsoft.Maui.Resizetizer" Version="6.0.100-preview.4.462" />
+
+		<PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.0.1" />
+		<PackageReference Include="PInvoke.User32" Version="0.7.104" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.19041.16" />
@@ -40,10 +43,11 @@
 
 	<ItemGroup>
 		<Compile Include="..\WeatherTwentyOne\*.cs" Link="%(FileName)%(Extension)" />
+		<Compile Include="..\WeatherTwentyOne\Services\*.cs" Link="Services\%(FileName)%(Extension)" />
 		<Compile Include="..\WeatherTwentyOne\Models\*.cs" Link="Models\%(FileName)%(Extension)" />
 		<Compile Include="..\WeatherTwentyOne\Pages\*.cs" Link="Pages\%(FileName)%(Extension)" />
 		<Compile Include="..\WeatherTwentyOne\Resources\Styles\*.cs" Link="Resources\Styles\%(FileName)%(Extension)" />
-		<Compile Include="..\WeatherTwentyOne\Views\*.cs"  Link="Views\%(FileName)%(Extension)" />
+		<Compile Include="..\WeatherTwentyOne\Views\*.cs" Link="Views\%(FileName)%(Extension)" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -56,6 +60,12 @@
 	<ItemGroup>
 		<MauiImage Include="..\WeatherTwentyOne\Resources\**\*.svg" Link="Resources\%(RecursiveDir)%(FileName)%(Extension)" />
 		<MauiFont Include="..\WeatherTwentyOne\Resources\Fonts\**\*.ttf" Link="Resources\Fonts\%(RecursiveDir)%(FileName)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="Resources\trayicon.ico">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 </Project>
