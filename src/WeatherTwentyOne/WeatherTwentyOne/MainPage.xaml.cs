@@ -14,5 +14,12 @@ namespace WeatherTwentyOne
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            VisualStateManager.GoToState(NavBar, "Home");
+        }
     }
 }

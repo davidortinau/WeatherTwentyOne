@@ -16,5 +16,12 @@ namespace WeatherTwentyOne.Pages
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            VisualStateManager.GoToState(NavBar, "Favorites");
+        }
     }
 }

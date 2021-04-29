@@ -18,10 +18,6 @@
     <None Remove="Resources\Images\checkmark_icon.svg" />
     <None Remove="Resources\Images\compass_background.svg" />
     <None Remove="Resources\Images\compass_needle.svg" />
-    <None Remove="Resources\Images\desktop_favorites_icon.svg" />
-    <None Remove="Resources\Images\desktop_home_icon.svg" />
-    <None Remove="Resources\Images\desktop_map_icon.svg" />
-    <None Remove="Resources\Images\desktop_settings_icon.svg" />
     <None Remove="Resources\Images\fluent_weather_cloudy_20_filled.svg" />
     <None Remove="Resources\Images\fluent_weather_drizzle_20_filled.svg" />
     <None Remove="Resources\Images\fluent_weather_fog_20_filled.svg" />
@@ -53,6 +49,14 @@
     <None Remove="Resources\Images\solid_wind.svg" />
     <None Remove="Resources\Images\sunrise_icon.svg" />
     <None Remove="Resources\Images\sunset_icon.svg" />
+    <None Remove="Resources\Images\tab_favorites.svg" />
+    <None Remove="Resources\Images\tab_favorites_on.svg" />
+    <None Remove="Resources\Images\tab_home.svg" />
+    <None Remove="Resources\Images\tab_home_on.svg" />
+    <None Remove="Resources\Images\tab_map.svg" />
+    <None Remove="Resources\Images\tab_map_on.svg" />
+    <None Remove="Resources\Images\tab_settings.svg" />
+    <None Remove="Resources\Images\tab_settings_on.svg" />
     <None Remove="Resources\Images\umbrella_icon.svg" />
     <None Remove="Resources\Images\wind_icon.svg" />
   </ItemGroup>
@@ -74,10 +78,6 @@
     <SharedImage Include="Resources\Images\checkmark_icon.svg" />
     <SharedImage Include="Resources\Images\compass_background.svg" BaseSize="212" />
     <SharedImage Include="Resources\Images\compass_needle.svg" />
-    <SharedImage Include="Resources\Images\desktop_favorites_icon.svg" BaseSize="40" />
-    <SharedImage Include="Resources\Images\desktop_home_icon.svg" BaseSize="40" />
-    <SharedImage Include="Resources\Images\desktop_map_icon.svg" BaseSize="40" />
-    <SharedImage Include="Resources\Images\desktop_settings_icon.svg" BaseSize="40" />
     <SharedImage Include="Resources\Images\fluent_weather_cloudy_20_filled.svg" BaseSize="140" />
     <SharedImage Include="Resources\Images\fluent_weather_drizzle_20_filled.svg" BaseSize="140" />
     <SharedImage Include="Resources\Images\fluent_weather_fog_20_filled.svg" BaseSize="140" />
@@ -109,6 +109,14 @@
     <SharedImage Include="Resources\Images\solid_wind.svg" />
     <SharedImage Include="Resources\Images\sunrise_icon.svg" />
     <SharedImage Include="Resources\Images\sunset_icon.svg" />
+    <SharedImage Include="Resources\Images\tab_favorites.svg" />
+    <SharedImage Include="Resources\Images\tab_favorites_on.svg" />
+    <SharedImage Include="Resources\Images\tab_home.svg" />
+    <SharedImage Include="Resources\Images\tab_home_on.svg" />
+    <SharedImage Include="Resources\Images\tab_map.svg" />
+    <SharedImage Include="Resources\Images\tab_map_on.svg" />
+    <SharedImage Include="Resources\Images\tab_settings.svg" />
+    <SharedImage Include="Resources\Images\tab_settings_on.svg" />
     <SharedImage Include="Resources\Images\umbrella_icon.svg" BaseSize="40" />
     <SharedImage Include="Resources\Images\wind_icon.svg" BaseSize="40" />
   </ItemGroup>
@@ -116,6 +124,9 @@
   <ItemGroup>
     <Compile Update="Pages\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NavBarView.xaml.cs">
+      <DependentUpon>NavBarView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -132,7 +143,7 @@
     <EmbeddedResource Update="Views\CurrentWidget.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\NavBar_Desktop.xaml">
+    <EmbeddedResource Update="Views\NavBarView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Next24HrWidget.xaml">

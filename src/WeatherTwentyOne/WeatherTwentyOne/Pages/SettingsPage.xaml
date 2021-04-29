@@ -48,7 +48,7 @@
         </ScrollView>
 
         <!-- Desktop Menu -->
-        <v:NavBar_Desktop
+        <v:NavBarView x:Name="NavBar"
             Grid.Column="0"
             Grid.Row="{OnIdiom Phone=2, Default=0}"
             Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>

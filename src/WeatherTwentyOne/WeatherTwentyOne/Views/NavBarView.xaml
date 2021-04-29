@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherTwentyOne.Views.NavBarView">
+    
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="NavigationStates">
+            <VisualState x:Name="Home">
+                <VisualState.Setters>
+                    <Setter TargetName="HomeTab" Property="ImageButton.Source"
+                            Value="tab_home_on.png"/>
+                    <Setter TargetName="FavoritesTab" Property="ImageButton.Source"
+                            Value="tab_favorites.png"/>
+                    <Setter TargetName="SettingsTab" Property="ImageButton.Source"
+                            Value="tab_settings.png"/>
+                </VisualState.Setters>
+            </VisualState>
+
+            <VisualState x:Name="Favorites">
+                <VisualState.Setters>
+                    <Setter TargetName="HomeTab" Property="ImageButton.Source"
+                            Value="tab_home.png"/>
+                    <Setter TargetName="FavoritesTab" Property="ImageButton.Source"
+                            Value="tab_favorites_on.png"/>
+                    <Setter TargetName="SettingsTab" Property="ImageButton.Source"
+                            Value="tab_settings.png"/>
+                </VisualState.Setters>
+            </VisualState>
+
+            <VisualState x:Name="Settings">
+                <VisualState.Setters>
+                    <Setter TargetName="HomeTab" Property="ImageButton.Source"
+                            Value="tab_home.png"/>
+                    <Setter TargetName="FavoritesTab" Property="ImageButton.Source"
+                            Value="tab_favorites.png"/>
+                    <Setter TargetName="SettingsTab" Property="ImageButton.Source"
+                            Value="tab_settings_on.png"/>
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
+    
+    <FlexLayout
+        Direction="{OnIdiom Phone=Row,Default=Column}"
+        JustifyContent="{OnIdiom Phone=Center, Default=Start}"
+        BackgroundColor="{OnIdiom Phone=Transparent, Default={StaticResource Background_Mid}}">
+        <FlexLayout.Resources>
+            <Style TargetType="ImageButton">
+                <Setter Property="Margin"
+                        Value="{OnIdiom Phone='25,0',Default='0,50,0,25'}"/>
+            </Style>
+        </FlexLayout.Resources>
+
+            <ImageButton x:Name="HomeTab"
+                    Clicked="HomeTab_Clicked"
+                />
+            <ImageButton x:Name="FavoritesTab" Source="tab_favorites.png"
+                         Clicked="FavoritesTab_Clicked"
+                         />
+            <ImageButton x:Name="MapTab" 
+                         Source="tab_map.png"
+                         Clicked="MapTab_Clicked"
+                         />
+        <BoxView Color="Transparent"
+                 FlexLayout.Grow="1"
+                 IsVisible="{OnIdiom Phone=False, Default=True}"
+                 />
+        <ImageButton x:Name="SettingsTab" 
+                     VerticalOptions="{OnIdiom Phone=Center,Default=End}"
+                     Margin="{OnIdiom Phone='25,0',Default='0,0,0,40'}"
+                     Clicked="SettingsTab_Clicked"
+                    />
+    </FlexLayout>
+</ContentView>

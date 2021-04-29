@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace WeatherTwentyOne.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NavBar_Desktop : ContentView
+    public partial class NavBarView : ContentView
     {
-        public NavBar_Desktop()
+        public NavBarView()
         {
             InitializeComponent();
         }
