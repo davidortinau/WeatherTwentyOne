@@ -8,14 +8,22 @@
         <StackLayout Orientation="Vertical"
                          Margin="0,50"
                          Spacing="50">
-            <ImageButton 
-                    Source="desktop_home_icon.png"/>
-            <ImageButton Source="desktop_favorites_icon.png"/>
-            <ImageButton Source="desktop_map_icon.png"/>
-        </StackLayout>
-        <ImageButton Source="desktop_settings_icon.png"
-                         VerticalOptions="End"
-                         Margin="0,0,0,40"
+            <ImageButton x:Name="HomeTab"
+                    Source="desktop_home_icon.png"
+                         Clicked="HomeTab_Clicked"
+                />
+            <ImageButton x:Name="FavoritesTab" Source="desktop_favorites_icon.png"
+                         Clicked="FavoritesTab_Clicked"
                          />
+            <ImageButton x:Name="MapTab" Source="desktop_map_icon.png"
+                         Clicked="MapTab_Clicked"
+                         />
+        </StackLayout>
+        <ImageButton x:Name="SettingsTab" 
+                     Source="desktop_settings_icon.png"
+                     VerticalOptions="End"
+                     Margin="0,0,0,40"
+                     Clicked="SettingsTab_Clicked"
+                    />
     </Grid>
 </ContentView>

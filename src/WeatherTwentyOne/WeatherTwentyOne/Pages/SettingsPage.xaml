@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:v="clr-namespace:WeatherTwentyOne.Views"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="WeatherTwentyOne.Pages.SettingsPage">
+    <Grid ColumnDefinitions="114,*"
+          RowDefinitions="80,*"
+          >
+        <Grid 
+            Grid.Column="1"
+            >
+            <Label Text="Settings"
+                   StyleClass="LargeTitle"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   />
+            <BoxView 
+                VerticalOptions="End"
+                StyleClass="HRule"/>
+        </Grid>
+
+        <!-- desktop main content -->
+        <ScrollView Grid.Column="1"
+                    Grid.Row="1"
+                    Margin="25"
+                    >
+            <StackLayout>
+                <v:CurrentWidget/>
+                <Label Text="Units" class="SectionTitle"/>
+                
+                <Label Text="Imperial" class="Subhead"/>
+                <Label Text="˚F / mph / miles / inches" class="SubContent"/>
+                <BoxView class="HRule"/>
+
+                <Label Text="Metric" class="Subhead"/>
+                <Label Text="˚C / kmh / km / millimeters / milibars" class="SubContent"/>
+                <BoxView class="HRule"/>
+
+                <Label Text="Hybrid" class="Subhead"/>
+                <Label Text="˚C / mph / miles / millimeters / millibars"/>
+                <BoxView class="HRule"/>
+
+            </StackLayout>
+
+        </ScrollView>
+
+        <!-- Desktop Menu -->
+        <v:NavBar_Desktop Grid.Column="0" Grid.RowSpan="2" />
+    </Grid>
+</ContentPage>
