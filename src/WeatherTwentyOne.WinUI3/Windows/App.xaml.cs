@@ -4,7 +4,7 @@ using Windows.ApplicationModel;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace LayoutLabWinUI3
+namespace WeatherTwentyOne.WinUI
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -22,7 +22,7 @@ namespace LayoutLabWinUI3
     }
 
     // TODO: this is not nice.
-    public class MiddleApp : MauiWinUIApplication<LayoutLab.Startup>
+    public class MiddleApp : MauiWinUIApplication<Startup>
     {
     }
 
