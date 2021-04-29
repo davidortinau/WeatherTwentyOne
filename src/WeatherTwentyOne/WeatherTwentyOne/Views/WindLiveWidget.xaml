@@ -2,17 +2,27 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherTwentyOne.Views.WindLiveWidget">
-    <Grid HeightRequest="300" FlexLayout.Basis="50%">
-        <Image VerticalOptions="Start"
-                            HeightRequest="212"
-                            Source="compass_background.png"/>
+    <Grid>
+        <Grid RowDefinitions="242" ColumnDefinitions="242" HorizontalOptions="Center">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Grid.GestureRecognizers>
+            <Image VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                                HeightRequest="212"
+                                Source="compass_background.png"/>
 
-        <Image Source="compass_needle.png" 
-               WidthRequest="51"
-               VerticalOptions="End" Margin="0,0,80,70"/>
+            <Image x:Name="Needle"
+                   Source="compass_needle.png" 
+                   WidthRequest="242"
+                   HeightRequest="242"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Rotation="360"
+                   />
+        </Grid>
 
-        <StackLayout
-                            VerticalOptions="End">
+        <StackLayout VerticalOptions="End">
             <Label Text="Winds"
                                    HorizontalOptions="Center"
                                    class="SubContent"
