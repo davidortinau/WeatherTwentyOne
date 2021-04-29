@@ -1,0 +1,115 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <EnableDefaultItems>false</EnableDefaultItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ProjectReunion" Version="0.5.0" />
+    <PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.5.0" />
+    <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.5.0" />
+    <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.3.315" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="6.0.100-preview.3.315" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="6.0.100-preview.3.315" />
+    <PackageReference Include="Microsoft.Maui.Resizetizer" Version="6.0.100-preview.3.315" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\WeatherTwentyOne\App.xaml.cs" Link="App.xaml.cs" />
+    <Compile Include="..\WeatherTwentyOne\App.xaml" Link="App.xaml" />
+    <Compile Include="..\WeatherTwentyOne\Models\Metric.cs" Link="Models\Metric.cs" />
+    <Compile Include="..\WeatherTwentyOne\Pages\FavoritesPage.xaml.cs" Link="Pages\FavoritesPage.xaml.cs" />
+    <Compile Include="..\WeatherTwentyOne\Pages\HomePage.xaml.cs" Link="Pages\HomePage.xaml.cs" />
+    <Compile Include="..\WeatherTwentyOne\Pages\HomePage.xaml" Link="Pages\HomePage.xaml" />
+    <Compile Include="..\WeatherTwentyOne\Pages\SettingsPage.xaml.cs" Link="Pages\SettingsPage.xaml.cs" />
+    <Compile Include="..\WeatherTwentyOne\Startup.cs" Link="Startup.cs" />
+    <Compile Include="..\WeatherTwentyOne\Views\CurrentWidget.xaml.cs" Link="Views\CurrentWidget.xaml.cs" />
+    <Compile Include="..\WeatherTwentyOne\Views\NavBarView.xaml.cs" Link="Views\NavBarView.xaml.cs" />
+    <Compile Include="..\WeatherTwentyOne\Views\Next24HrWidget.xaml.cs" Link="Views\Next24HrWidget.xaml.cs" />
+    <Compile Include="..\WeatherTwentyOne\Views\Next7DWidget.xaml.cs" Link="Views\Next7DWidget.xaml.cs" />
+    <Compile Include="..\WeatherTwentyOne\Views\WindLiveWidget.xaml.cs" Link="Views\WindLiveWidget.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <MauiImage Include="..\WeatherTwentyOne\Resources\appicon.svg" Link="Resources\appicon.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\appiconfg.svg" Link="Resources\appiconfg.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\add_icon.svg" Link="add_icon.svg" />
+    <MauiFont Include="..\WeatherTwentyOne\Resources\Fonts\fa-solid-900.ttf" Link="Resources\Fonts\fa-solid-900.ttf" />
+    <MauiFont Include="..\WeatherTwentyOne\Resources\Fonts\OpenSans-Regular.ttf" Link="Resources\Fonts\OpenSans-Regular.ttf" />
+    <MauiFont Include="..\WeatherTwentyOne\Resources\Fonts\OpenSans-SemiBold.ttf" Link="Resources\Fonts\OpenSans-SemiBold.ttf" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\checkmark_icon.svg" Link="Resources\Images\checkmark_icon.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\compass_background.svg" Link="Resources\Images\compass_background.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\compass_needle.svg" Link="Resources\Images\compass_needle.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_cloudy_20_filled.svg" Link="Resources\Images\fluent_weather_cloudy_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_drizzle_20_filled.svg" Link="Resources\Images\fluent_weather_drizzle_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_fog_20_filled.svg" Link="Resources\Images\fluent_weather_fog_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_hail_day_20_filled.svg" Link="Resources\Images\fluent_weather_hail_day_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_hail_night_20_filled.svg" Link="Resources\Images\fluent_weather_hail_night_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_haze_20_filled.svg" Link="Resources\Images\fluent_weather_haze_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_moon_16_filled.svg" Link="Resources\Images\fluent_weather_moon_16_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_moon_off_16_filled.svg" Link="Resources\Images\fluent_weather_moon_off_16_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_partly_cloudy.svg" Link="Resources\Images\fluent_weather_partly_cloudy.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_partly_cloudy_night_20_filled.svg" Link="Resources\Images\fluent_weather_partly_cloudy_night_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_rain_20_filled.svg" Link="Resources\Images\fluent_weather_rain_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_rain_showers_day_20_filled.svg" Link="Resources\Images\fluent_weather_rain_showers_day_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_rain_showers_night_20_filled.svg" Link="Resources\Images\fluent_weather_rain_showers_night_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_rain_snow_20_filled.svg" Link="Resources\Images\fluent_weather_rain_snow_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_snowflake_20_filled.svg" Link="Resources\Images\fluent_weather_snowflake_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_snow_20_filled.svg" Link="Resources\Images\fluent_weather_snow_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_snow_shower_day_20_filled.svg" Link="Resources\Images\fluent_weather_snow_shower_day_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_snow_shower_night_20_filled.svg" Link="Resources\Images\fluent_weather_snow_shower_night_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_squalls_20_filled.svg" Link="Resources\Images\fluent_weather_squalls_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_sunny_20_filled.svg" Link="Resources\Images\fluent_weather_sunny_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_sunny_high_20_filled.svg" Link="Resources\Images\fluent_weather_sunny_high_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_sunny_low_20_filled.svg" Link="Resources\Images\fluent_weather_sunny_low_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\fluent_weather_thunderstorm_20_filled.svg" Link="Resources\Images\fluent_weather_thunderstorm_20_filled.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\humidity_icon.svg" Link="Resources\Images\humidity_icon.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\rain_icon.svg" Link="Resources\Images\rain_icon.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\sm_solid_umbrella.svg" Link="Resources\Images\sm_solid_umbrella.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\solid_humidity.svg" Link="Resources\Images\solid_humidity.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\solid_umbrella.svg" Link="Resources\Images\solid_umbrella.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\solid_wind.svg" Link="Resources\Images\solid_wind.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\sunrise_icon.svg" Link="Resources\Images\sunrise_icon.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\sunset_icon.svg" Link="Resources\Images\sunset_icon.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\tab_favorites.svg" Link="Resources\Images\tab_favorites.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\tab_favorites_on.svg" Link="Resources\Images\tab_favorites_on.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\tab_home.svg" Link="Resources\Images\tab_home.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\tab_home_on.svg" Link="Resources\Images\tab_home_on.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\tab_map.svg" Link="Resources\Images\tab_map.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\tab_map_on.svg" Link="Resources\Images\tab_map_on.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\tab_settings.svg" Link="Resources\Images\tab_settings.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\tab_settings_on.svg" Link="Resources\Images\tab_settings_on.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\umbrella_icon.svg" Link="Resources\Images\umbrella_icon.svg" />
+    <MauiImage Include="..\WeatherTwentyOne\Resources\Images\wind_icon.svg" Link="Resources\Images\wind_icon.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Views\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Styles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\WeatherTwentyOne\Pages\FavoritesPage.xaml" Link="Pages\FavoritesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\WeatherTwentyOne\Pages\SettingsPage.xaml" Link="Pages\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\WeatherTwentyOne\Views\CurrentWidget.xaml" Link="Views\CurrentWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\WeatherTwentyOne\Views\NavBarView.xaml" Link="Views\NavBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\WeatherTwentyOne\Views\Next24HrWidget.xaml" Link="Views\Next24HrWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\WeatherTwentyOne\Views\Next7DWidget.xaml" Link="Views\Next7DWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\WeatherTwentyOne\Views\WindLiveWidget.xaml" Link="Views\WindLiveWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+</Project>
