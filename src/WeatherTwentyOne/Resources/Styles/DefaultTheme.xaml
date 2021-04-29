@@ -255,7 +255,7 @@
         <Setter Property="BackgroundColor" Value="{StaticResource Background_Mid}"/>
     </Style>
 
-    <x:String x:Key="LineBreak">&#x0a;</x:String>
+    <!-- <x:String x:Key="LineBreak">&#x0a;</x:String> -->
     
     <!-- data templates -->
     <DataTemplate x:Key="WeatherWidgetTemplate">

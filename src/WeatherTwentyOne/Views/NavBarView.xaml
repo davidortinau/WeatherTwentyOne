@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherTwentyOne.Views.NavBarView"
              Direction="{OnIdiom Phone=Row,Default=Column}"
-        JustifyContent="{OnIdiom Phone=Center, Default=Start}"
-        BackgroundColor="{OnIdiom Phone=Transparent, Default={StaticResource Background_Mid}}">
+             JustifyContent="{OnIdiom Phone=Center, Default=Start}"
+             BackgroundColor="{OnIdiom Phone=Transparent, Default={StaticResource Background_Mid}}"
+             xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls">
     
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="NavigationStates">
@@ -53,13 +54,22 @@
 
             <ImageButton x:Name="HomeTab"
                     Clicked="HomeTab_Clicked"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent"
+                    android:ImageButton.ShadowColor="Transparent"
                 />
             <ImageButton x:Name="FavoritesTab" Source="tab_favorites.png"
                          Clicked="FavoritesTab_Clicked"
+                         BackgroundColor="Transparent"
+                         BorderColor="Transparent"
+                         android:ImageButton.ShadowColor="Transparent"
                          />
             <ImageButton x:Name="MapTab" 
                          Source="tab_map.png"
                          Clicked="MapTab_Clicked"
+                         BackgroundColor="Transparent"
+                         BorderColor="Transparent"
+                         android:ImageButton.ShadowColor="Transparent"
                          />
         <BoxView Color="Transparent"
                  FlexLayout.Grow="1"
@@ -69,5 +79,8 @@
                      VerticalOptions="{OnIdiom Phone=Center,Default=End}"
                      Margin="{OnIdiom Phone='25,0',Default='0,0,0,40'}"
                      Clicked="SettingsTab_Clicked"
+                     BackgroundColor="Transparent"
+                     BorderColor="Transparent"
+                     android:ImageButton.ShadowColor="Transparent"
                     />
 </FlexLayout>
