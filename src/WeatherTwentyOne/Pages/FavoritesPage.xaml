@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:v="clr-namespace:WeatherTwentyOne.Views" xmlns:m="clr-namespace:WeatherTwentyOne.Models"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:v="clr-namespace:WeatherTwentyOne.Views" 
+             xmlns:m="clr-namespace:WeatherTwentyOne.Models"
              NavigationPage.HasNavigationBar="False"
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              ios:Page.UseSafeArea="True"

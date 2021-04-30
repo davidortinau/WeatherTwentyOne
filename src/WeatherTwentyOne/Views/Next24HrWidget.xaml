@@ -4,13 +4,15 @@
              xmlns:m="clr-namespace:WeatherTwentyOne.Models"
              x:Class="WeatherTwentyOne.Views.Next24HrWidget">
 
-    <!-- next 24 hrs hscroll -->
-    <Label Text="Next 24 Hours"
-                class="SectionTitle"/>
-    <ScrollView Orientation="Horizontal">
-        <StackLayout Orientation="Horizontal" Spacing="12"
-                             BindableLayout.ItemsSource="{Binding Hours}">
-
+    <!-- Next 24 hrs hscroll -->
+    <Label 
+        Text="Next 24 Hours"
+        class="SectionTitle"/>
+    <ScrollView 
+        Orientation="Horizontal">
+        <StackLayout 
+            Orientation="Horizontal" Spacing="12"
+            BindableLayout.ItemsSource="{Binding Hours}">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
                     <StackLayout>
@@ -20,7 +22,6 @@
                     </StackLayout>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
-
         </StackLayout>
     </ScrollView>
 </StackLayout>

@@ -1,58 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:m="clr-namespace:WeatherTwentyOne.Models"
-             xmlns:v="clr-namespace:WeatherTwentyOne.Views"
-             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
-             ios:Page.UseSafeArea="True"
-             NavigationPage.HasNavigationBar="False"
-             x:Class="WeatherTwentyOne.Pages.HomePage">
-
-    <Grid ColumnDefinitions="{OnIdiom Phone=*, Default='68,*,480'}"
-          RowDefinitions="{OnIdiom Phone='80,*,68', Default='80,*'}">
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:m="clr-namespace:WeatherTwentyOne.Models"
+    xmlns:v="clr-namespace:WeatherTwentyOne.Views"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    ios:Page.UseSafeArea="True"
+    NavigationPage.HasNavigationBar="False"
+    x:Class="WeatherTwentyOne.Pages.HomePage">
+    <Grid 
+        ColumnDefinitions="{OnIdiom Phone=*, Default='68,*,480'}"  
+        RowDefinitions="{OnIdiom Phone='80,*,68', Default='80,*'}">
         <Grid
             Grid.Column="{OnIdiom Phone=0,Default=1}"
-            Grid.ColumnSpan="{OnIdiom Phone=1,Default=2}"
-            >
-            <Label Text="St. Louis, MO"
-                   StyleClass="LargeTitle"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   />
-            <BoxView
+            Grid.ColumnSpan="{OnIdiom Phone=1,Default=2}">
+            <Label 
+                Text="St. Louis, MO"
+                StyleClass="LargeTitle"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+            <BoxView  
                 VerticalOptions="End"
                 StyleClass="HRule"/>
         </Grid>
-
-        <!-- main content -->
-        <ScrollView Grid.Column="{OnIdiom Phone=0,Default=1}"
-                    Grid.Row="1"
-                    >
-            <StackLayout Orientation="Vertical"
-                         Margin="{OnIdiom Phone=15, Default='50,50'}"
-                         Spacing="25"
-                         >
-                <!-- top widgets -->
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+        <!-- Main content -->
+        <ScrollView 
+            Grid.Column="{OnIdiom Phone=0,Default=1}" 
+            Grid.Row="1">
+            <StackLayout 
+                Orientation="Vertical"
+                Margin="{OnIdiom Phone=15, Default='50,50'}"
+                Spacing="25">
+                <!-- Top widgets -->
+                <StackLayout 
+                    Orientation="Horizontal" HorizontalOptions="Center">
                     <v:CurrentWidget/>
-                    <v:WindLiveWidget x:Name="WindWidget" HeightRequest="300" />
+                    <v:WindLiveWidget 
+                        x:Name="WindWidget" HeightRequest="300" />
                 </StackLayout>
-
                 <v:Next24HrWidget/>
                 <v:Next7DWidget/>
-
             </StackLayout>
-
         </ScrollView>
-
         <!-- Desktop Menu -->
         <v:NavBarView
             x:Name="NavBar"
             Grid.Column="0"
             Grid.Row="{OnIdiom Phone=2, Default=0}"
             Grid.RowSpan="{OnIdiom Phone=1,Default=2}" />
-
-        <!-- widget panel -->
+        <!-- Widget panel -->
         <ScrollView
             IsVisible="{OnIdiom Phone=False, Default=True}"
             Grid.Row="1"
@@ -120,7 +116,5 @@
                          HorizontalOptions="Start"/>
             </Grid>
         </ScrollView>
-
     </Grid>
-
 </ContentPage>

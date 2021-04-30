@@ -28,7 +28,7 @@ namespace WeatherTwentyOne.Pages
             }
             catch(FeatureNotEnabledException ex)
             {
-                Debug.WriteLine("App Actions not supported");
+                Debug.WriteLine("App Actions not supported", ex);
             }
         }
 
