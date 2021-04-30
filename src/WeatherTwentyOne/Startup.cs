@@ -1,8 +1,6 @@
 ﻿using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
-using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Maui.Controls.Hosting;
 using WeatherTwentyOne.Services;
 
 namespace WeatherTwentyOne
@@ -12,16 +10,19 @@ namespace WeatherTwentyOne
 		public void Configure(IAppHostBuilder appBuilder)
 		{
 			appBuilder
-				.UseFormsCompatibility()
+				.UseCompatibility()
 				.UseMauiApp<App>()
-				.UseMauiControlsHandlers()
-				.ConfigureServices(services => {
+				.ConfigureServices(services =>
+				{
 #if WINDOWS
 					services.AddSingleton<ITrayService, WinUI.Windows.TrayService>();
 					services.AddSingleton<INotificationService, WinUI.Windows.NotificationService>();
+#elif MACCATALYST
+					services.AddSingleton<ITrayService, Services.MacCatalyst.TrayService>();
 #endif
 				})
-				.ConfigureFonts((fonts)=>{
+				.ConfigureFonts((fonts)=>
+				{
 					fonts.AddFont("fa-solid-900.ttf", "FontAwesome");
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 					fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");

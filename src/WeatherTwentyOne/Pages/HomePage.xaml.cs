@@ -12,8 +12,13 @@ namespace WeatherTwentyOne.Pages
             InitializeComponent();
 
             NavBar.ActiveTab = "Home";
+            
+            SetupAppActions();
+            SetupTrayIcon();
+        }
 
-            // Setup App Actions
+        private void SetupAppActions()
+        {
             try
             {
                 AppActions.SetAsync(
@@ -25,15 +30,18 @@ namespace WeatherTwentyOne.Pages
             {
                 Debug.WriteLine("App Actions not supported");
             }
+        }
 
-            // Register services
+        private void SetupTrayIcon()
+        {
             var trayService = ServiceProvider.GetService<ITrayService>();
             var notificationService = ServiceProvider.GetService<INotificationService>();
 
-            trayService?.Initialize();
-            trayService.ClickHandler = () => 
-                notificationService.ShowNotification("Hello Windows! 😻 .NET MAUI says it's currently 18°. Brrr!");
-
+            if (trayService != null && notificationService != null)
+            {
+                trayService.Initialize();
+                trayService.ClickHandler = () => notificationService.ShowNotification("Tray Clicked");
+            }
         }
     }
 }
