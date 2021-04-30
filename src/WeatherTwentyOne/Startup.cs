@@ -17,6 +17,8 @@ namespace WeatherTwentyOne
 #if WINDOWS
 					services.AddSingleton<ITrayService, WinUI.Windows.TrayService>();
 					services.AddSingleton<INotificationService, WinUI.Windows.NotificationService>();
+#elif MACCATALYST
+					services.AddSingleton<ITrayService, Services.MacCatalyst.TrayService>();
 #endif
 				})
 				.ConfigureFonts((fonts)=>
