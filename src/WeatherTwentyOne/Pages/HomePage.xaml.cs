@@ -19,8 +19,11 @@ namespace WeatherTwentyOne.Pages
             var trayService = ServiceProvider.GetService<ITrayService>();
             var notificationService = ServiceProvider.GetService<INotificationService>();
 
-            trayService?.Initialize();
-            trayService.ClickHandler = () => notificationService.ShowNotification("Tray Clicked");
+            if (trayService != null)
+            {
+                trayService.Initialize();
+                trayService.ClickHandler = () => notificationService.ShowNotification("Tray Clicked");
+            }
         }
 
         protected override void OnAppearing()

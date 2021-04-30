@@ -9,6 +9,7 @@
     <AndroidVersionCode>1</AndroidVersionCode>
     <RuntimeIdentifier Condition="'$(TargetFramework)' == 'net6.0-ios'">iossimulator-x64</RuntimeIdentifier>
     <RuntimeIdentifier Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">maccatalyst-x64</RuntimeIdentifier>
+    <InvariantGlobalization Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">true</InvariantGlobalization>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.4.462+sha.4f8ee0f06-azdo.4704179" />
