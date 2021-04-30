@@ -26,7 +26,7 @@ namespace WeatherTwentyOne.Pages
                              new AppAction("add_location", "Add a Location")
                 );
             }
-            catch(FeatureNotEnabledException ex)
+            catch (System.Exception ex)
             {
                 Debug.WriteLine("App Actions not supported", ex);
             }
