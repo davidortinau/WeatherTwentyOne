@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 namespace WeatherTwentyOne.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NavBarView : FlexLayout
+    public partial class NavBarView : Grid
     {
         private string activeTab;
         public string ActiveTab

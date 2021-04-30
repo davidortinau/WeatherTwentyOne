@@ -1,38 +1,75 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<FlexLayout  xmlns:c="using:WeatherTwentyOne.Converters" xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+<Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherTwentyOne.Views.NavBarView"
-             Direction="{OnIdiom Phone=Row,Default=Column}"
-            JustifyContent="{OnIdiom Phone=Center, Default=Start}"
-            BackgroundColor="{OnIdiom Phone=Transparent, Default={StaticResource Background_Mid}}">
+	  RowDefinitions="{OnIdiom Default='*,*,*,3*,*', Phone='*'}"
+	  ColumnDefinitions="{OnIdiom Default='*', Phone='*,*,*,3*,*'}"
+             
+        BackgroundColor="{OnIdiom Phone=Transparent, Default={StaticResource Background_Mid}}">
+    
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="NavigationStates">
+            <VisualState x:Name="Home">
+                <VisualState.Setters>
+                    <Setter TargetName="HomeTab" Property="ImageButton.Source"
+                            Value="tab_home_on.png"/>
+                    <Setter TargetName="FavoritesTab" Property="ImageButton.Source"
+                            Value="tab_favorites.png"/>
+                    <Setter TargetName="SettingsTab" Property="ImageButton.Source"
+                            Value="tab_settings.png"/>
+                </VisualState.Setters>
+            </VisualState>
 
-    <FlexLayout.Resources>
-        <Style TargetType="ImageButton">
-            <Setter Property="Margin"
-                    Value="{OnIdiom Phone='25,0',Default='0,25,0,25'}"/>
-        </Style>
-    </FlexLayout.Resources>
+            <VisualState x:Name="Settings">
+                <VisualState.Setters>
+                    <Setter TargetName="HomeTab" Property="ImageButton.Source"
+                            Value="tab_home.png"/>
+                    <Setter TargetName="FavoritesTab" Property="ImageButton.Source"
+                            Value="tab_favorites.png"/>
+                    <Setter TargetName="SettingsTab" Property="ImageButton.Source"
+                            Value="tab_settings_on.png"/>
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
 
-    <ImageButton x:Name="HomeTab"
-                    Source="tab_home_on.png"
-                    Clicked="HomeTab_Clicked"
-                />
-    <ImageButton x:Name="FavoritesTab" 
-                         Source="tab_favorites.png"
-                         Clicked="FavoritesTab_Clicked"
-                         />
-    <ImageButton x:Name="MapTab" 
-                         Source="tab_map.png"
-                         Clicked="MapTab_Clicked"
-                         />
-    <BoxView Color="Transparent"
-                 FlexLayout.Grow="1"
+    
+        <Grid.Resources>
+            <Style TargetType="ImageButton">
+                <Setter Property="Margin"
+                        Value="{OnIdiom Phone='25,0',Default='0,50,0,25'}"/>
+            </Style>
+        </Grid.Resources>
+
+        <ImageButton x:Name="HomeTab"
+                Clicked="HomeTab_Clicked"
+				Grid.Row="{OnIdiom Phone=0, Default=0}"
+					 Grid.Column="{OnIdiom Phone=0, Default=0}"
+            />
+        <ImageButton x:Name="FavoritesTab" Source="tab_favorites.png"
+					 Grid.Row="{OnIdiom Phone=0, Default=1}"
+					 Grid.Column="{OnIdiom Phone=1, Default=0}"
+                        Clicked="FavoritesTab_Clicked"
+                        />
+        <ImageButton x:Name="MapTab" 
+                        Source="tab_map.png"
+                        Clicked="MapTab_Clicked"
+					 Grid.Row="{OnIdiom Phone=0, Default=2}"
+					 Grid.Column="{OnIdiom Phone=2, Default=0}"
+                        />
+
+        <BoxView Color="Transparent"
+                
                  IsVisible="{OnIdiom Phone=False, Default=True}"
+				 Grid.Row="{OnIdiom Phone=0, Default=3}"
+					 Grid.Column="{OnIdiom Phone=3, Default=0}"
                  />
     <ImageButton x:Name="SettingsTab" 
                      Source="tab_settings.png"
                      VerticalOptions="{OnIdiom Phone=Center,Default=End}"
                      Margin="{OnIdiom Phone='25,0',Default='0,0,0,40'}"
                      Clicked="SettingsTab_Clicked"
+					 Grid.Row="{OnIdiom Phone=0, Default=4}"
+					 Grid.Column="{OnIdiom Phone=4, Default=0}"
                     />
-</FlexLayout>
+</Grid>
