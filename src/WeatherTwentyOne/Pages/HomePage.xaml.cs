@@ -16,14 +16,7 @@ namespace WeatherTwentyOne.Pages
         {
             InitializeComponent();
 
-            var trayService = ServiceProvider.GetService<ITrayService>();
-            var notificationService = ServiceProvider.GetService<INotificationService>();
-
-            if (trayService != null)
-            {
-                trayService.Initialize();
-                trayService.ClickHandler = () => notificationService.ShowNotification("Tray Clicked");
-            }
+            SetupTrayIcon();
         }
 
         protected override void OnAppearing()
@@ -31,6 +24,18 @@ namespace WeatherTwentyOne.Pages
             base.OnAppearing();
 
             VisualStateManager.GoToState(NavBar, "Home");
+        }
+
+        private void SetupTrayIcon()
+        {
+            var trayService = ServiceProvider.GetService<ITrayService>();
+            var notificationService = ServiceProvider.GetService<INotificationService>();
+
+            if (trayService != null && notificationService != null)
+            {
+                trayService.Initialize();
+                trayService.ClickHandler = () => notificationService.ShowNotification("Tray Clicked");
+            }
         }
     }
 }
