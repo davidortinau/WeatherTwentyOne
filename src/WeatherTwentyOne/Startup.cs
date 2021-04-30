@@ -1,18 +1,7 @@
 ﻿using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Maui.Controls.Hosting;
 using WeatherTwentyOne.Services;
-
-#if ANDROID
-using Microsoft.Maui.Controls.Compatibility.Platform.Android;
-#elif IOS || MACCATALYST
-using Microsoft.Maui.Controls.Compatibility.Platform.iOS;
-#elif WINDOWS
-using Microsoft.Maui.Controls.Compatibility.Platform.UWP;
-#endif
 
 namespace WeatherTwentyOne
 {
@@ -21,13 +10,8 @@ namespace WeatherTwentyOne
 		public void Configure(IAppHostBuilder appBuilder)
 		{
 			appBuilder
-				.UseFormsCompatibility()
+				.UseCompatibility()
 				.UseMauiApp<App>()
-				.UseMauiControlsHandlers()
-				.ConfigureMauiHandlers(handlers =>
-				{
-					handlers.AddCompatibilityRenderer<ImageButton, ImageButtonRenderer>();
-				})
 				.ConfigureServices(services =>
 				{
 #if WINDOWS
