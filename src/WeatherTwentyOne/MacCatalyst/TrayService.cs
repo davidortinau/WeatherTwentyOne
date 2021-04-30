@@ -9,7 +9,7 @@ using ObjCRuntime;
 
 namespace WeatherTwentyOne.Services.MacCatalyst
 {
-	public class TrayService : ITrayService
+	public class TrayService : NSObject, ITrayService
 	{
 		[DllImport("/usr/lib/libobjc.dylib", EntryPoint = "objc_msgSend")]
 		public static extern IntPtr IntPtr_objc_msgSend_nfloat(IntPtr receiver, IntPtr selector, nfloat arg1);
@@ -48,6 +48,19 @@ namespace WeatherTwentyOne.Services.MacCatalyst
 
 			void_objc_msgSend_IntPtr(statusBarButton.Handle, Selector.GetHandle("setImage:"), statusBarImage.Handle);
 			void_objc_msgSend_bool(nsImagePtr, Selector.GetHandle("setTemplate:"), true);
+
+			// Handle click
+			void_objc_msgSend_IntPtr(statusBarButton.Handle, Selector.GetHandle("setTarget:"), this.Handle);
+			void_objc_msgSend_IntPtr(statusBarButton.Handle, Selector.GetHandle("setAction:"), new Selector ("handleButtonClick:").Handle);
+		}
+
+		[Export ("handleButtonClick:")]
+		void HandleClick (NSObject senderStatusBarButton)
+		{
+			var nsapp = Runtime.GetNSObject(Class.GetHandle("NSApplication"));
+			var sharedApp = nsapp.PerformSelector(new Selector("sharedApplication"));
+
+			void_objc_msgSend_bool(sharedApp.Handle, Selector.GetHandle("activateIgnoringOtherApps:"), true);
 		}
 	}
 }
