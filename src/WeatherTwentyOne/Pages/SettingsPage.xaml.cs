@@ -15,13 +15,8 @@ namespace WeatherTwentyOne.Pages
         public SettingsPage()
         {
             InitializeComponent();
-        }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            VisualStateManager.GoToState(NavBar, "Settings");
+            NavBar.ActiveTab = "Settings";
         }
     }
 }

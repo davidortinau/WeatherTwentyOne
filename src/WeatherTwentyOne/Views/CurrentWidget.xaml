@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherTwentyOne.Views.CurrentWidget">
     <Image 
-        HeightRequest="115"
+        HeightRequest="160"
         Aspect="AspectFit"
-        Source="fluent_weather_moon_16_filled.png"/>
+        Source="weather_partly_cloudy_night.png"/>
     <Label Text="18℉" 
             HorizontalOptions="Center"
             class="Title1"/>

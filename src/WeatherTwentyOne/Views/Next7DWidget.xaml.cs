@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Xaml;
+using WeatherTwentyOne.ViewModels;
 
 namespace WeatherTwentyOne.Views
 {
@@ -15,6 +16,8 @@ namespace WeatherTwentyOne.Views
         public Next7DWidget()
         {
             InitializeComponent();
+
+            BindingContext = new HomeViewModel();
         }
     }
 }

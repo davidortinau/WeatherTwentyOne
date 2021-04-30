@@ -15,13 +15,8 @@ namespace WeatherTwentyOne.Pages
         public FavoritesPage()
         {
             InitializeComponent();
-        }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            VisualStateManager.GoToState(NavBar, "Favorites");
+            NavBar.ActiveTab = "Favorites";
         }
     }
 }

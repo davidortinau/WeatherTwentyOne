@@ -6,12 +6,35 @@ using System.Threading.Tasks;
 using WeatherTwentyOne.Pages;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Xaml;
+using System.Runtime.CompilerServices;
 
 namespace WeatherTwentyOne.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NavBarView : FlexLayout
     {
+        private string activeTab;
+        public string ActiveTab
+        {
+            get
+            {
+                return activeTab;
+            }
+            set
+            {
+                activeTab = value;
+
+                var target = activeTab;
+                var homeImg = (target == "Home") ? "tab_home_on.png" : "tab_home.png";
+                var favImg = (target == "Favorites") ? "tab_favorites_on.png" : "tab_favorites.png";
+                var settingsImg = (target == "Settings") ? "tab_settings_on.png" : "tab_settings.png";
+
+                HomeTab.Source = ImageSource.FromFile(homeImg);
+                FavoritesTab.Source = ImageSource.FromFile(favImg);
+                SettingsTab.Source = ImageSource.FromFile(settingsImg);
+            }
+        }
+
         public NavBarView()
         {
             InitializeComponent();
@@ -36,5 +59,7 @@ namespace WeatherTwentyOne.Views
         {
             (App.Current.MainPage as NavigationPage).PushAsync(new SettingsPage());
         }
+
+        
     }
 }

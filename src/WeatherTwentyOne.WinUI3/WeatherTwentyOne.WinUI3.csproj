@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
-		<TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+		<TargetFramework>net6.0-windows10.0.19041</TargetFramework>
 		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
 		<RootNamespace>WeatherTwentyOne.WinUI</RootNamespace>
 		<ApplicationManifest>Windows\app.manifest</ApplicationManifest>
@@ -9,6 +9,7 @@
 		<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
 		<EnableDefaultPageItems>False</EnableDefaultPageItems>
 		<EnableDefaultApplicationDefintition>False</EnableDefaultApplicationDefintition>
+		<StartupObject>WeatherTwentyOne.WinUI.Program</StartupObject>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -45,6 +46,8 @@
 		<Compile Include="..\WeatherTwentyOne\*.cs" Link="%(FileName)%(Extension)" />
 		<Compile Include="..\WeatherTwentyOne\Services\*.cs" Link="Services\%(FileName)%(Extension)" />
 		<Compile Include="..\WeatherTwentyOne\Models\*.cs" Link="Models\%(FileName)%(Extension)" />
+    <Compile Include="..\WeatherTwentyOne\ViewModels\*.cs" Link="ViewModels\%(FileName)%(Extension)" />
+    <Compile Include="..\WeatherTwentyOne\Converters\*.cs" Link="Converters\%(FileName)%(Extension)" />
 		<Compile Include="..\WeatherTwentyOne\Pages\*.cs" Link="Pages\%(FileName)%(Extension)" />
 		<Compile Include="..\WeatherTwentyOne\Resources\Styles\*.cs" Link="Resources\Styles\%(FileName)%(Extension)" />
 		<Compile Include="..\WeatherTwentyOne\Views\*.cs" Link="Views\%(FileName)%(Extension)" />

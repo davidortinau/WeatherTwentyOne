@@ -19,7 +19,6 @@ namespace WeatherTwentyOne
 			this.On<Microsoft.Maui.Controls.PlatformConfiguration.Windows>()
 				.SetImageDirectory("Assets");
 
-
 			return new Microsoft.Maui.Controls.Window(
 				new NavigationPage(
 					new HomePage()

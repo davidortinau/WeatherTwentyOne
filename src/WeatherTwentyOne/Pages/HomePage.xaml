@@ -6,12 +6,10 @@
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              ios:Page.UseSafeArea="True"
              NavigationPage.HasNavigationBar="False"
-             x:Class="WeatherTwentyOne.Pages.HomePage"
-             >
+             x:Class="WeatherTwentyOne.Pages.HomePage">
 
     <Grid ColumnDefinitions="{OnIdiom Phone=*, Default='68,*,480'}"
-          RowDefinitions="{OnIdiom Phone='80,*,68', Default='80,*'}"
-          >
+          RowDefinitions="{OnIdiom Phone='80,*,68', Default='80,*'}">
         <Grid 
             Grid.Column="{OnIdiom Phone=0,Default=1}"
             Grid.ColumnSpan="{OnIdiom Phone=1,Default=2}"
@@ -38,7 +36,7 @@
                 <FlexLayout Direction="Row"
                             AlignItems="Center">
                     <v:CurrentWidget FlexLayout.Basis="50%"/>
-                    <v:WindLiveWidget HeightRequest="300" FlexLayout.Basis="50%"/>
+                    <v:WindLiveWidget x:Name="WindWidget" HeightRequest="300" FlexLayout.Basis="50%"/>
                 </FlexLayout>
 
                 <v:Next24HrWidget/>
@@ -57,7 +55,8 @@
         <!-- widget panel -->
         <ScrollView
             IsVisible="{OnIdiom Phone=False, Default=True}"
-            Grid.Row="{OnIdiom Desktop=1}" Grid.Column="{OnIdiom Desktop=2}">
+            Grid.Row="1" 
+            Grid.Column="2">
             <Grid>
                 <FlexLayout Wrap="Wrap" Direction="Row" Margin="25"
                             JustifyContent="SpaceBetween"

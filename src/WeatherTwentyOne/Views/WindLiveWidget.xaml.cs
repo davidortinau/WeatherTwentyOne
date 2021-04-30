@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
-using Microsoft.Maui.Controls;
+﻿using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Xaml;
+using System;
+using System.Timers;
 
 namespace WeatherTwentyOne.Views
 {
@@ -18,6 +14,13 @@ namespace WeatherTwentyOne.Views
         public WindLiveWidget()
         {
             InitializeComponent();
+            
+            if (aTimer == null)
+                Start();
+        }
+
+        public void Start()
+        {
             rand = new Random();
 
             // Create a timer with a two second interval.
@@ -26,6 +29,11 @@ namespace WeatherTwentyOne.Views
             aTimer.Elapsed += UpdateLiveWind;
             aTimer.AutoReset = true;
             aTimer.Enabled = true;
+        }
+
+        public void Stop()
+        {
+            aTimer.Enabled = false;
         }
 
         void UpdateLiveWind(Object source, ElapsedEventArgs e)
@@ -41,7 +49,10 @@ namespace WeatherTwentyOne.Views
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            aTimer.Enabled = !aTimer.Enabled;
+            if (aTimer == null)
+                Start();
+            else
+                aTimer.Enabled = !aTimer.Enabled;
         }
     }
 }

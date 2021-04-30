@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui;
+using Microsoft.UI.Xaml;
 using Windows.ApplicationModel;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -18,6 +19,13 @@ namespace WeatherTwentyOne.WinUI
         public App()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnLaunched(LaunchActivatedEventArgs args)
+        {
+            base.OnLaunched(args);
+
+            Microsoft.Maui.Essentials.Platform.OnLaunched(args);
         }
     }
 
