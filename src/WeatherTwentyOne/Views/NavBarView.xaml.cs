@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WeatherTwentyOne.Pages;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Xaml;
-using System.Runtime.CompilerServices;
 
 namespace WeatherTwentyOne.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NavBarView : Grid
     {
-        private string activeTab;
+        string activeTab;
+
         public string ActiveTab
         {
             get
@@ -27,10 +23,12 @@ namespace WeatherTwentyOne.Views
                 var target = activeTab;
                 var homeImg = (target == "Home") ? "tab_home_on.png" : "tab_home.png";
                 var favImg = (target == "Favorites") ? "tab_favorites_on.png" : "tab_favorites.png";
+                var mapImg = (target == "Map") ? "tab_map_on.png" : "tab_map.png";
                 var settingsImg = (target == "Settings") ? "tab_settings_on.png" : "tab_settings.png";
 
                 HomeTab.Source = ImageSource.FromFile(homeImg);
                 FavoritesTab.Source = ImageSource.FromFile(favImg);
+                MapTab.Source = ImageSource.FromFile(mapImg);
                 SettingsTab.Source = ImageSource.FromFile(settingsImg);
             }
         }
@@ -52,14 +50,12 @@ namespace WeatherTwentyOne.Views
 
         private void MapTab_Clicked(object sender, EventArgs e)
         {
-
+            (App.Current.MainPage as NavigationPage).PushAsync(new MapPage());
         }
 
         private void SettingsTab_Clicked(object sender, EventArgs e)
         {
             (App.Current.MainPage as NavigationPage).PushAsync(new SettingsPage());
         }
-
-        
     }
 }

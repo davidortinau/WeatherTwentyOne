@@ -18,6 +18,8 @@ namespace WeatherTwentyOne.Converters
             {
                 case "Home":
                     return (target == "Home") ? "tab_home_on.png" : "tab_home.png";
+                case "Map":
+                    return (target == "Map") ? "tab_map_on.png" : "tab_map.png";
                 case "Favorites":
                     return (target == "Favorites") ? "tab_favorites_on.png" : "tab_favorites.png";
                 case "Settings":
