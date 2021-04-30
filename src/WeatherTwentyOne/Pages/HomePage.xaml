@@ -89,7 +89,7 @@
                         </DataTemplate>
                     </ResourceDictionary>
                 </Grid.Resources>
-                <StackLayout Margin="25"
+                <StackLayout Margin="25,25,0,25"
                              Orientation="Vertical"
                              BindableLayout.ItemTemplate="{StaticResource MetricDataTemplate}"
                              >
