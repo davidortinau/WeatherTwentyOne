@@ -19,23 +19,11 @@
                 <StackLayout Orientation="Horizontal" Spacing="12"
                              BindableLayout.ItemsSource="{Binding Week}"
                              >
-                    <!--<BindableLayout.ItemsSource>
-                        <x:Array Type="{x:Type m:Metric}">
-                            <m:Metric Title="M" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                            <m:Metric Title="T" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                            <m:Metric Title="W" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                            <m:Metric Title="T" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                            <m:Metric Title="F" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                            <m:Metric Title="S" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-                            <m:Metric Title="S" Icon="fluent_weather_hail_night_20_filled.png" Value="18℉"/>
-
-                        </x:Array>
-                    </BindableLayout.ItemsSource>-->
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <Grid RowDefinitions="34,34,34,200,1,40">
-                                <Label Grid.Row="0" Text="{Binding DateTime.DayOfWeek}" class="Subhead" HorizontalOptions="Center"/>
-                                <Label Grid.Row="1" Text="{Binding Temperature.Maximum.Value}" class="Subhead" HorizontalOptions="Center"/>
+                                <Label Grid.Row="0" Text="{Binding DateTime, StringFormat='{0:ddd}'}" class="Subhead" HorizontalOptions="Center"/>
+                                <Label Grid.Row="1" Text="{Binding Temperature.Maximum.Value, StringFormat='{0:F0}°'}" class="Subhead" HorizontalOptions="Center"/>
                                 <Image Grid.Row="2" Source="{Binding Day.Phrase, StringFormat='{0:F2}.png'}" HorizontalOptions="Center"/>
                                 <Grid Grid.Row="3" 
                                           RowDefinitions="20,*,20"
@@ -57,17 +45,17 @@
                                             </MultiBinding>
                                         </BoxView.HeightRequest>
                                     </BoxView>
-                                    <Label Grid.Row="0" Text="{Binding Temperature.Maximum.Value}" class="Subhead" HorizontalOptions="Center"/>
-                                    <Label Grid.Row="2" Text="{Binding Temperature.Minimum.Value}" class="Subhead" HorizontalOptions="Center"/>
+                                    <Label Grid.Row="0" Text="{Binding Temperature.Maximum.Value, StringFormat='{0:F0}°'}" class="Subhead" HorizontalOptions="Center"/>
+                                    <Label Grid.Row="2" Text="{Binding Temperature.Minimum.Value, StringFormat='{0:F0}°'}" class="Subhead" HorizontalOptions="Center"/>
                                 </Grid>
-                                <!--<BoxView Grid.Row="4" class="HRule"/>
+                                <BoxView Grid.Row="4" class="HRule"/>
                                 <StackLayout Grid.Row="5" Orientation="Horizontal"
                                                  HorizontalOptions="Center"
                                                  >
-                                    <Image Source="sm_solid_umbrella.png" VerticalOptions="Center"/>
+                                    <Image Source="sm_solid_umbrella.png" HeightRequest="20" VerticalOptions="Center"/>
                                     <Label Text="13%" class="SubContent" VerticalOptions="Center"/>
 
-                                </StackLayout>-->
+                                </StackLayout>
                             </Grid>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
