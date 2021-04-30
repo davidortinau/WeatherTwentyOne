@@ -9,7 +9,7 @@ namespace WeatherTwentyOne.Views
     public partial class WindLiveWidget : Grid
     {
         Random rand;
-        private Timer aTimer;
+        Timer aTimer;
 
         public WindLiveWidget()
         {
@@ -36,15 +36,21 @@ namespace WeatherTwentyOne.Views
             aTimer.Enabled = false;
         }
 
-        void UpdateLiveWind(Object source, ElapsedEventArgs e)
+        void UpdateLiveWind(object source, ElapsedEventArgs e)
         {
-            Needle.RotateTo(WindValues[GetDirection()], 200, Easing.SpringOut);
+            var direction = GetDirection();
+
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                Needle.RotateTo(WindValues[direction], 200, Easing.SpringOut);
+            });
         }
 
-        double[] WindValues = {98,84,140,92,55};
+        readonly double[] WindValues = { 98, 84, 140, 92, 55 };
+
         private int GetDirection()
         {
-            return rand.Next(0, WindValues.Length-1);
+            return rand.Next(0, WindValues.Length - 1);
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
