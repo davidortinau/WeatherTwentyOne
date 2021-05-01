@@ -5,7 +5,7 @@ using WeatherTwentyOne.ViewModels;
 namespace WeatherTwentyOne.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Next7DWidget : StackLayout
+    public partial class Next7DWidget
     {
         public Next7DWidget()
         {

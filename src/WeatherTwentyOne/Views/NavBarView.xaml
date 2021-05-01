@@ -1,10 +1,7 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<Grid 
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+﻿<StackLayout
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="WeatherTwentyOne.Views.NavBarView"
-	RowDefinitions="{OnIdiom Default='*,*,*,3*,*', Phone='*'}"
-	ColumnDefinitions="{OnIdiom Default='*', Phone='*,*,*,3*,*'}"      
     BackgroundColor="{OnIdiom Phone=Transparent, Default={StaticResource Background_Mid}}">
 
     <VisualStateManager.VisualStateGroups>
@@ -36,7 +33,6 @@
         </VisualStateGroup>
     </VisualStateManager.VisualStateGroups>
 
-
     <Grid.Resources>
         <Style TargetType="ImageButton">
             <Setter Property="Margin"
@@ -44,33 +40,23 @@
         </Style>
     </Grid.Resources>
 
-    <ImageButton 
+    <ImageButton
         x:Name="HomeTab"
-        Clicked="HomeTab_Clicked"
-		Grid.Row="{OnIdiom Phone=0, Default=0}"
-		Grid.Column="{OnIdiom Phone=0, Default=0}"/>
-    <ImageButton 
+        Clicked="HomeTab_Clicked"/>
+    <ImageButton
         x:Name="FavoritesTab" Source="tab_favorites.png"
-		Grid.Row="{OnIdiom Phone=0, Default=1}"
-		Grid.Column="{OnIdiom Phone=1, Default=0}"
         Clicked="FavoritesTab_Clicked"/>
-    <ImageButton 
-        x:Name="MapTab" 
+    <ImageButton
+        x:Name="MapTab"
         Source="tab_map.png"
-        Clicked="MapTab_Clicked"
-		Grid.Row="{OnIdiom Phone=0, Default=2}"
-		Grid.Column="{OnIdiom Phone=2, Default=0}" />
-    <BoxView 
-        Color="Transparent"       
-        IsVisible="{OnIdiom Phone=False, Default=True}"
-		Grid.Row="{OnIdiom Phone=0, Default=3}"
-	    Grid.Column="{OnIdiom Phone=3, Default=0}" />
-    <ImageButton 
-        x:Name="SettingsTab" 
+        Clicked="MapTab_Clicked"/>
+    <BoxView
+        Color="Transparent"
+        HorizontalOptions="{OnIdiom Phone=StartAndExpand, Default=Start}"
+        VerticalOptions="{OnIdiom Phone=Start, Default=StartAndExpand}" />
+    <ImageButton
+        x:Name="SettingsTab"
         Source="tab_settings.png"
-        VerticalOptions="{OnIdiom Phone=Center,Default=End}"
-        Margin="{OnIdiom Phone='25,0',Default='0,0,0,40'}"
-        Clicked="SettingsTab_Clicked"
-		Grid.Row="{OnIdiom Phone=0, Default=4}"
-		Grid.Column="{OnIdiom Phone=4, Default=0}" />
-</Grid>
+        Clicked="SettingsTab_Clicked" />
+
+</StackLayout>

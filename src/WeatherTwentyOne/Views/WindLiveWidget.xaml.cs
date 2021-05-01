@@ -6,7 +6,7 @@ using System.Timers;
 namespace WeatherTwentyOne.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WindLiveWidget : Grid
+    public partial class WindLiveWidget
     {
         Random rand;
         Timer aTimer;

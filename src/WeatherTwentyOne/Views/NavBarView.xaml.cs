@@ -6,7 +6,7 @@ using Microsoft.Maui.Controls.Xaml;
 namespace WeatherTwentyOne.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NavBarView : Grid
+    public partial class NavBarView
     {
         string activeTab;
 
