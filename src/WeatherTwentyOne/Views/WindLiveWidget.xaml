@@ -12,7 +12,7 @@
             Source="compass_needle.png"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            Rotation="360" />
+            Rotation="0" />
     </Grid>
 
     <Label

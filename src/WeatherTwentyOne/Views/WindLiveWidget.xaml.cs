@@ -14,8 +14,8 @@ namespace WeatherTwentyOne.Views
         public WindLiveWidget()
         {
             InitializeComponent();
-            
-            if (aTimer == null)
+
+            if (aTimer == null && Device.Idiom != TargetIdiom.Phone)
                 Start();
         }
 
