@@ -55,6 +55,7 @@
                             />
                         <BoxView class="HRule"/>
                         <HorizontalStackLayout
+                            IsVisible="{OnPlatform Android=True, Default=False}"
                             HeightRequest="40"
                             HorizontalOptions="Center">
                             <Image
@@ -63,6 +64,17 @@
                             <Label
                                 Text="13%" class="SubContent" VerticalOptions="Center"/>
                         </HorizontalStackLayout>
+                        <StackLayout
+                            IsVisible="{OnPlatform Android=False, Default=True}"
+                            Orientation="Horizontal"
+                            HeightRequest="40"
+                            HorizontalOptions="Center">
+                            <Image
+                                Source="sm_solid_umbrella.png" HeightRequest="20"
+                                VerticalOptions="Center"/>
+                            <Label
+                                Text="13%" class="SubContent" VerticalOptions="Center"/>
+                        </StackLayout>
                     </StackLayout>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>

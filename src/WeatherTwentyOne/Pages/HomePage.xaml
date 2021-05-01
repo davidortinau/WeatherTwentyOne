@@ -34,7 +34,7 @@
                 <StackLayout
                     Orientation="Horizontal"
                     HorizontalOptions="Center"
-                    Spacing="25">
+                    Spacing="{OnIdiom Phone='12.5',Default='50'}">
                     <v:CurrentWidget/>
                     <v:WindLiveWidget
                         x:Name="WindWidget" />
