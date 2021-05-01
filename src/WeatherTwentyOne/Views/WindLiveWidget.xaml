@@ -6,7 +6,7 @@
         <Image
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            Source="compass_background.png"/>
+            Source="compass_background.png" />
         <Image
             x:Name="Needle"
             Source="compass_needle.png"

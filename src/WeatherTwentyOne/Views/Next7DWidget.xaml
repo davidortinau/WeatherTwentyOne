@@ -6,6 +6,7 @@
     <StackLayout.Resources>
         <c:TempSpanConverter x:Key="TempSpanConverter"/>
         <c:MaxTempOffsetConverter x:Key="MaxTempOffsetConverter"/>
+        <c:MinTempOffsetConverter x:Key="MinTempOffsetConverter"/>
     </StackLayout.Resources>
     <Label
         Text="Daily Forecasts"
@@ -17,40 +18,44 @@
             BindableLayout.ItemsSource="{Binding Week}">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
-                    <Grid RowDefinitions="34,34,34,200,1,40">
-                        <Label Grid.Row="0" Text="{Binding DateTime, StringFormat='{0:ddd}'}" class="Subhead" HorizontalOptions="Center"/>
-                        <Label Grid.Row="1" Text="{Binding Temperature.Maximum.Value, StringFormat='{0:F0}°'}" class="Subhead" HorizontalOptions="Center"/>
-                        <Image Grid.Row="2" Source="{Binding Day.Phrase, StringFormat='{0:F2}.png'}" HorizontalOptions="Center"/>
-                        <Grid
-                            Grid.Row="3"
-                            RowDefinitions="20,*,20"
-                            VerticalOptions="Start"
-                            Padding="{Binding Temperature.Maximum.Value,
-                                Converter={StaticResource MaxTempOffsetConverter}, FallbackValue=100}">
-                            <BoxView
-                                Grid.Row="1"
-                                BackgroundColor="{StaticResource Accent_Blue100}"
-                                WidthRequest="10"
-                                CornerRadius="5"
-                                HorizontalOptions="Center">
-                                <BoxView.HeightRequest>
-                                    <MultiBinding Converter="{StaticResource TempSpanConverter}">
-                                        <Binding Path="Temperature.Minimum.Value" FallbackValue="0"/>
-                                        <Binding Path="Temperature.Maximum.Value" FallbackValue="100"/>
-                                    </MultiBinding>
-                                </BoxView.HeightRequest>
-                            </BoxView>
-                            <Label
-                                Grid.Row="0" Text="{Binding Temperature.Maximum.Value, StringFormat='{0:F0}°'}"
-                                class="Subhead" HorizontalOptions="Center"/>
-                            <Label
-                                Grid.Row="2" Text="{Binding Temperature.Minimum.Value, StringFormat='{0:F0}°'}"
-                                class="Subhead" HorizontalOptions="Center"/>
-                        </Grid>
+                    <StackLayout>
+                        <Label Text="{Binding DateTime, StringFormat='{0:ddd}'}" class="Subhead"
+                               HeightRequest="34" HorizontalOptions="Center"/>
+                        <Label Text="{Binding Temperature.Maximum.Value, StringFormat='{0:F0}°'}" class="Subhead"
+                               HeightRequest="34" HorizontalOptions="Center"/>
+                        <Image Source="{Binding Day.Phrase, StringFormat='{0:F2}.png'}"
+                               HeightRequest="34" HorizontalOptions="Center"/>
                         <BoxView
-                            Grid.Row="4" class="HRule"/>
+                            WidthRequest="1"
+                            HeightRequest="1"
+                            Margin="{Binding Temperature.Maximum.Value, Converter={StaticResource MaxTempOffsetConverter}, FallbackValue=100}"
+                            />
+                        <Label
+                            Text="{Binding Temperature.Maximum.Value, StringFormat='{0:F0}°'}"
+                            class="Subhead" HorizontalOptions="Center" HeightRequest="20"/>
+                        <BoxView
+                            BackgroundColor="{StaticResource Accent_Blue100}"
+                            WidthRequest="10"
+                            CornerRadius="5"
+                            HorizontalOptions="Center">
+                            <BoxView.HeightRequest>
+                                <MultiBinding Converter="{StaticResource TempSpanConverter}">
+                                    <Binding Path="Temperature.Minimum.Value" FallbackValue="0"/>
+                                    <Binding Path="Temperature.Maximum.Value" FallbackValue="100"/>
+                                </MultiBinding>
+                            </BoxView.HeightRequest>
+                        </BoxView>
+                        <Label
+                            Text="{Binding Temperature.Minimum.Value, StringFormat='{0:F0}°'}"
+                            class="Subhead" HorizontalOptions="Center" HeightRequest="20"/>
+                        <BoxView
+                            WidthRequest="1"
+                            HeightRequest="1"
+                            Margin="{Binding Temperature.Minimum.Value, Converter={StaticResource MinTempOffsetConverter}, FallbackValue=100}"
+                            />
+                        <BoxView class="HRule"/>
                         <HorizontalStackLayout
-                            Grid.Row="5"
+                            HeightRequest="40"
                             HorizontalOptions="Center">
                             <Image
                                 Source="sm_solid_umbrella.png" HeightRequest="20"
@@ -58,7 +63,7 @@
                             <Label
                                 Text="13%" class="SubContent" VerticalOptions="Center"/>
                         </HorizontalStackLayout>
-                    </Grid>
+                    </StackLayout>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
         </StackLayout>

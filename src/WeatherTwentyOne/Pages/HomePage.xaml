@@ -29,6 +29,7 @@
             Grid.Row="1">
             <StackLayout
                 Spacing="25">
+                <BoxView HeightRequest="{OnIdiom Phone=15,Default=50}" />
                 <!-- Top widgets -->
                 <StackLayout
                     Orientation="Horizontal"
@@ -36,10 +37,11 @@
                     Spacing="25">
                     <v:CurrentWidget/>
                     <v:WindLiveWidget
-                        x:Name="WindWidget"/>
+                        x:Name="WindWidget" />
                 </StackLayout>
                 <v:Next24HrWidget />
                 <v:Next7DWidget />
+                <BoxView HeightRequest="{OnIdiom Phone=15,Default=50}" />
             </StackLayout>
         </ScrollView>
 

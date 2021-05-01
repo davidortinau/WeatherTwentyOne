@@ -1,9 +1,6 @@
-﻿using Microsoft.Maui.Controls;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Globalization;
-using System.Linq;
-using System.Text;
+using Microsoft.Maui.Controls;
 
 namespace WeatherTwentyOne.Converters
 {
@@ -12,31 +9,17 @@ namespace WeatherTwentyOne.Converters
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             // two values
-            double minTemp = double.Parse(values[0].ToString());
-            double maxTemp = double.Parse(values[1].ToString());
+            var minTemp = double.Parse(values[0].ToString()) * 3;
+            var maxTemp = double.Parse(values[1].ToString()) * 3;
 
-            var dif = maxTemp - minTemp;
-            
-            return (dif*3);
+            var diff = maxTemp - minTemp;
+
+            return diff;
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
-            if (!(value is bool b) || targetTypes.Any(t => !t.IsAssignableFrom(typeof(bool))))
-            {
-                // Return null to indicate conversion back is not possible
-                return null;
-            }
-
-            if (b)
-            {
-                return targetTypes.Select(t => (object)true).ToArray();
-            }
-            else
-            {
-                // Can't convert back from false because of ambiguity
-                return null;
-            }
+            throw new NotSupportedException();
         }
     }
 }

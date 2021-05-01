@@ -15,7 +15,7 @@ namespace WeatherTwentyOne.Views
         {
             InitializeComponent();
 
-            if (aTimer == null && Device.Idiom != TargetIdiom.Phone)
+            if (aTimer == null && Device.RuntimePlatform != Device.Android)
                 Start();
         }
 
