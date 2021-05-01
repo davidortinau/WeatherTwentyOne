@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:v="clr-namespace:WeatherTwentyOne.Views" 
              xmlns:m="clr-namespace:WeatherTwentyOne.Models"
@@ -28,70 +27,73 @@
         <ScrollView Grid.Column="{OnIdiom Phone=0,Default=1}"
                     Grid.Row="1"
                     >
-            <!-- FlexLayout Wrap="Wrap" Direction="Row"
-                        Margin="{OnIdiom Phone=15,Default=25}"
-                            JustifyContent="Start"
-                            AlignItems="Start"
-                            AlignContent="Start"
-                            -->
-			<StackLayout  Margin="{OnIdiom Phone=15,Default=25}">
-				<BindableLayout.ItemsSource>
-                    <x:Array Type="{x:Type m:Metric}">
-                        <m:Metric Title="Seattle, WA" Icon="fluent_weather_rain_showers_night_20_filled.png" WeatherStation="USA" Value="18°"/>
-                        <m:Metric Title="St. Louis, MO" Icon="fluent_weather_moon_16_filled.png" WeatherStation="USA" Value="28°"/>
-                        <m:Metric Title="New York, NY" Icon="fluent_weather_rain_showers_night_20_filled.png" WeatherStation="USA" Value="12°"/>
-                        <m:Metric Title="Boston, MA" Icon="fluent_weather_snowflake_20_filled.png" WeatherStation="USA" Value="8°"/>
-                        <m:Metric Title="San Fran., CA" Icon="fluent_weather_moon_off_16_filled.png" WeatherStation="USA" Value="20°"/>
-                        
-                    </x:Array>
-                </BindableLayout.ItemsSource>
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <Frame Margin="{OnIdiom Phone=15,Default=25}"
-                                HorizontalOptions="Start"
-                                HeightRequest="124" 
-                                WidthRequest="124"
-                                CornerRadius="20"
-                                HasShadow="False"
-                                BackgroundColor="{StaticResource Background_Mid}"
-                        >
-                            <Grid RowDefinitions="42,40,*">
-                                <Image Source="{Binding Icon}"
-                                           WidthRequest="36"
-                                           HeightRequest="36"
-                                   VerticalOptions="Start"
-                                     HorizontalOptions="End"/>
-                                <Label Text="{Binding Value}" class="LargeTitle"/>
-                                
-                                <StackLayout 
-                                    Grid.Row="1"
-                                    HorizontalOptions="Start"
-                                     Spacing="0"
-                                     VerticalOptions="End">
-                                    
-                                    <Label Text="{Binding Title}" class="Subhead"/>
-                                    <Label Text="{Binding WeatherStation}" class="SubContent"/>
-                                </StackLayout>
+            <ScrollView.Resources>
+                <DataTemplate x:Key="FavouriteTemplate">
+                    <Frame
+                        HorizontalOptions="Start"
+                        HeightRequest="124" 
+                        WidthRequest="124"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        BackgroundColor="{StaticResource Background_Mid}">
+                        <Grid RowDefinitions="42,40,*">
+                            <Image
+                                Source="{Binding Icon}"
+                                WidthRequest="36"
+                                HeightRequest="36"
+                                VerticalOptions="Start"
+                                HorizontalOptions="End"/>
+                            <Label Text="{Binding Value}" class="LargeTitle"/>
 
-                                <StackLayout Orientation="Horizontal"
-                                             Grid.Row="2"
-                                    VerticalOptions="End">
-                                    <Image Source="solid_umbrella.png" VerticalOptions="Center"/>
-                                    <Label Text="13%" class="Small" VerticalOptions="Center"/>
-                                </StackLayout>
+                            <StackLayout
+                                Spacing="0"
+                                Grid.RowSpan="3"
+                                VerticalOptions="Center">
+                                <Label Text="{Binding Title}" class="Subhead" />
+                                <Label Text="{Binding WeatherStation}" class="SubContent"/>
+                            </StackLayout>
 
-                                <StackLayout Orientation="Horizontal"
-                                             Grid.Row="2"
-                                             HorizontalOptions="End"
-                                    VerticalOptions="End">
-                                    <Image Source="solid_humidity.png" VerticalOptions="Center"/>
-                                    <Label Text="45%" class="Small" VerticalOptions="Center"/>
-                                </StackLayout>
-                            </Grid>
-                        </Frame>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
+                            <StackLayout
+                                Grid.Row="2"
+                                Spacing="10"
+                                Orientation="Horizontal"
+                                VerticalOptions="End">
+                                <Image Source="solid_umbrella.png" VerticalOptions="Center"/>
+                                <Label Text="13%" class="Small" VerticalOptions="Center"/>
+                            </StackLayout>
 
+                            <StackLayout
+                                Grid.Row="2"
+                                Spacing="10"
+                                Orientation="Horizontal"
+                                HorizontalOptions="End"
+                                VerticalOptions="End">
+                                <Image Source="solid_humidity.png" VerticalOptions="Center"/>
+                                <Label Text="45%" class="Small" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </ScrollView.Resources>
+
+            <StackLayout Orientation="Horizontal">
+                <StackLayout BindableLayout.ItemTemplate="{StaticResource FavouriteTemplate}">
+                    <BindableLayout.ItemsSource>
+                        <x:Array Type="{x:Type m:Metric}">
+                            <m:Metric Title="Seattle, WA" Icon="fluent_weather_rain_showers_night_20_filled.png" WeatherStation="USA" Value="18°"/>
+                            <m:Metric Title="St. Louis, MO" Icon="fluent_weather_moon_16_filled.png" WeatherStation="USA" Value="28°"/>
+                            <m:Metric Title="New York, NY" Icon="fluent_weather_rain_showers_night_20_filled.png" WeatherStation="USA" Value="12°"/>
+                        </x:Array>
+                    </BindableLayout.ItemsSource>
+                </StackLayout>
+                <StackLayout BindableLayout.ItemTemplate="{StaticResource FavouriteTemplate}">
+                    <BindableLayout.ItemsSource>
+                        <x:Array Type="{x:Type m:Metric}">
+                            <m:Metric Title="Boston, MA" Icon="fluent_weather_snowflake_20_filled.png" WeatherStation="USA" Value="8°"/>
+                            <m:Metric Title="San Fran., CA" Icon="fluent_weather_moon_off_16_filled.png" WeatherStation="USA" Value="20°"/>
+                        </x:Array>
+                    </BindableLayout.ItemsSource>
+                </StackLayout>
             </StackLayout>
 
         </ScrollView>

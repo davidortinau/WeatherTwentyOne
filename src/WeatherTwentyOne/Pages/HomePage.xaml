@@ -51,11 +51,10 @@
             Grid.RowSpan="{OnIdiom Phone=1,Default=2}" />
 
         <!-- Widget panel -->
-        <!--
         <ScrollView
             IsVisible="{OnIdiom Phone=False, Default=True}"
             Grid.Row="1"
-            Grid.Column="2">
+            Grid.Column="{OnIdiom Phone=0, Default=2}">
             <Grid ColumnDefinitions="Auto,Auto">
                 <Grid.Resources>
                     <ResourceDictionary>
@@ -119,6 +118,5 @@
                          HorizontalOptions="Start"/>
             </Grid>
         </ScrollView>
-        -->
     </Grid>
 </ContentPage>

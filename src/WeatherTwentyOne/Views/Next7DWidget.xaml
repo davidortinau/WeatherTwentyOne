@@ -1,19 +1,19 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<StackLayout  xmlns:c="clr-namespace:WeatherTwentyOne.Converters" 
-              xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
-              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+﻿<StackLayout  xmlns:c="clr-namespace:WeatherTwentyOne.Converters"
+              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               xmlns:m="clr-namespace:WeatherTwentyOne.Models"
               x:Class="WeatherTwentyOne.Views.Next7DWidget">
     <StackLayout.Resources>
         <c:TempSpanConverter x:Key="TempSpanConverter"/>
         <c:MaxTempOffsetConverter x:Key="MaxTempOffsetConverter"/>
     </StackLayout.Resources>
-    <Label 
-        Text="Daily Forecasts"  
+    <Label
+        Text="Daily Forecasts"
         class="SectionTitle"/>
     <ScrollView Orientation="Horizontal">
         <StackLayout
-            Orientation="Horizontal" Spacing="12"        
+            Orientation="Horizontal"
+            Spacing="12"
             BindableLayout.ItemsSource="{Binding Week}">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
@@ -22,13 +22,13 @@
                         <Label Grid.Row="1" Text="{Binding Temperature.Maximum.Value, StringFormat='{0:F0}°'}" class="Subhead" HorizontalOptions="Center"/>
                         <Image Grid.Row="2" Source="{Binding Day.Phrase, StringFormat='{0:F2}.png'}" HorizontalOptions="Center"/>
                         <Grid
-                            Grid.Row="3"        
+                            Grid.Row="3"
                             RowDefinitions="20,*,20"
                             VerticalOptions="Start"
-                            Margin="{Binding Temperature.Maximum.Value,                        
-                            Converter={StaticResource MaxTempOffsetConverter}, FallbackValue=100}">
-                            <BoxView 
-                                Grid.Row="1"              
+                            Padding="{Binding Temperature.Maximum.Value,
+                                Converter={StaticResource MaxTempOffsetConverter}, FallbackValue=100}">
+                            <BoxView
+                                Grid.Row="1"
                                 BackgroundColor="{StaticResource Accent_Blue100}"
                                 WidthRequest="10"
                                 CornerRadius="5"
@@ -40,24 +40,24 @@
                                     </MultiBinding>
                                 </BoxView.HeightRequest>
                             </BoxView>
-                            <Label 
-                                Grid.Row="0" Text="{Binding Temperature.Maximum.Value, StringFormat='{0:F0}°'}" 
+                            <Label
+                                Grid.Row="0" Text="{Binding Temperature.Maximum.Value, StringFormat='{0:F0}°'}"
                                 class="Subhead" HorizontalOptions="Center"/>
-                            <Label 
-                                Grid.Row="2" Text="{Binding Temperature.Minimum.Value, StringFormat='{0:F0}°'}" 
+                            <Label
+                                Grid.Row="2" Text="{Binding Temperature.Minimum.Value, StringFormat='{0:F0}°'}"
                                 class="Subhead" HorizontalOptions="Center"/>
                         </Grid>
-                        <BoxView 
+                        <BoxView
                             Grid.Row="4" class="HRule"/>
-                        <StackLayout 
-                            Grid.Row="5" Orientation="Horizontal"       
+                        <HorizontalStackLayout
+                            Grid.Row="5"
                             HorizontalOptions="Center">
-                            <Image 
-                                Source="sm_solid_umbrella.png" HeightRequest="20" 
+                            <Image
+                                Source="sm_solid_umbrella.png" HeightRequest="20"
                                 VerticalOptions="Center"/>
-                            <Label 
+                            <Label
                                 Text="13%" class="SubContent" VerticalOptions="Center"/>
-                        </StackLayout>
+                        </HorizontalStackLayout>
                     </Grid>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
