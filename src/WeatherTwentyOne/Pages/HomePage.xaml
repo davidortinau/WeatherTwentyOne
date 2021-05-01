@@ -26,13 +26,14 @@
         <!-- Main content -->
         <ScrollView
             Grid.Column="{OnIdiom Phone=0,Default=1}"
-            Grid.Row="1"
-            Padding="{OnIdiom Phone=15, Default='50,50'}">
+            Grid.Row="1">
             <StackLayout
+                Padding="{OnIdiom Phone=15, Default='50,50'}"
                 Spacing="25">
                 <!-- Top widgets -->
                 <HorizontalStackLayout
-                    Spacing="25">
+                    Spacing="25"
+                    HorizontalOptions="Center">
                     <v:CurrentWidget/>
                     <v:WindLiveWidget x:Name="WindWidget"/>
                 </HorizontalStackLayout>
