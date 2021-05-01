@@ -74,10 +74,51 @@
                         </Grid>
                     </Frame>
                 </DataTemplate>
+                <DataTemplate x:Key="FavouriteTemplateAndroid">
+                    <Frame
+                        HorizontalOptions="Start"
+                        HeightRequest="124"
+                        WidthRequest="124"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        BackgroundColor="{StaticResource Background_Mid}">
+                        <Grid RowDefinitions="42,20,20,42" RowSpacing="0">
+                            <Image
+                                Source="{Binding Icon}"
+                                WidthRequest="36"
+                                HeightRequest="36"
+                                VerticalOptions="Start"
+                                HorizontalOptions="End"/>
+                            <Label Text="{Binding Value}" class="LargeTitle"/>
+
+                            <Label Text="{Binding Title}" class="Subhead"
+                                   Grid.Row="1" VerticalOptions="End" />
+                            <Label Text="{Binding WeatherStation}" class="SubContent"
+                                   Grid.Row="2" VerticalOptions="Start"/>
+
+                            <HorizontalStackLayout
+                                Grid.Row="3"
+                                Spacing="10"
+                                VerticalOptions="End">
+                                <Image Source="solid_umbrella.png" VerticalOptions="Center"/>
+                                <Label Text="13%" class="Small" VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout
+                                Grid.Row="3"
+                                Spacing="10"
+                                HorizontalOptions="End"
+                                VerticalOptions="End">
+                                <Image Source="solid_humidity.png" VerticalOptions="Center"/>
+                                <Label Text="45%" class="Small" VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
             </ScrollView.Resources>
 
             <StackLayout Orientation="Horizontal">
-                <StackLayout BindableLayout.ItemTemplate="{StaticResource FavouriteTemplate}">
+                <StackLayout BindableLayout.ItemTemplate="{OnPlatform Android={StaticResource FavouriteTemplateAndroid}, Default={StaticResource FavouriteTemplate}}">
                     <BindableLayout.ItemsSource>
                         <x:Array Type="{x:Type m:Metric}">
                             <m:Metric Title="Seattle, WA" Icon="fluent_weather_rain_showers_night_20_filled.png" WeatherStation="USA" Value="18°"/>
@@ -86,7 +127,7 @@
                         </x:Array>
                     </BindableLayout.ItemsSource>
                 </StackLayout>
-                <StackLayout BindableLayout.ItemTemplate="{StaticResource FavouriteTemplate}">
+                <StackLayout BindableLayout.ItemTemplate="{OnPlatform Android={StaticResource FavouriteTemplateAndroid}, Default={StaticResource FavouriteTemplate}}">
                     <BindableLayout.ItemsSource>
                         <x:Array Type="{x:Type m:Metric}">
                             <m:Metric Title="Boston, MA" Icon="fluent_weather_snowflake_20_filled.png" WeatherStation="USA" Value="8°"/>
