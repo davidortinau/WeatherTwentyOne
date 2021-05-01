@@ -28,17 +28,18 @@
             Grid.Column="{OnIdiom Phone=0,Default=1}"
             Grid.Row="1">
             <StackLayout
-                Padding="{OnIdiom Phone=15, Default='50,50'}"
                 Spacing="25">
                 <!-- Top widgets -->
-                <HorizontalStackLayout
-                    Spacing="25"
-                    HorizontalOptions="Center">
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="Center"
+                    Spacing="25">
                     <v:CurrentWidget/>
-                    <v:WindLiveWidget x:Name="WindWidget"/>
-                </HorizontalStackLayout>
-                <v:Next24HrWidget/>
-                <v:Next7DWidget/>
+                    <v:WindLiveWidget
+                        x:Name="WindWidget"/>
+                </StackLayout>
+                <v:Next24HrWidget />
+                <v:Next7DWidget />
             </StackLayout>
         </ScrollView>
 

@@ -2,7 +2,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="WeatherTwentyOne.Views.NavBarView"
-    BackgroundColor="{OnIdiom Phone=Transparent, Default={StaticResource Background_Mid}}">
+    BackgroundColor="{OnIdiom Phone=Transparent, Default={StaticResource Background_Mid}}"
+    Orientation="{OnIdiom Phone=Horizontal, Default=Vertical}">
 
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="NavigationStates">
@@ -36,7 +37,7 @@
     <Grid.Resources>
         <Style TargetType="ImageButton">
             <Setter Property="Margin"
-                        Value="{OnIdiom Phone='25,0',Default='0,50,0,25'}"/>
+                        Value="{OnIdiom Phone='25,5',Default='0,50,0,25'}"/>
         </Style>
     </Grid.Resources>
 
