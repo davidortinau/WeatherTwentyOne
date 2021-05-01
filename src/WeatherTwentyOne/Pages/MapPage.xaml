@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage 
+﻿<ContentPage 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:m="clr-namespace:WeatherTwentyOne.Models"
@@ -36,6 +35,7 @@
                 Grid.Row="{OnIdiom Phone=2, Default=0}"
                 Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
             <!-- Widget panel -->
+            <!--
             <ScrollView
             IsVisible="{OnIdiom Phone=False, Default=True}"
             Grid.Row="1"
@@ -121,6 +121,7 @@
                         HorizontalOptions="Start"/>
                 </Grid>
             </ScrollView>
+            -->
         </Grid>
     </ContentPage.Content>
 </ContentPage>
