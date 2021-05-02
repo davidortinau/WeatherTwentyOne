@@ -28,7 +28,7 @@
                         <BoxView
                             WidthRequest="1"
                             HeightRequest="1"
-                            Margin="{Binding Temperature.Maximum.Value, Converter={StaticResource MaxTempOffsetConverter}, FallbackValue=100}"
+                            Margin="{Binding Temperature.Maximum.Value, Converter={StaticResource MaxTempOffsetConverter}}"
                             />
                         <Label
                             Text="{Binding Temperature.Maximum.Value, StringFormat='{0:F0}°'}"
@@ -51,7 +51,7 @@
                         <BoxView
                             WidthRequest="1"
                             HeightRequest="1"
-                            Margin="{Binding Temperature.Minimum.Value, Converter={StaticResource MinTempOffsetConverter}, FallbackValue=100}"
+                            Margin="{Binding Temperature.Minimum.Value, Converter={StaticResource MinTempOffsetConverter}}"
                             />
                         <BoxView class="HRule"/>
                         <StackLayout

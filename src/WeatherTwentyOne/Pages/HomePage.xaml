@@ -32,13 +32,16 @@
                 <BoxView HeightRequest="{OnIdiom Phone=15,Default=50}" />
                 <!-- Top widgets -->
                 <StackLayout
+                    IsVisible="{OnIdiom Phone=False, Default=True}"
                     Orientation="Horizontal"
                     HorizontalOptions="Center"
-                    Spacing="{OnIdiom Phone='12.5',Default='50'}">
+                    Spacing="50">
                     <v:CurrentWidget/>
                     <v:WindLiveWidget
                         x:Name="WindWidget" />
                 </StackLayout>
+                <v:CurrentWidget IsVisible="{OnIdiom Phone=True, Default=False}"/>
+                <BoxView HeightRequest="{OnIdiom Phone=15,Default=50}" />
                 <v:Next24HrWidget />
                 <v:Next7DWidget />
                 <BoxView HeightRequest="{OnIdiom Phone=15,Default=50}" />
