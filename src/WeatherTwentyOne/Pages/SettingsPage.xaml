@@ -5,26 +5,15 @@
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              ios:Page.UseSafeArea="True"
              NavigationPage.HasNavigationBar="False"
+			 Title="Settings"
              x:Class="WeatherTwentyOne.Pages.SettingsPage">
     <Grid ColumnDefinitions="{OnIdiom Phone=*, Default='68,*'}"
-          RowDefinitions="{OnIdiom Phone='80,*,68', Default='80,*'}"
+          RowDefinitions="{OnIdiom Phone='*,68', Default='*'}"
           >
-        <Grid 
-            Grid.Column="{OnIdiom Phone=0,Default=1}"
-            >
-            <Label Text="Settings"
-                   StyleClass="LargeTitle"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   />
-            <BoxView 
-                VerticalOptions="End"
-                StyleClass="HRule"/>
-        </Grid>
-
+       
         <!-- main content -->
         <ScrollView Grid.Column="{OnIdiom Phone=0,Default=1}"
-                    Grid.Row="1"
+                    Grid.Row="0"
                     Margin="{OnIdiom Phone=15, Default=25}"
                     >
             <StackLayout>
@@ -50,7 +39,7 @@
         <!-- Desktop Menu -->
         <v:NavBarView x:Name="NavBar"
             Grid.Column="0"
-            Grid.Row="{OnIdiom Phone=2, Default=0}"
+            Grid.Row="{OnIdiom Phone=1, Default=0}"
             Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
     </Grid>
 </ContentPage>

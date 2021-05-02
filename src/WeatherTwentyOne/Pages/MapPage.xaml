@@ -6,38 +6,27 @@
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     ios:Page.UseSafeArea="True"
     NavigationPage.HasNavigationBar="False"
+	Title="Wind Map"
     x:Class="WeatherTwentyOne.Pages.MapPage">
     <ContentPage.Content>
-        <Grid 
+		<Grid 
             ColumnDefinitions="{OnIdiom Phone=*, Default='68,*,480'}"  
-            RowDefinitions="{OnIdiom Phone='80,*,68', Default='80,*'}">
-            <Grid
-                Grid.Column="{OnIdiom Phone=0,Default=1}"
-                Grid.ColumnSpan="{OnIdiom Phone=1,Default=2}">
-                <Label 
-                    Text="Wind Map"
-                    StyleClass="LargeTitle"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center" />
-                <BoxView 
-                    VerticalOptions="End"
-                    StyleClass="HRule"/>
-            </Grid>
-            <!-- Main content -->
+            RowDefinitions="{OnIdiom Phone='*,68', Default='*'}">
+			<!-- Main content -->
             <WebView
                 Grid.Column="{OnIdiom Phone=0, Default=1}"   
-                Grid.Row="1"
+                Grid.Row="0"
                 Source="https://embed.windy.com" />
             <!-- Desktop Menu -->
             <v:NavBarView 
                 x:Name="NavBar"
                 Grid.Column="0"
-                Grid.Row="{OnIdiom Phone=2, Default=0}"
+                Grid.Row="{OnIdiom Phone=1, Default=0}"
                 Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
             <!-- Widget panel -->
             <ScrollView
             IsVisible="{OnIdiom Phone=False, Default=True}"
-            Grid.Row="1"
+            Grid.Row="0"
             Grid.Column="{OnIdiom Phone=0, Default=2}">
                 <Grid ColumnDefinitions="Auto,Auto">
                     <Grid.Resources>
@@ -114,10 +103,6 @@
                             </x:Array>
                         </BindableLayout.ItemsSource>
                     </StackLayout>
-                    <BoxView 
-                        BackgroundColor="{StaticResource Background_Mid}"
-                        WidthRequest="1"
-                        HorizontalOptions="Start"/>
                 </Grid>
             </ScrollView>
         </Grid>
