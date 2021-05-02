@@ -9,16 +9,25 @@
         Text="18℉"
         HorizontalOptions="Center"
         class="Title1" />
-    <Frame
-        CornerRadius="15"
-        HeightRequest="30"
-        VerticalOptions="Start"
-        HorizontalOptions="Center"
-        Padding="15,0"
-        BackgroundColor="{StaticResource Primary}">
-        <Label
-            Text="Clear"
-            VerticalOptions="Center"
-            class="Headline" />
-    </Frame>
+    <Grid>
+        <Frame
+            CornerRadius="15"
+            HorizontalOptions="Center"
+            Padding="0"
+            BackgroundColor="{StaticResource Primary}">
+            <Grid
+                RowDefinitions="3,*,3"
+                ColumnDefinitions="15,*,15"
+                RowSpacing="0"
+                ColumnSpacing="0"
+                HorizontalOptions="Center">
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="Clear"
+                    HorizontalOptions="Center"
+                    FontSize="17"/>
+            </Grid>
+        </Frame>
+    </Grid>
 </StackLayout>
