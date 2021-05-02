@@ -1,34 +1,36 @@
-﻿<ContentPage 
+﻿<ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:m="clr-namespace:WeatherTwentyOne.Models"
-    xmlns:v="clr-namespace:WeatherTwentyOne.Views"   
+    xmlns:v="clr-namespace:WeatherTwentyOne.Views"
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     ios:Page.UseSafeArea="True"
-    NavigationPage.HasNavigationBar="False"
-	Title="Wind Map"
+    Title="Wind Map"
     x:Class="WeatherTwentyOne.Pages.MapPage">
-    <ContentPage.Content>
-		<Grid 
-            ColumnDefinitions="{OnIdiom Phone=*, Default='68,*,480'}"  
-            RowDefinitions="{OnIdiom Phone='*,68', Default='*'}">
-			<!-- Main content -->
-            <WebView
-                Grid.Column="{OnIdiom Phone=0, Default=1}"   
-                Grid.Row="0"
-                Source="https://embed.windy.com" />
-            <!-- Desktop Menu -->
-            <v:NavBarView 
-                x:Name="NavBar"
-                Grid.Column="0"
-                Grid.Row="{OnIdiom Phone=1, Default=0}"
-                Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
-            <!-- Widget panel -->
-            <ScrollView
+
+    <Grid
+        ColumnDefinitions="{OnIdiom Phone='*', Default='68,*,480'}"
+        RowDefinitions="{OnIdiom Phone='*,68', Default='*,0'}">
+
+        <!-- Main content -->
+        <WebView
+            Grid.Column="{OnIdiom Phone=0, Default=1}"
+            Grid.Row="0"
+            Source="https://embed.windy.com" />
+
+        <!-- Desktop Menu -->
+        <v:NavBarView 
+            x:Name="NavBar"
+            Grid.Column="0"
+            Grid.Row="{OnIdiom Phone=1, Default=0}"
+            Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
+
+        <!-- Widget panel -->
+        <ScrollView
             IsVisible="{OnIdiom Phone=False, Default=True}"
             Grid.Row="0"
             Grid.Column="{OnIdiom Phone=0, Default=2}">
-                <Grid ColumnDefinitions="Auto,Auto">
+            <Grid ColumnDefinitions="Auto,Auto">
                     <Grid.Resources>
                         <ResourceDictionary>
                             <DataTemplate x:Key="MetricDataTemplate">
@@ -104,7 +106,8 @@
                         </BindableLayout.ItemsSource>
                     </StackLayout>
                 </Grid>
-            </ScrollView>
-        </Grid>
-    </ContentPage.Content>
+        </ScrollView>
+
+    </Grid>
+
 </ContentPage>

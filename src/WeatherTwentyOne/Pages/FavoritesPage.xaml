@@ -2,18 +2,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:v="clr-namespace:WeatherTwentyOne.Views" 
              xmlns:m="clr-namespace:WeatherTwentyOne.Models"
-             NavigationPage.HasNavigationBar="False"
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              ios:Page.UseSafeArea="True"
-			 Title="Favorites"
+             Title="Favorites"
              x:Class="WeatherTwentyOne.Pages.FavoritesPage">
 
-    <Grid ColumnDefinitions="{OnIdiom Phone=*, Default='68,*'}"
-          RowDefinitions="{OnIdiom Phone='*,68', Default='*'}"
+    <Grid ColumnDefinitions="{OnIdiom Phone='15,*,15', Default='68,15,*'}"
+          RowDefinitions="{OnIdiom Phone='15,*,68', Default='15,*'}"
           >
 
         <!-- main content -->
-        <ScrollView Grid.Column="{OnIdiom Phone=0,Default=1}"
+        <ScrollView Grid.Column="{OnIdiom Phone=1,Default=2}"
                     Grid.Row="1"
                     >
             <ScrollView.Resources>
@@ -131,7 +130,8 @@
         <!-- Menu -->
         <v:NavBarView x:Name="NavBar"
             Grid.Column="0"
-            Grid.Row="{OnIdiom Phone=1, Default=0}"
+            Grid.ColumnSpan="{OnIdiom Phone=3,Default=1}"
+            Grid.Row="{OnIdiom Phone=2, Default=0}"
             Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
     </Grid>
 </ContentPage>
