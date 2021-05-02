@@ -6,27 +6,17 @@
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     ios:Page.UseSafeArea="True"
     NavigationPage.HasNavigationBar="False"
+	Title="St. Louis, MO"
     x:Class="WeatherTwentyOne.Pages.HomePage">
     <Grid
         ColumnDefinitions="{OnIdiom Phone=*, Default='68,*,480'}"
-        RowDefinitions="{OnIdiom Phone='80,*,68', Default='80,*'}">
-        <Grid
-            Grid.Column="{OnIdiom Phone=0,Default=1}"
-            Grid.ColumnSpan="{OnIdiom Phone=1,Default=2}">
-            <Label
-                Text="St. Louis, MO"
-                StyleClass="LargeTitle"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"/>
-            <BoxView
-                VerticalOptions="End"
-                StyleClass="HRule"/>
-        </Grid>
+        RowDefinitions="{OnIdiom Phone='*,68', Default='*'}">
+
 
         <!-- Main content -->
         <ScrollView
             Grid.Column="{OnIdiom Phone=0,Default=1}"
-            Grid.Row="1">
+            Grid.Row="0">
             <StackLayout
                 Spacing="25">
                 <BoxView HeightRequest="{OnIdiom Phone=15,Default=50}" />
@@ -49,7 +39,7 @@
         <v:NavBarView
             x:Name="NavBar"
             Grid.Column="0"
-            Grid.Row="{OnIdiom Phone=2, Default=0}"
+            Grid.Row="{OnIdiom Phone=1, Default=0}"
             Grid.RowSpan="{OnIdiom Phone=1,Default=2}" />
 
         <!-- Widget panel -->
