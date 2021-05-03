@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <style name="Maui.MainTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#512BD4</item>
+        <item name="colorPrimaryDark">#152C39</item>
+        <item name="colorAccent">#F7B548</item>
+    </style>
+</resources>
