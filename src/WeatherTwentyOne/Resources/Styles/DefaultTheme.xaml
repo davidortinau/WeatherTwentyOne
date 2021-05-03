@@ -259,6 +259,9 @@
     </Style>
 
     <!-- Misc -->
+    <Style TargetType="BoxView">
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+    </Style>
     <Style Class="HRule"
            TargetType="BoxView">
         <Setter Property="HeightRequest" Value="1"/>
