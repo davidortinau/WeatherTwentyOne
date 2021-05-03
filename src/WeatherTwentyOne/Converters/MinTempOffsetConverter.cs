@@ -5,16 +5,16 @@ using Microsoft.Maui.Controls;
 
 namespace WeatherTwentyOne.Converters
 {
-    public class MaxTempOffsetConverter : IValueConverter
+    public class MinTempOffsetConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            const double max = 90 * 3;
+            const double min = 40 * 3;
 
-            var maxTemp = System.Convert.ToDouble(value) * 3;
-            var topMargin = max - maxTemp;
+            var minTemp = System.Convert.ToDouble(value) * 3;
+            var bottomMargin = minTemp - min;
 
-            return new Thickness(0, topMargin, 0, 0);
+            return new Thickness(0, 0, 0, bottomMargin);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

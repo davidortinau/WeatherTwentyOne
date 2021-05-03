@@ -5,7 +5,7 @@ using WeatherTwentyOne.ViewModels;
 namespace WeatherTwentyOne.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Next24HrWidget : StackLayout
+    public partial class Next24HrWidget
     {
         public Next24HrWidget()
         {

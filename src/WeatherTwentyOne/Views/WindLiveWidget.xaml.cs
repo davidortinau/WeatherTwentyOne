@@ -6,7 +6,7 @@ using System.Timers;
 namespace WeatherTwentyOne.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WindLiveWidget : Grid
+    public partial class WindLiveWidget
     {
         Random rand;
         Timer aTimer;
@@ -14,8 +14,8 @@ namespace WeatherTwentyOne.Views
         public WindLiveWidget()
         {
             InitializeComponent();
-            
-            if (aTimer == null)
+
+            if (aTimer == null && Device.RuntimePlatform != Device.Android)
                 Start();
         }
 

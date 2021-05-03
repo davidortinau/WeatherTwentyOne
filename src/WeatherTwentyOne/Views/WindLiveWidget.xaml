@@ -1,36 +1,27 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WeatherTwentyOne.Views.WindLiveWidget">
-    <Grid 
-        RowDefinitions="242" ColumnDefinitions="242" HorizontalOptions="Center">
-        <Grid.GestureRecognizers>
-            <TapGestureRecognizer 
-                Tapped="TapGestureRecognizer_Tapped"/>
-        </Grid.GestureRecognizers>
-        <Image 
+﻿<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      x:Class="WeatherTwentyOne.Views.WindLiveWidget">
+
+    <Grid>
+        <Image
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            HeightRequest="212"
-            Source="compass_background.png"/>
-        <Image 
+            Source="compass_background.png" />
+        <Image
             x:Name="Needle"
-            Source="compass_needle.png" 
-            WidthRequest="242"
-            HeightRequest="242"
+            Source="compass_needle.png"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            Rotation="360" />
+            Rotation="0" />
     </Grid>
-    <StackLayout 
-        VerticalOptions="End">
-        <Label 
-            Text="Winds"
-            HorizontalOptions="Center"
-            class="SubContent"/>
-        <Label 
-            Text="14|25" 
-            HorizontalOptions="Center"
-            class="Headline"/>
-    </StackLayout>
-</Grid>
+
+    <Label
+        Text="Winds"
+        HorizontalOptions="Center"
+        class="SubContent"/>
+    <Label
+        Text="14|25"
+        HorizontalOptions="Center"
+        class="Headline"/>
+
+</StackLayout>

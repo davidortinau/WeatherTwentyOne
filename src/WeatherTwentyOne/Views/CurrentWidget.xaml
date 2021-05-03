@@ -1,25 +1,33 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+﻿<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherTwentyOne.Views.CurrentWidget">
-    <Image 
+    <Image
         HeightRequest="160"
         Aspect="AspectFit"
-        Source="weather_partly_cloudy_night.png"/>
-    <Label Text="18℉" 
+        Source="weather_partly_cloudy_night.png" />
+    <Label
+        Text="18℉"
+        HorizontalOptions="Center"
+        class="Title1" />
+    <Grid>
+        <Frame
+            CornerRadius="15"
             HorizontalOptions="Center"
-            class="Title1"/>
-    <Frame
-                        CornerRadius="15"
-                        HeightRequest="30"
-                        VerticalOptions="Start"
-                        HorizontalOptions="Center"
-                        Padding="15,0"
-                        BackgroundColor="{StaticResource Primary}"
-                        >
-        <Label Text="Clear"
-                                VerticalOptions="Center"
-                                class="Headline"
-                                />
-    </Frame>
+            Padding="0"
+            BackgroundColor="{StaticResource Primary}">
+            <Grid
+                RowDefinitions="3,*,3"
+                ColumnDefinitions="15,*,15"
+                RowSpacing="0"
+                ColumnSpacing="0"
+                HorizontalOptions="Center">
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="Clear"
+                    HorizontalOptions="Center"
+                    FontSize="17"/>
+            </Grid>
+        </Frame>
+    </Grid>
 </StackLayout>

@@ -1,126 +1,40 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage 
+﻿<ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:m="clr-namespace:WeatherTwentyOne.Models"
-    xmlns:v="clr-namespace:WeatherTwentyOne.Views"   
+    xmlns:v="clr-namespace:WeatherTwentyOne.Views"
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     ios:Page.UseSafeArea="True"
-    NavigationPage.HasNavigationBar="False"
+    Title="Wind Map"
     x:Class="WeatherTwentyOne.Pages.MapPage">
-    <ContentPage.Content>
-        <Grid 
-            ColumnDefinitions="{OnIdiom Phone=*, Default='68,*,480'}"  
-            RowDefinitions="{OnIdiom Phone='80,*,68', Default='80,*'}">
-            <Grid
-                Grid.Column="{OnIdiom Phone=0,Default=1}"
-                Grid.ColumnSpan="{OnIdiom Phone=1,Default=2}">
-                <Label 
-                    Text="Wind Map"
-                    StyleClass="LargeTitle"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center" />
-                <BoxView 
-                    VerticalOptions="End"
-                    StyleClass="HRule"/>
-            </Grid>
+
+    <Grid
+        RowDefinitions="{OnPlatform iOS='68,*', Default='*'}">
+        <Grid
+            Grid.Row="{OnPlatform iOS=1, Default=0}"
+            ColumnDefinitions="{OnIdiom Phone='*', Default='68,*,480'}"
+            RowDefinitions="{OnIdiom Phone='*,68', Default='*,0'}">
+
             <!-- Main content -->
             <WebView
-                Grid.Column="{OnIdiom Phone=0, Default=1}"   
-                Grid.Row="1"
+                Grid.Column="{OnIdiom Phone=0, Default=1}"
+                Grid.Row="0"
                 Source="https://embed.windy.com" />
+
             <!-- Desktop Menu -->
             <v:NavBarView 
                 x:Name="NavBar"
                 Grid.Column="0"
-                Grid.Row="{OnIdiom Phone=2, Default=0}"
+                Grid.Row="{OnIdiom Phone=1, Default=0}"
                 Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
+
             <!-- Widget panel -->
-            <ScrollView
-            IsVisible="{OnIdiom Phone=False, Default=True}"
-            Grid.Row="1"
-            Grid.Column="2">
-                <Grid ColumnDefinitions="Auto,Auto">
-                    <Grid.Resources>
-                        <ResourceDictionary>
-                            <DataTemplate x:Key="MetricDataTemplate">
-                                <Frame 
-                                    Margin="25"
-                                    HorizontalOptions="Start"
-                                    HeightRequest="124"
-                                    WidthRequest="124"
-                                    CornerRadius="20"
-                                    HasShadow="False"
-                                    BackgroundColor="{StaticResource Background_Mid}">
-                                    <Grid>
-                                        <Image 
-                                            Source="{Binding Icon}"
-                                            WidthRequest="45"
-                                            HeightRequest="45"
-                                            VerticalOptions="Start"
-                                            HorizontalOptions="End"/>
-                                        <StackLayout 
-                                            HorizontalOptions="Start"
-                                            Spacing="0"
-                                            VerticalOptions="End">
-                                            <Label 
-                                                Text="{Binding Value}" class="LargeTitle"/>
-                                            <Label 
-                                                Text="From" class="Subhead"/>
-                                            <Label 
-                                                Text="{Binding WeatherStation}" class="SubContent"/>
-                                        </StackLayout>
-                                    </Grid>
-                                </Frame>
-                            </DataTemplate>
-                        </ResourceDictionary>
-                    </Grid.Resources>
-                    <StackLayout 
-                        Margin="25,25,0,25"
-                        Orientation="Vertical"
-                        BindableLayout.ItemTemplate="{StaticResource MetricDataTemplate}">
-                        <BindableLayout.ItemsSource>
-                            <x:Array Type="{x:Type m:Metric}">
-                                <m:Metric 
-                                    Title="Humidity" Icon="humidity_icon.png" 
-                                    WeatherStation="Pond Elementary" Value="78%"/>
-                                <m:Metric 
-                                    Title="Rain" Icon="rain_icon.png" 
-                                    WeatherStation="Pond Elementary" Value="0.2in"/>
-                                <m:Metric 
-                                    Title="Chance of Rain" Icon="umbrella_icon.png" 
-                                    WeatherStation="Pond Elementary" Value="2%"/>
-                                <m:Metric 
-                                    Title="Wind" Icon="wind_icon.png" 
-                                    WeatherStation="Pond Elementary" Value="9mph"/>
-                            </x:Array>
-                        </BindableLayout.ItemsSource>
-                    </StackLayout>
-                    <StackLayout 
-                        Margin="0,25,25,25"
-                        Orientation="Vertical"
-                        BindableLayout.ItemTemplate="{StaticResource MetricDataTemplate}"
-                        Grid.Column="1">
-                        <BindableLayout.ItemsSource>
-                            <x:Array Type="{x:Type m:Metric}">
-                                <m:Metric 
-                                    Title="Humidity" Icon="humidity_icon.png" 
-                                    WeatherStation="City Hall" Value="78%"/>
-                                <m:Metric 
-                                    Title="Rain" Icon="rain_icon.png" 
-                                    WeatherStation="Rockwood Reservation" Value="0.2in"/>
-                                <m:Metric 
-                                    Title="Chance of Rain" Icon="umbrella_icon.png" 
-                                    WeatherStation="County Library" Value="2%"/>
-                            </x:Array>
-                        </BindableLayout.ItemsSource>
-                    </StackLayout>
-                    <BoxView 
-                        BackgroundColor="{StaticResource Background_Mid}"
-                        WidthRequest="1"
-                        HorizontalOptions="Start"/>
-                </Grid>
-            </ScrollView>
+            <v:WidgetsPanel
+                IsVisible="{OnIdiom Phone=False, Default=True}"
+                Grid.Row="0"
+                Grid.Column="{OnIdiom Phone=0, Default=2}" />
+            
         </Grid>
-    </ContentPage.Content>
+    </Grid>
+
 </ContentPage>
