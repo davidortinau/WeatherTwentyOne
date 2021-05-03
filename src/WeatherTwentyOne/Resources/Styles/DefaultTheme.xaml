@@ -35,6 +35,12 @@
         <Setter Property="BackgroundColor" Value="{StaticResource Background_Dark}"/>
     </Style>
 
+    <Style TargetType="NavigationPage" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{StaticResource Background_Mid}"/>
+        <Setter Property="BarBackgroundColor" Value="{StaticResource Background_Mid}"/>
+        <Setter Property="BarTextColor" Value="{StaticResource White}"/>
+    </Style>
+
     <Style TargetType="Label">
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
         <Setter Property="FontSize"
