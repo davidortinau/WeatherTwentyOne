@@ -32,7 +32,7 @@
                     <BoxView class="HRule"/>
 
                     <Label Text="Hybrid" class="Subhead"/>
-                    <Label Text="˚C / mph / miles / millimeters / millibars"/>
+                    <Label Text="˚C / mph / miles / millimeters / millibars" class="SubContent"/>
                     <BoxView class="HRule"/>
 
                 </StackLayout>
