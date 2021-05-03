@@ -65,18 +65,7 @@
                             <Label
                                 Text="13%" class="SubContent" VerticalOptions="Center"/>
                         </StackLayout>
-                        <StackLayout
-                            IsVisible="{OnPlatform Android=True, Default=False}">
-                            <HorizontalStackLayout
-                                HeightRequest="40"
-                                HorizontalOptions="Center">
-                                <Image
-                                    Source="sm_solid_umbrella.png" HeightRequest="20"
-                                    VerticalOptions="Center"/>
-                                <Label
-                                    Text="13%" class="SubContent" VerticalOptions="Center"/>
-                            </HorizontalStackLayout>
-                        </StackLayout>
+                        
                     </StackLayout>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
