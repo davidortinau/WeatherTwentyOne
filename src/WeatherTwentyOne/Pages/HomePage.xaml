@@ -48,73 +48,10 @@
                 Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
 
             <!-- Widget panel -->
-            <ScrollView
+            <v:WidgetsPanel
                 IsVisible="{OnIdiom Phone=False, Default=True}"
                 Grid.Row="1"
-                Grid.Column="{OnIdiom Phone=0, Default=4}">
-                <Grid ColumnDefinitions="Auto,Auto">
-                    <Grid.Resources>
-                        <ResourceDictionary>
-                            <DataTemplate x:Key="MetricDataTemplate">
-                                <Frame Margin="25"
-                                    HorizontalOptions="Start"
-                                    HeightRequest="124"
-                                    WidthRequest="124"
-                                    CornerRadius="20"
-                                    HasShadow="False"
-                                    BackgroundColor="{StaticResource Background_Mid}"
-                                    >
-                                    <Grid>
-                                        <Image Source="{Binding Icon}"
-                                            WidthRequest="45"
-                                            HeightRequest="45"
-                                            VerticalOptions="Start"
-                                            HorizontalOptions="End"
-                                            />
-
-                                        <StackLayout HorizontalOptions="Start"
-                                                    Spacing="0"
-                                                    VerticalOptions="End">
-                                            <Label Text="{Binding Value}" class="LargeTitle"/>
-                                            <Label Text="From" class="Subhead"/>
-                                            <Label Text="{Binding WeatherStation}" class="SubContent"/>
-                                        </StackLayout>
-                                    </Grid>
-                                </Frame>
-                            </DataTemplate>
-                        </ResourceDictionary>
-                    </Grid.Resources>
-                    <StackLayout Margin="25,25,0,25"
-                                Orientation="Vertical"
-                                BindableLayout.ItemTemplate="{StaticResource MetricDataTemplate}"
-                                >
-                        <BindableLayout.ItemsSource>
-                            <x:Array Type="{x:Type m:Metric}">
-                                <m:Metric Title="Humidity" Icon="humidity_icon.png" WeatherStation="Pond Elementary" Value="78%"/>
-                                <m:Metric Title="Rain" Icon="rain_icon.png" WeatherStation="Pond Elementary" Value="0.2in"/>
-                                <m:Metric Title="Chance of Rain" Icon="umbrella_icon.png" WeatherStation="Pond Elementary" Value="2%"/>
-                                <m:Metric Title="Wind" Icon="wind_icon.png" WeatherStation="Pond Elementary" Value="9mph"/>
-                            </x:Array>
-                        </BindableLayout.ItemsSource>
-                    </StackLayout>
-                    <StackLayout Margin="0,25,25,25"
-                                Orientation="Vertical"
-                                BindableLayout.ItemTemplate="{StaticResource MetricDataTemplate}"
-                                Grid.Column="1"
-                                >
-                        <BindableLayout.ItemsSource>
-                            <x:Array Type="{x:Type m:Metric}">
-                                <m:Metric Title="Humidity" Icon="humidity_icon.png" WeatherStation="City Hall" Value="78%"/>
-                                <m:Metric Title="Rain" Icon="rain_icon.png" WeatherStation="Rockwood Reservation" Value="0.2in"/>
-                                <m:Metric Title="Chance of Rain" Icon="umbrella_icon.png" WeatherStation="County Library" Value="2%"/>
-                            </x:Array>
-                        </BindableLayout.ItemsSource>
-                    </StackLayout>
-                    <BoxView BackgroundColor="{StaticResource Background_Mid}"
-                            WidthRequest="1"
-                            HorizontalOptions="Start"/>
-                </Grid>
-            </ScrollView>
+                Grid.Column="{OnIdiom Phone=0, Default=4}" />
 
         </Grid>
     </Grid>
