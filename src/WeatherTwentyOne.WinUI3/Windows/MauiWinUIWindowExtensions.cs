@@ -13,7 +13,17 @@ namespace WeatherTwentyOne.WinUI
 			return nativeWindow.WindowHandle;
 		}
 
-		public static void BringToFront(this MauiWinUIWindow window)
+        public static void SetIcon(this MauiWinUIWindow window, string iconFilename)
+        {
+            var hwnd = window.GetNativeWindowHandle();
+
+            var hIcon = PInvoke.User32.LoadImage(IntPtr.Zero, iconFilename,
+               PInvoke.User32.ImageType.IMAGE_ICON, 16, 16, PInvoke.User32.LoadImageFlags.LR_LOADFROMFILE);
+
+            PInvoke.User32.SendMessage(hwnd, PInvoke.User32.WindowMessage.WM_SETICON, (IntPtr)0, hIcon);
+        }
+
+        public static void BringToFront(this MauiWinUIWindow window)
 		{
 			var hwnd = window.GetNativeWindowHandle();
 
