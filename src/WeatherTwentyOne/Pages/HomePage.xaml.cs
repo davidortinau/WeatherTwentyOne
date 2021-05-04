@@ -21,9 +21,12 @@ namespace WeatherTwentyOne.Pages
         {
             try
             {
-                AppActions.SetAsync(
-                       new AppAction("current_info", "Check Current Weather"),
-                             new AppAction("add_location", "Add a Location")
+#if WINDOWS
+                AppActions.IconDirectory = "Images";
+#endif
+                AppActions.SetAsync(   
+                    new AppAction("current_info", "Check Current Weather", icon: "current_info"),
+                    new AppAction("add_location", "Add a Location", icon: "add_location")
                 );
             }
             catch (System.Exception ex)
@@ -35,12 +38,13 @@ namespace WeatherTwentyOne.Pages
         private void SetupTrayIcon()
         {
             var trayService = ServiceProvider.GetService<ITrayService>();
-            var notificationService = ServiceProvider.GetService<INotificationService>();
 
-            if (trayService != null && notificationService != null)
+            if (trayService != null)
             {
                 trayService.Initialize();
-                trayService.ClickHandler = () => notificationService.ShowNotification("Hello Build! 😻 From .NET MAUI. It's sunny where we are.");
+                trayService.ClickHandler = () => 
+                    ServiceProvider.GetService<INotificationService>()
+                        ?.ShowNotification("Hello Build! 😻 From .NET MAUI", "How's your weather?  It's sunny where we are 🌞");
             }
         }
     }
