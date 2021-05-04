@@ -1,6 +1,7 @@
 using System;
 using Foundation;
 using UserNotifications;
+using WeatherTwentyOne.Services;
 
 namespace WeatherTwentyOne.MacCatalyst
 {
