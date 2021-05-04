@@ -53,6 +53,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<EmbeddedResource Remove="Windows\*.xaml" />
 		<EmbeddedResource Include="..\WeatherTwentyOne\*.xaml" Link="%(FileName)%(Extension)" />
 		<EmbeddedResource Include="..\WeatherTwentyOne\Pages\*.xaml" Link="Pages\%(FileName)%(Extension)" />
 		<EmbeddedResource Include="..\WeatherTwentyOne\Resources\Styles\*.xaml" Link="Resources\Styles\%(FileName)%(Extension)" />
