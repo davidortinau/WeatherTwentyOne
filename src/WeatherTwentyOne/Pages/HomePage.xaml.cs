@@ -21,9 +21,9 @@ namespace WeatherTwentyOne.Pages
         {
             try
             {
-                AppActions.SetAsync(
-                       new AppAction("current_info", "Check Current Weather"),
-                             new AppAction("add_location", "Add a Location")
+                AppActions.SetAsync(   
+                    new AppAction("current_info", "Check Current Weather", icon: string.Empty),
+                    new AppAction("add_location", "Add a Location", icon: string.Empty)
                 );
             }
             catch (System.Exception ex)
