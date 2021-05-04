@@ -30,6 +30,13 @@
     <Color x:Key="Accent_Blue200">#72ACF1</Color>
     <Color x:Key="TabOff">#91A7B7</Color>
 
+    <FontImageSource
+                x:Key="SearchIcon"
+                FontFamily="FontAwesome"
+                Glyph="{x:Static app:IconFont.Search}"
+                Color="{StaticResource Background_Mid}"
+                Size="16"/>
+
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="Padding" Value="0"/>
         <Setter Property="BackgroundColor" Value="{StaticResource Background_Dark}"/>

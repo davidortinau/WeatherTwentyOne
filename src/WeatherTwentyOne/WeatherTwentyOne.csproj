@@ -25,6 +25,7 @@
     <BundleResource Include="MacCatalyst\trayicon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Resources\Images\search_icon.svg" />
     <None Remove="Resources\Images\weather_cloudy.svg" />
     <None Remove="Resources\Images\weather_partly_cloudy_day.svg" />
   </ItemGroup>

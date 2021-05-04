@@ -13,7 +13,7 @@
             ColumnDefinitions="{OnIdiom Phone='15,*,15', Default='68,0,*'}"
             RowDefinitions="{OnIdiom Phone='15,*,68', Default='15,*'}"
             >
-
+            
             <!-- main content -->
             <ScrollView Grid.Column="{OnIdiom Phone=1,Default=2}"
                         Grid.Row="1"
@@ -139,12 +139,30 @@
 
             </ScrollView>
 
+            <!-- Search Box -->
+            <StackLayout Orientation="Horizontal" 
+                         HeightRequest="40"
+                         VerticalOptions="Start"
+                         Spacing="18"
+                         Grid.Row="1" 
+                             Grid.Column="{OnIdiom Phone=1,Default=2}"
+                         Padding="{OnIdiom Phone='30,0',Default='50,0'}"
+                         BackgroundColor="{StaticResource Background_Dark}"
+                         >
+                <Image Source="search_icon.png" VerticalOptions="Center"/>
+                <Label Text="Search" 
+                       TextColor="#637989" 
+                       FontSize="18"
+                       WidthRequest="240"
+                       VerticalOptions="Center" />
+            </StackLayout>
+
             <!-- Menu -->
             <v:NavBarView x:Name="NavBar"
                 Grid.Column="0"
                 Grid.ColumnSpan="{OnIdiom Phone=3,Default=1}"
                 Grid.Row="{OnIdiom Phone=2, Default=0}"
-                Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
+                Grid.RowSpan="{OnIdiom Phone=0,Default=2}"/>
         </Grid>
     </Grid>
 </ContentPage>
