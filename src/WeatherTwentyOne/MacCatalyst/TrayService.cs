@@ -62,6 +62,8 @@ namespace WeatherTwentyOne.MacCatalyst
 			var sharedApp = nsapp.PerformSelector(new Selector("sharedApplication"));
 
 			void_objc_msgSend_bool(sharedApp.Handle, Selector.GetHandle("activateIgnoringOtherApps:"), true);
+
+			ClickHandler?.Invoke();
 		}
 	}
 }
