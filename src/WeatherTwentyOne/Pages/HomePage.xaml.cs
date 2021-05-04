@@ -40,7 +40,7 @@ namespace WeatherTwentyOne.Pages
             if (trayService != null && notificationService != null)
             {
                 trayService.Initialize();
-                trayService.ClickHandler = () => notificationService.ShowNotification("Tray Clicked");
+                trayService.ClickHandler = () => notificationService.ShowNotification("Hello Build! 😻 From .NET MAUI. It's sunny where we are.");
             }
         }
     }

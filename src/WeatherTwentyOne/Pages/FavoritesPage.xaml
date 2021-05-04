@@ -119,7 +119,7 @@
                             >
                     <BindableLayout.ItemsSource>
                         <x:Array Type="{x:Type m:Metric}">
-                            <m:Metric Title="Seattle, WA" Icon="fluent_weather_rain_showers_night_20_filled.png" WeatherStation="USA" Value="18°"/>
+                            <m:Metric Title="Redmond, WA" Icon="fluent_weather_rain_showers_night_20_filled.png" WeatherStation="USA" Value="18°"/>
                             <m:Metric Title="St. Louis, MO" Icon="fluent_weather_moon_16_filled.png" WeatherStation="USA" Value="28°"/>
                             <m:Metric Title="New York, NY" Icon="fluent_weather_rain_showers_night_20_filled.png" WeatherStation="USA" Value="12°"/>
                             <m:Metric Title="Boston, MA" Icon="fluent_weather_snowflake_20_filled.png" WeatherStation="USA" Value="8°"/>

@@ -22,6 +22,6 @@
     <Label
         Text="14|25"
         HorizontalOptions="Center"
-        class="Headline"/>
+        class="Title"/>
 
 </StackLayout>

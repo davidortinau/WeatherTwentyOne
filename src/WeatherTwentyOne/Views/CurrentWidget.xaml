@@ -4,9 +4,9 @@
     <Image
         HeightRequest="160"
         Aspect="AspectFit"
-        Source="weather_partly_cloudy_night.png" />
+        Source="fluent_weather_cloudy_20_filled.png" />
     <Label
-        Text="18℉"
+        Text="52℉"
         HorizontalOptions="Center"
         class="Title1" />
     <Grid>
