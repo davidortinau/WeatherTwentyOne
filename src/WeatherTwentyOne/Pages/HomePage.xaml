@@ -28,6 +28,7 @@
                         HorizontalOptions="Center"
                         Spacing="50">
                         <v:CurrentWidget/>
+                        <BoxView WidthRequest="50"/>
                         <v:WindLiveWidget
                             x:Name="WindWidget" />
                     </StackLayout>

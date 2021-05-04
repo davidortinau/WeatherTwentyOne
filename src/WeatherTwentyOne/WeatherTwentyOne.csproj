@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net6.0-ios;net6.0-android;net6.0-maccatalyst</TargetFrameworks>
     <OutputType>Exe</OutputType>
@@ -23,5 +23,9 @@
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">
     <BundleResource Include="MacCatalyst\trayicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Images\weather_cloudy.svg" />
+    <None Remove="Resources\Images\weather_partly_cloudy_day.svg" />
   </ItemGroup>
 </Project>
