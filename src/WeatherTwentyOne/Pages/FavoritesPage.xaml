@@ -127,7 +127,14 @@
                         </x:Array>
                     </BindableLayout.ItemsSource>
 
-                
+                    <Grid HeightRequest="132" 
+                          WidthRequest="132" 
+                          FlexLayout.AlignSelf="Center"
+                          Margin="{OnIdiom Phone=15,Default=25}">
+                        <ImageButton 
+                            BackgroundColor="Transparent"
+                            Source="add_icon.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </Grid>
                 </FlexLayout>
 
             </ScrollView>

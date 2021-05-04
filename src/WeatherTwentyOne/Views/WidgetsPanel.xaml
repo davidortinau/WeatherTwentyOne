@@ -52,6 +52,15 @@
                     <m:Metric Title="Chance of Rain" Icon="umbrella_icon.png" WeatherStation="County Library" Value="2%"/>
                 </x:Array>
             </BindableLayout.ItemsSource>
+
+            <Grid HeightRequest="132" 
+                          WidthRequest="132" 
+                          FlexLayout.AlignSelf="Center"
+                          Margin="{OnIdiom Phone=15,Default=25}">
+                <ImageButton 
+                            BackgroundColor="Transparent"
+                            Source="add_icon.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </Grid>
         </FlexLayout>
         <BoxView BackgroundColor="{StaticResource Background_Mid}"
                 WidthRequest="1"
