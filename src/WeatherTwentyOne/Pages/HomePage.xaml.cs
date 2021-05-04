@@ -35,12 +35,13 @@ namespace WeatherTwentyOne.Pages
         private void SetupTrayIcon()
         {
             var trayService = ServiceProvider.GetService<ITrayService>();
-            var notificationService = ServiceProvider.GetService<INotificationService>();
 
-            if (trayService != null && notificationService != null)
+            if (trayService != null)
             {
                 trayService.Initialize();
-                trayService.ClickHandler = () => notificationService.ShowNotification("Hello Build! 😻 From .NET MAUI. It's sunny where we are.");
+                trayService.ClickHandler = () => 
+                    ServiceProvider.GetService<INotificationService>()
+                        ?.ShowNotification("Hello Build! 😻 From .NET MAUI", "How's your weather?  It's sunny where we are 🌞");
             }
         }
     }

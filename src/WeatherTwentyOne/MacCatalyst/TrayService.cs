@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using Foundation;
 using ObjCRuntime;
+using WeatherTwentyOne.Services;
 
-namespace WeatherTwentyOne.Services.MacCatalyst
+namespace WeatherTwentyOne.MacCatalyst
 {
 	public class TrayService : NSObject, ITrayService
 	{
@@ -42,7 +43,7 @@ namespace WeatherTwentyOne.Services.MacCatalyst
 			statusBarButton = Runtime.GetNSObject(IntPtr_objc_msgSend(statusBarItem.Handle, Selector.GetHandle("button")));
 			statusBarImage = Runtime.GetNSObject(IntPtr_objc_msgSend(ObjCRuntime.Class.GetHandle("NSImage"), Selector.GetHandle("alloc")));
 
-			var imgPath = System.IO.Path.Combine(NSBundle.MainBundle.BundlePath, "Contents", "trayicon.png");
+			var imgPath = System.IO.Path.Combine(NSBundle.MainBundle.BundlePath, "Contents", "Resources", "MacCatalyst", "trayicon.png");
 			var imageFileStr = NSString.CreateNative(imgPath);
 			var nsImagePtr = IntPtr_objc_msgSend_IntPtr(statusBarImage.Handle, Selector.GetHandle("initWithContentsOfFile:"), imageFileStr);
 
