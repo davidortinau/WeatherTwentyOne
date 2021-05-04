@@ -31,11 +31,11 @@
 
 	<ItemGroup>
 		<Manifest Include="$(ApplicationManifest)" />
-		<ApplicationDefinition Include="Windows\App.xaml">
+		<ApplicationDefinition Include="Windows\WindowsApp.xaml">
 			<Generator>MSBuild:Compile</Generator>
 			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
 		</ApplicationDefinition>
-		<Page Include="Windows\*.xaml" Exclude="Windows\App.xaml">
+		<Page Include="Windows\*.xaml" Exclude="Windows\WindowsApp.xaml;App.xaml;Application.xaml">
 			<Generator>MSBuild:Compile</Generator>
 			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
 		</Page>
