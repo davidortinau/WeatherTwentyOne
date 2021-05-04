@@ -21,9 +21,12 @@ namespace WeatherTwentyOne.Pages
         {
             try
             {
-                AppActions.SetAsync(
-                       new AppAction("current_info", "Check Current Weather"),
-                             new AppAction("add_location", "Add a Location")
+#if WINDOWS
+                AppActions.IconDirectory = "Images";
+#endif
+                AppActions.SetAsync(   
+                    new AppAction("current_info", "Check Current Weather", icon: "current_info"),
+                    new AppAction("add_location", "Add a Location", icon: "add_location")
                 );
             }
             catch (System.Exception ex)
