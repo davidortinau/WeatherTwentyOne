@@ -10,6 +10,8 @@
     <RuntimeIdentifier Condition="'$(TargetFramework)' == 'net6.0-ios'">iossimulator-x64</RuntimeIdentifier>
     <RuntimeIdentifier Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">maccatalyst-x64</RuntimeIdentifier>
     <InvariantGlobalization Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">true</InvariantGlobalization>
+    <!-- Set to True to C# hot reload on Android -->
+    <UseInterpreter Condition="'$(TargetFramework)' == 'net6.0-android'">False</UseInterpreter>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.4.482" />
@@ -30,6 +32,6 @@
     <None Remove="Resources\Images\weather_partly_cloudy_day.svg" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
-    <AndroidEnvironment Include="AndroidEnvironment.txt" />
+    <AndroidEnvironment Include="Android\AndroidEnvironment.txt" />
   </ItemGroup>
 </Project>
