@@ -9,7 +9,7 @@ Weather Twenty One
 2. Create an `Android\AndroidEnvironment.txt` file in the project folder, and add this to the `WeatherTwentyOne.csproj`:
 ```
 <ItemGroup>
-  <AndroidEnvironment Include="Android\AndroidEnvironment.xt" />
+  <AndroidEnvironment Include="Android\AndroidEnvironment.txt" />
 </ItemGroup>
 ```
 3. In the `Android\AndroidEnvironment.txt` file, add line with the contents: `DOTNET_MODIFIABLE_ASSEMBLIES=Debug`
