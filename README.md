@@ -5,7 +5,7 @@ Weather Twenty One
 
 ## C# Hot Reload - Android
 
-1. Switch the `WeatherTwentyOne.csproj` to be `<TargetFramework>net6.0-android</TargetFramework>` (note the non-plural.. I didn't test the plural TargetFrameworks plural yet, not sure if it matters).
+1. Switch the `WeatherTwentyOne.csproj` to be `<TargetFrameworks>net6.0-android</TargetFrameworks>`
 2. Create an `Android\AndroidEnvironment.txt` file in the project folder, and add this to the `WeatherTwentyOne.csproj`:
 ```
 <ItemGroup>
@@ -16,6 +16,6 @@ Weather Twenty One
 4. In the `WeatherTwentyOne.csproj` add the property:
 ```
 <PropertyGroup>
-  <AndroidUseInterpreter>True</AndroidUseInterpreter>
+  <UseInterpreter>True</UseInterpreter>
 </PropertyGroup>
 ```
