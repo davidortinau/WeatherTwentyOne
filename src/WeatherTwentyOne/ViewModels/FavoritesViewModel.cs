@@ -30,15 +30,20 @@ namespace WeatherTwentyOne.ViewModels
         async void Fetch()
         {
             var locations = await weatherService.GetLocations(string.Empty);
+            
+            UpdateFavorites(locations);
+
+            OnPropertyChanged(nameof(Favorites));
+
+        }
+
+        private void UpdateFavorites(IEnumerable<Location> locations)
+        {
             favorites = new ObservableCollection<Location>();
             for (int i = locations.Count() - 1; i >= 0; i--)
             {
                 favorites.Add(locations.ElementAt(0));
             }
-
-            
-            OnPropertyChanged(nameof(Favorites));
-            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
