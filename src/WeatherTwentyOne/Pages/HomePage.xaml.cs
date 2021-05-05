@@ -7,14 +7,21 @@ namespace WeatherTwentyOne.Pages
 {
     public partial class HomePage : ContentPage
     {
+        static bool isSetup = false;
+
         public HomePage()
         {
             InitializeComponent();
 
             NavBar.ActiveTab = "Home";
-            
-            SetupAppActions();
-            SetupTrayIcon();
+
+            if (!isSetup)
+            {
+                isSetup = true;
+
+                SetupAppActions();
+                SetupTrayIcon();
+            }
 
 #if WINDOWS
             Microsoft.Maui.MauiWinUIApplication.Current.MainWindow.Title = "Weather TwentyOne";
