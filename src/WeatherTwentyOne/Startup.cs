@@ -2,6 +2,8 @@
 using Microsoft.Maui.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using WeatherTwentyOne.Services;
+using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 
 namespace WeatherTwentyOne
 {
@@ -10,8 +12,17 @@ namespace WeatherTwentyOne
 		public void Configure(IAppHostBuilder appBuilder)
 		{
 			appBuilder
+                .ConfigureAppConfiguration(config => {
+                    config.AddInMemoryCollection(
+                        new Dictionary<string, string>
+                        {
+                            {"DefaultLocation", "St. Louis"}
+                        }
+                     );
+                })
 				.UseCompatibility()
 				.UseMauiApp<App>()
+                .UseMauiServiceProviderFactory(true)
 				.ConfigureServices(services =>
 				{
 #if WINDOWS
@@ -27,7 +38,9 @@ namespace WeatherTwentyOne
 					fonts.AddFont("fa-solid-900.ttf", "FontAwesome");
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 					fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");
-				});
+				})
+                ;
+
 		}
 	}
 }

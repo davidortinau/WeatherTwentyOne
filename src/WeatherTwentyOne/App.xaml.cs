@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui;
+﻿using System;
+using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
 using WeatherTwentyOne.Pages;
@@ -7,8 +8,12 @@ namespace WeatherTwentyOne
 {
 	public partial class App : Microsoft.Maui.Controls.Application
     {
-		public App()
+        public static IServiceProvider Services { get; private set; }
+
+		public App(IServiceProvider services)
 		{
+            Services = services;
+
 			InitializeComponent();
 		}
 
