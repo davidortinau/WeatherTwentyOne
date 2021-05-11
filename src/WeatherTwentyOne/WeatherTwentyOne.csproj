@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net6.0-ios;net6.0-android;net6.0-maccatalyst</TargetFrameworks>
+    <TargetFrameworks>net6.0-android</TargetFrameworks>
     <OutputType>Exe</OutputType>
     <SingleProject>true</SingleProject>
     <ApplicationTitle>WeatherTwentyOne</ApplicationTitle>
@@ -11,7 +11,7 @@
     <RuntimeIdentifier Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">maccatalyst-x64</RuntimeIdentifier>
     <InvariantGlobalization Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">true</InvariantGlobalization>
     <!-- Set to True to C# hot reload on Android -->
-    <UseInterpreter Condition="'$(TargetFramework)' == 'net6.0-android'">False</UseInterpreter>
+    <UseInterpreter Condition="'$(TargetFramework)' == 'net6.0-android'">True</UseInterpreter>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.4.482" />
@@ -27,11 +27,15 @@
     <BundleResource Include="MacCatalyst\trayicon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Android\AndroidEnvironment.txt" />
     <None Remove="Resources\Images\search_icon.svg" />
     <None Remove="Resources\Images\weather_cloudy.svg" />
     <None Remove="Resources\Images\weather_partly_cloudy_day.svg" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
     <AndroidEnvironment Include="Android\AndroidEnvironment.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Android\AndroidEnvironment.txt" />
   </ItemGroup>
 </Project>

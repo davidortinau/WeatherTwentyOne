@@ -1,5 +1,8 @@
-﻿using Microsoft.Maui.Controls;
+﻿using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 using Microsoft.Maui.Essentials;
+using Microsoft.Maui.Graphics;
+using System;
 using System.Diagnostics;
 using WeatherTwentyOne.Services;
 
