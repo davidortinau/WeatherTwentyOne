@@ -35,7 +35,4 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
     <AndroidEnvironment Include="Android\AndroidEnvironment.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Android\AndroidEnvironment.txt" />
-  </ItemGroup>
 </Project>
