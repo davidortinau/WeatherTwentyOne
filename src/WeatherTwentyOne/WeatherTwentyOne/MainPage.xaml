@@ -8,10 +8,46 @@
              NavigationPage.HasNavigationBar="False"
              x:Class="WeatherTwentyOne.MainPage"
              >
+    <VisualStateManager.VisualStateGroups>
+                <VisualStateGroupList>
+                    <VisualStateGroup>
+                        <VisualState x:Name="Portrait">
+                            <VisualState.StateTriggers>
+                                <OrientationStateTrigger Orientation="Portrait" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter TargetName="WidgetPanel"
+                                        Property="ScrollView.IsVisible"
+                                        Value="False" />
+                                <Setter
+                                    TargetName="Container"
+                                    Property="Grid.ColumnDefinitions"
+                                        Value="{OnIdiom Phone=*, Tablet='68,*,0', Default='68,*,480'}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Landscape">
+                            <VisualState.StateTriggers>
+                                <OrientationStateTrigger Orientation="Landscape" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter TargetName="WidgetPanel"
+                                        Property="ScrollView.IsVisible"
+                                        Value="True" />
+                                <Setter
+                                    TargetName="Container"
+                                    Property="Grid.ColumnDefinitions"
+                                        Value="{OnIdiom Phone=*, Tablet='68,*,260', Default='68,*,480'}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </VisualStateManager.VisualStateGroups>
 
-    <Grid ColumnDefinitions="{OnIdiom Phone=*, Default='68,*,480'}"
+    <Grid x:Name="Container"
+        ColumnDefinitions="{OnIdiom Phone=*, Tablet='68,*,260', Default='68,*,480'}"
           RowDefinitions="{OnIdiom Phone='80,*,68', Default='80,*'}"
           >
+        
         <Grid 
             Grid.Column="{OnIdiom Phone=0,Default=1}"
             Grid.ColumnSpan="{OnIdiom Phone=1,Default=2}"
@@ -56,8 +92,10 @@
 
         <!-- widget panel -->
         <ScrollView
-            IsVisible="{OnIdiom Phone=False, Default=True}"
-            Grid.Row="{OnIdiom Desktop=1}" Grid.Column="{OnIdiom Desktop=2}">
+            x:Name="WidgetPanel"
+            Grid.Row="{OnIdiom Desktop=1, Default=1}"
+            Grid.Column="{OnIdiom Desktop=2, Default=2}">
+            
             <Grid>
                 <FlexLayout Wrap="Wrap" Direction="Row" Margin="25"
                             JustifyContent="SpaceBetween"
