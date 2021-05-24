@@ -18,7 +18,7 @@ namespace WeatherTwentyOne.ViewModels
         private WeatherService weatherService;
         public List<FullDayForecast> Week {  get;set;}
 
-        public ObservableCollection<WeatherSnapshot> Hours { get;set;}
+        public List<WeatherSnapshot> Hours { get;set;}
 
         public WeatherSnapshot CurrentWeather {get;set;}
 
@@ -35,16 +35,19 @@ namespace WeatherTwentyOne.ViewModels
         private async void InitData()
         {
             var config = (IConfiguration)App.Services.GetService(typeof(IConfiguration));
-            var defaultLocation = config["DefaultLocation"];
+            var defaultLocation = "NYC";
             var locations = weatherService.GetLocations(defaultLocation).Result;
-            var response = await weatherService.GetWeather(
+            WeatherResponse response = await weatherService.GetWeather(
                     locations.First().Coordinate
             );
+            Console.WriteLine(response);
+            Week = new List<FullDayForecast>(response.DailyForecasts);
+            Hours = new List<WeatherSnapshot>(response.HourlyForecasts);
 
             CurrentWeather = response.CurrentWeather;
-            Hours = new ObservableCollection<WeatherSnapshot>(response.HourlyForecasts);
 
             OnPropertyChanged(nameof(CurrentWeather));
+            OnPropertyChanged(nameof(Week));
             OnPropertyChanged(nameof(Hours));
            
         }
