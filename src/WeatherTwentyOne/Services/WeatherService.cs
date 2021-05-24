@@ -44,8 +44,11 @@ namespace WeatherClient2021
         public Task<IEnumerable<Location>> GetLocations(string query)
             => Task.FromResult(locations.Where(l => l.Name.Contains(query)));
 
+        //public Task<WeatherResponse> GetWeather(Coordinate location)
+        //    =>GetAsync<WeatherResponse>($"/{location}");
+
         public Task<WeatherResponse> GetWeather(Coordinate location)
-            =>GetAsync<WeatherResponse>($"/{location}");
+            => httpClient.GetFromJsonAsync<WeatherResponse>($"/weather/{location}");
 
         async Task<T> GetAsync<T>(string url, int days = 7, bool forceRefresh = false)
         {

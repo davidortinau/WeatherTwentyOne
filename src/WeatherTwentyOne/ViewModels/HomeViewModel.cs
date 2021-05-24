@@ -41,14 +41,16 @@ namespace WeatherTwentyOne.ViewModels
                     locations.First().Coordinate
             );
             Console.WriteLine(response);
-            Week = new List<FullDayForecast>(response.DailyForecasts);
-            Hours = new List<WeatherSnapshot>(response.HourlyForecasts);
+            if(response != null) { 
+                Week = new List<FullDayForecast>(response.DailyForecasts);
+                Hours = new List<WeatherSnapshot>(response.HourlyForecasts);
 
-            CurrentWeather = response.CurrentWeather;
+                CurrentWeather = response.CurrentWeather;
 
-            OnPropertyChanged(nameof(CurrentWeather));
-            OnPropertyChanged(nameof(Week));
-            OnPropertyChanged(nameof(Hours));
+                OnPropertyChanged(nameof(CurrentWeather));
+                OnPropertyChanged(nameof(Week));
+                OnPropertyChanged(nameof(Hours));
+            }
            
         }
         

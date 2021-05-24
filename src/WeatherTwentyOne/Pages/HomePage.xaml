@@ -33,7 +33,6 @@
                             x:Name="WindWidget" />
                     </StackLayout>
                     <v:CurrentWidget 
-                        BindingContext="{Binding CurrentWeather}"
                         IsVisible="{OnIdiom Phone=True, Default=False}"/>
                     <BoxView HeightRequest="{OnIdiom Phone=15,Default=50}" />
                     <v:Next24HrWidget />
