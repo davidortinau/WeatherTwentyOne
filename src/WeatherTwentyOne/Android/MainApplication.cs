@@ -11,6 +11,13 @@ namespace WeatherTwentyOne
 		public MainApplication(IntPtr handle, JniHandleOwnership ownership)
 			: base(handle, ownership)
 		{
+			
+		}
+
+		public override void OnCreate()
+		{
+			Java.Lang.JavaSystem.LoadLibrary("System.Security.Cryptography.Native.OpenSsl");
+			base.OnCreate();
 		}
 	}
 }

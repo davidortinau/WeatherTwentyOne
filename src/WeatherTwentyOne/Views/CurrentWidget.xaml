@@ -8,7 +8,7 @@
         Aspect="AspectFit"
         Source="weather_partly_cloudy_day.png" />
     <Label
-        Text="52℉"
+        Text="{Binding Temperature}"
         HorizontalOptions="Center"
         class="Title1" />
     <Grid>
@@ -26,7 +26,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="1"
-                    Text="Clear"
+                    Text="{Binding Phrase}"
                     HorizontalOptions="Center"
                     FontSize="17"/>
             </Grid>

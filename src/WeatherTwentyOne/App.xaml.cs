@@ -13,6 +13,7 @@ namespace WeatherTwentyOne
 
 		public App(IServiceProvider services)
 		{
+			// AppContext.SetSwitch("System.Net.Http.UseNativeHttpHandler", true); // ios sim only
             Services = services;
             Barrel.ApplicationId = "WeatherTwentryOne";
             InitializeComponent();

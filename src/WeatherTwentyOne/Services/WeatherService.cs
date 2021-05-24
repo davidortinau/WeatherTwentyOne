@@ -9,6 +9,7 @@ using WeatherTwentyOne.Models;
 using MonkeyCache.FileStore;
 using Newtonsoft.Json;
 using Microsoft.Maui.Controls;
+using System.Diagnostics;
 
 namespace WeatherClient2021
 {
@@ -61,6 +62,7 @@ namespace WeatherClient2021
                 //skip web request because we are using cached data
                 if (string.IsNullOrWhiteSpace(json))
                 {
+                    Debug.WriteLine($"{httpClient.BaseAddress}{url}");
                     json = await httpClient.GetStringAsync(url);
                     Barrel.Current.Add(url, json, TimeSpan.FromDays(days));
                 }

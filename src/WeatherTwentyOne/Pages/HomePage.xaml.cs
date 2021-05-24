@@ -2,6 +2,7 @@
 using Microsoft.Maui.Essentials;
 using System.Diagnostics;
 using WeatherTwentyOne.Services;
+using WeatherTwentyOne.ViewModels;
 
 namespace WeatherTwentyOne.Pages
 {
@@ -12,6 +13,8 @@ namespace WeatherTwentyOne.Pages
         public HomePage()
         {
             InitializeComponent();
+
+            BindingContext = new HomeViewModel();
 
             NavBar.ActiveTab = "Home";
 

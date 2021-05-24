@@ -32,12 +32,11 @@ namespace WeatherTwentyOne.ViewModels
         {
             weatherService = new WeatherService(new System.Net.Http.HttpClient 
             {
-                BaseAddress = new Uri("http://minimalweather20210428173256.azurewebsites.net/weather")
+                BaseAddress = new Uri("https://minimalweather20210428173256.azurewebsites.net/weather")
             });
             var locations = await weatherService.GetLocations(string.Empty);
             
             UpdateFavorites(locations);
-
             OnPropertyChanged(nameof(Favorites));
 
         }
