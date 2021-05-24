@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace WeatherClient2021
+namespace WeatherTwentyOne.Models
 {
     public class WeatherResponse
     {

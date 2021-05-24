@@ -2,6 +2,7 @@
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
+using MonkeyCache.FileStore;
 using WeatherTwentyOne.Pages;
 
 namespace WeatherTwentyOne
@@ -13,8 +14,8 @@ namespace WeatherTwentyOne
 		public App(IServiceProvider services)
 		{
             Services = services;
-
-			InitializeComponent();
+            Barrel.ApplicationId = "WeatherTwentryOne";
+            InitializeComponent();
 		}
 
 		protected override IWindow CreateWindow(IActivationState activationState)

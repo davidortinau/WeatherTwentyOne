@@ -21,6 +21,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="6.0.100-preview.4.482" />
 		<PackageReference Include="Microsoft.Maui.Resizetizer" Version="6.0.100-preview.4.482" />
 		<PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.0.1" />
+		<PackageReference Include="MonkeyCache.FileStore" Version="1.5.2" />
 		<PackageReference Include="PInvoke.User32" Version="0.7.104" />
 	</ItemGroup>
 

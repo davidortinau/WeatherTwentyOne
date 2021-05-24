@@ -16,6 +16,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.4.482" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="6.0.100-preview.4.482" />
+    <PackageReference Include="MonkeyCache.FileStore" Version="1.5.2" />
   </ItemGroup>
   <ItemGroup>
     <MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" />
@@ -25,6 +26,9 @@
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">
     <BundleResource Include="MacCatalyst\trayicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\AzureModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\Images\search_icon.svg" />

@@ -5,6 +5,10 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http.Json;
+using WeatherTwentyOne.Models;
+using MonkeyCache.FileStore;
+using Newtonsoft.Json;
+using Microsoft.Maui.Controls;
 
 namespace WeatherClient2021
 {
@@ -40,6 +44,35 @@ namespace WeatherClient2021
             => Task.FromResult(locations.Where(l => l.Name.Contains(query)));
 
         public Task<WeatherResponse> GetWeather(Coordinate location)
-            => httpClient.GetFromJsonAsync<WeatherResponse>($"/weather/{location}");
+            =>GetAsync<WeatherResponse>($"/{location}");
+
+        async Task<T> GetAsync<T>(string url, int days = 7, bool forceRefresh = false)
+        {
+            var json = string.Empty;
+
+            //check if we are connected, else check to see if we have valid data
+            if (Microsoft.Maui.Essentials.Connectivity.NetworkAccess != Microsoft.Maui.Essentials.NetworkAccess.Internet)
+                json = Barrel.Current.Get<string>(url);
+            else if (!forceRefresh && !Barrel.Current.IsExpired(url))
+                json = Barrel.Current.Get<string>(url);
+
+            try
+            {
+                //skip web request because we are using cached data
+                if (string.IsNullOrWhiteSpace(json))
+                {
+                    json = await httpClient.GetStringAsync(url);
+                    Barrel.Current.Add(url, json, TimeSpan.FromDays(days));
+                }
+                return await Task.Run(() => JsonConvert.DeserializeObject<T>(json));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unable to get information from server {ex}");
+                //probably re-throw here :)
+            }
+
+            return default(T);
+        }
     }
 }

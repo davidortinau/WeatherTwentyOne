@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
 using WeatherClient2021;
+using WeatherTwentyOne.Models;
 
 namespace WeatherTwentyOne.ViewModels
 {
@@ -29,7 +30,10 @@ namespace WeatherTwentyOne.ViewModels
 
         async void Fetch()
         {
-            weatherService = new WeatherService(null);
+            weatherService = new WeatherService(new System.Net.Http.HttpClient 
+            {
+                BaseAddress = new Uri("http://minimalweather20210428173256.azurewebsites.net/weather")
+            });
             var locations = await weatherService.GetLocations(string.Empty);
             
             UpdateFavorites(locations);
