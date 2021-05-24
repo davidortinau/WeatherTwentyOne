@@ -8,7 +8,7 @@
         Aspect="AspectFit"
         Source="weather_partly_cloudy_day.png" />
     <Label
-        Text="{Binding Temperature}"
+        Text="{Binding CurrentWeather.Temperature}"
         HorizontalOptions="Center"
         class="Title1" />
     <Grid>
@@ -26,7 +26,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="1"
-                    Text="{Binding Phrase}"
+                    Text="{Binding CurrentWeather.Phrase}"
                     HorizontalOptions="Center"
                     FontSize="17"/>
             </Grid>
