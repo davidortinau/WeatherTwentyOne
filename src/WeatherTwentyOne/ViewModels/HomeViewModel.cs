@@ -19,19 +19,25 @@ namespace WeatherTwentyOne.ViewModels
 
         public HomeViewModel()
         {
-            //weatherService = new WeatherService(new HttpClient());
+            weatherService = new WeatherService(new System.Net.Http.HttpClient 
+            {
+                BaseAddress = new Uri("https://minimalweather20210428173256.azurewebsites.net/weather")
+            });
 
             InitData();
         }
 
-        private void InitData()
+        private async void InitData()
         {
             var config = (IConfiguration)App.Services.GetService(typeof(IConfiguration));
-            var defaultLocation = config["DefaultLocation"];
+            var defaultLocation = "NYC";
             var locations = weatherService.GetLocations(defaultLocation).Result;
-            weatherService.GetWeather(
+            WeatherResponse response = await weatherService.GetWeather(
                     locations.First().Coordinate
             );
+            Console.WriteLine(response);
+            Week = new List<FullDayForecast>(response.DailyForecasts);
+            Hours = new List<WeatherSnapshot>(response.HourlyForecasts);
 
            
         }

@@ -11,6 +11,7 @@ namespace WeatherTwentyOne
 	{
 		public void Configure(IAppHostBuilder appBuilder)
 		{
+			System.AppContext.SetSwitch("System.Net.Http.UseNativeHttpHandler", true);
 			appBuilder
                 .ConfigureAppConfiguration(config => {
                     config.AddInMemoryCollection(
