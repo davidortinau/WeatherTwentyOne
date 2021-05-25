@@ -1,4 +1,4 @@
-# Weather '21'
+# Weather '21
 
 This is a [.NET MAUI](https://github.com/dotnet/maui) app showcasing .NET 6 Preview 4 progress. For more information about what's included, read the [release blog post](https://devblogs.microsoft.com/dotnet/announcing-net-maui-preview-4).
 
@@ -23,6 +23,8 @@ Run:
 ```cli
 maui-check
 ```
+
+For additional NuGet config, follow the [Getting Started guide](https://github.com/dotnet/maui/wiki/Getting-Started).
 
 For running on Mac you'll currently use your favorite text editor and terminal to edit and run apps. We expect Visual Studio for Mac .NET 6 support to begin arriving mid-year.
 
