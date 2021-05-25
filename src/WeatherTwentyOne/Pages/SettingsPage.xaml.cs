@@ -1,5 +1,6 @@
 ﻿using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Xaml;
+using WeatherTwentyOne.ViewModels;
 
 namespace WeatherTwentyOne.Pages
 {
@@ -9,6 +10,8 @@ namespace WeatherTwentyOne.Pages
         public SettingsPage()
         {
             InitializeComponent();
+
+            BindingContext = new SettingsViewModel();
 
             NavBar.ActiveTab = "Settings";
         }
