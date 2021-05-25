@@ -7,6 +7,6 @@
     <ProjectCapability Include="MauiSingleProject" />
 
     <!-- NOTE: Enable Static launch profiles on VS -->
-    <!--ProjectCapability Include="XamarinStaticLaunchProfiles" /-->
+    <ProjectCapability Include="XamarinStaticLaunchProfiles" />
   </ItemGroup>
 </Project>
