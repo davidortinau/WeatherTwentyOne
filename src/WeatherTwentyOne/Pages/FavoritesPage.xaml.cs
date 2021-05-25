@@ -9,9 +9,9 @@ namespace WeatherTwentyOne.Pages
     {
         public FavoritesPage()
         {
-            BindingContext = new FavoritesViewModel();
+            InitializeComponent();     
 
-            InitializeComponent();            
+            BindingContext = new FavoritesViewModel();       
 
             NavBar.ActiveTab = "Favorites";
         }
