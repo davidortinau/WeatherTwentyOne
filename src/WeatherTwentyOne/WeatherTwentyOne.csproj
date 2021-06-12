@@ -10,7 +10,7 @@
     <AndroidVersionCode>1</AndroidVersionCode>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.5.751" />
+    <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.5.764" />
   </ItemGroup>
   <ItemGroup>
     <MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" Color="#081B25" />

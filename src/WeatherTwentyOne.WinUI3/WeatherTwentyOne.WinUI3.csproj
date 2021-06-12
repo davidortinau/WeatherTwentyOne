@@ -23,7 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.5.751" />
+		<PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.5.764" />
 		<PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.0.1" />
 		<PackageReference Include="PInvoke.User32" Version="0.7.104" />
 	</ItemGroup>
