@@ -15,6 +15,7 @@
 		<MauiSplashScreen Include="..\WeatherTwentyOne\Resources\appiconfg.svg" Link="Resources\appiconfg.svg" Color="#512BD4" />
 		<MauiImage Include="..\WeatherTwentyOne\Resources\Images\*" Link="Resources\Images\%(Filename)%(Extension)" />
 		<MauiFont Include="..\WeatherTwentyOne\Resources\Fonts\*" Link="Resources\Fonts\%(Filename)%(Extension)" />
+		<Content Include="Resources\trayicon.ico" CopyToOutputDirectory="PreserveNewest" />
 	</ItemGroup>
 
 	<ItemGroup>
