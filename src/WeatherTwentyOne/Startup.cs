@@ -1,6 +1,8 @@
 ﻿using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Hosting;
 using WeatherTwentyOne.Services;
 
 namespace WeatherTwentyOne
@@ -10,7 +12,7 @@ namespace WeatherTwentyOne
 		public void Configure(IAppHostBuilder appBuilder)
 		{
 			appBuilder
-				.UseCompatibility()
+				.UseFormsCompatibility()
 				.UseMauiApp<App>()
 				.ConfigureServices(services =>
 				{
@@ -22,7 +24,7 @@ namespace WeatherTwentyOne
 					services.AddSingleton<INotificationService, MacCatalyst.NotificationService>();
 #endif
 				})
-				.ConfigureFonts((fonts)=>
+				.ConfigureFonts(fonts =>
 				{
 					fonts.AddFont("fa-solid-900.ttf", "FontAwesome");
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

@@ -39,9 +39,10 @@ namespace WeatherTwentyOne.Pages
             try
             {
 #if WINDOWS
-                AppActions.IconDirectory = "Images";
+                AppActions.IconDirectory = Application.Current.On<Microsoft.Maui.Controls.PlatformConfiguration.Windows>()
+                    .GetImageDirectory();
 #endif
-                AppActions.SetAsync(   
+                AppActions.SetAsync(
                     new AppAction("current_info", "Check Current Weather", icon: "current_info"),
                     new AppAction("add_location", "Add a Location", icon: "add_location")
                 );

@@ -3,36 +3,28 @@
     <TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
     <OutputType>Exe</OutputType>
     <SingleProject>true</SingleProject>
+    <RootNamespace>WeatherTwentyOne</RootNamespace>
     <ApplicationTitle>WeatherTwentyOne</ApplicationTitle>
     <ApplicationId>com.companyname.WeatherTwentyOne</ApplicationId>
     <ApplicationVersion>1.0</ApplicationVersion>
     <AndroidVersionCode>1</AndroidVersionCode>
-    <RuntimeIdentifier Condition="'$(TargetFramework)' == 'net6.0-ios'">iossimulator-x64</RuntimeIdentifier>
-    <RuntimeIdentifier Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">maccatalyst-x64</RuntimeIdentifier>
-    <InvariantGlobalization Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">true</InvariantGlobalization>
-    <!-- Set to True to C# hot reload on Android -->
-    <UseInterpreter Condition="'$(TargetFramework)' == 'net6.0-android'">True</UseInterpreter>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.4.631" />
-    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="6.0.100-preview.4.631" />
+    <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.5.751" />
   </ItemGroup>
   <ItemGroup>
-    <MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" />
+    <MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" Color="#081B25" />
     <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#081B25" />
     <MauiImage Include="Resources\Images\*" />
     <MauiFont Include="Resources\Fonts\*" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">
-    <BundleResource Include="MacCatalyst\trayicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Android\AndroidEnvironment.txt" />
-    <None Remove="Resources\Images\search_icon.svg" />
-    <None Remove="Resources\Images\weather_cloudy.svg" />
-    <None Remove="Resources\Images\weather_partly_cloudy_day.svg" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
+  <PropertyGroup>
+    <RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="$(TargetFramework.Contains('-maccatalyst'))">maccatalyst-x64</RuntimeIdentifier>
+    <InvariantGlobalization Condition="$(TargetFramework.Contains('-maccatalyst'))">true</InvariantGlobalization>
+    <UseInterpreter Condition="$(TargetFramework.Contains('-android'))">True</UseInterpreter>
+  </PropertyGroup>
+  <ItemGroup Condition="$(TargetFramework.Contains('-android'))">
     <AndroidEnvironment Include="Android\AndroidEnvironment.txt" />
   </ItemGroup>
 </Project>

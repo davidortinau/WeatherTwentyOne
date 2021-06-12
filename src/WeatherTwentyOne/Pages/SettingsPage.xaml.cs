@@ -4,7 +4,6 @@ using WeatherTwentyOne.ViewModels;
 
 namespace WeatherTwentyOne.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage : ContentPage
     {
         public SettingsPage()
