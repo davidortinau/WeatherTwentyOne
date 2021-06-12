@@ -1,5 +1,5 @@
 ﻿<local:MiddleApp
-    x:Class="WeatherTwentyOne.WinUI.WindowsApp"
+    x:Class="WeatherTwentyOne.WinUI.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WeatherTwentyOne.WinUI">
