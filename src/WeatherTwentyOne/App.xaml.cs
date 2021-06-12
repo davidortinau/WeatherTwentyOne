@@ -3,26 +3,26 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
 using WeatherTwentyOne.Pages;
 using Application = Microsoft.Maui.Controls.Application;
+using WindowsConfiguration = Microsoft.Maui.Controls.PlatformConfiguration.Windows;
 
 namespace WeatherTwentyOne
 {
-	public partial class App : Application
-	{
-		public App()
-		{
-			InitializeComponent();
-		}
+    public partial class App : Application
+    {
+        public App()
+        {
+            InitializeComponent();
+        }
 
-		protected override IWindow CreateWindow(IActivationState activationState)
-		{
-			this.On<Microsoft.Maui.Controls.PlatformConfiguration.Windows>()
-				.SetImageDirectory("Assets");
+        protected override IWindow CreateWindow(IActivationState activationState)
+        {
+            On<WindowsConfiguration>().SetImageDirectory("Assets");
 
-			return new Microsoft.Maui.Controls.Window(
-				new NavigationPage(
-					new HomePage()
-				)
-			);
-		}
-	}
+            return new Window(
+                new NavigationPage(
+                    new HomePage()
+                )
+            );
+        }
+    }
 }
