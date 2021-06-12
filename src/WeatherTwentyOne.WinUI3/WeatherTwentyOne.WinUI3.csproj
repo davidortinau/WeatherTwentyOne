@@ -11,8 +11,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<MauiImage Include="..\WeatherTwentyOne\Resources\appicon.svg" Link="Resources\appicon.svg" ForegroundFile="..\WeatherTwentyOne\Resources\appiconfg.svg" IsAppIcon="true" Color="#512BD4" />
-		<MauiSplashScreen Include="..\WeatherTwentyOne\Resources\appiconfg.svg" Link="Resources\appiconfg.svg" Color="#512BD4" />
+		<MauiImage Include="..\WeatherTwentyOne\Resources\appicon.svg" Link="Resources\appicon.svg" ForegroundFile="..\WeatherTwentyOne\Resources\appiconfg.svg" IsAppIcon="true" Color="#081B25" />
+		<MauiSplashScreen Include="..\WeatherTwentyOne\Resources\appiconfg.svg" Link="Resources\appiconfg.svg" Color="#081B25" />
 		<MauiImage Include="..\WeatherTwentyOne\Resources\Images\*" Link="Resources\Images\%(Filename)%(Extension)" />
 		<MauiFont Include="..\WeatherTwentyOne\Resources\Fonts\*" Link="Resources\Fonts\%(Filename)%(Extension)" />
 		<Content Include="Resources\trayicon.ico" CopyToOutputDirectory="PreserveNewest" />
