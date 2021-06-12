@@ -1,7 +1,6 @@
 ﻿using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Hosting;
 using WeatherTwentyOne.Services;
 
@@ -12,7 +11,6 @@ namespace WeatherTwentyOne
 		public void Configure(IAppHostBuilder appBuilder)
 		{
 			appBuilder
-				.UseFormsCompatibility()
 				.UseMauiApp<App>()
 				.ConfigureServices(services =>
 				{
