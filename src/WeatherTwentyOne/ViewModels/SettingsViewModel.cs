@@ -24,43 +24,13 @@ namespace WeatherTwentyOne.ViewModels
             }
         }
 
-        public string Temperature
-        {
-            get
-            {
-                if(IsImperial)
-                {
-                    return "70˚F";
-                }
-                else
-                {
-                    return "21˚C";
-                }
-            }
-        }
+        public string Temperature => IsImperial ? "70˚F" : "21˚C";
 
+        public bool IsImperial => units == "imperial";
 
-        public bool IsImperial
-        {
-            get {
-                return units == "imperial";
-            }
-        }
-        public bool IsMetric
-        {
-            get
-            {
-                return units == "metric";
-            }
-        }
+        public bool IsMetric => units == "metric";
 
-        public bool IsHybrid
-        {
-            get
-            {
-                return units == "hybrid";
-            }
-        }
+        public bool IsHybrid => units == "hybrid";
 
         public Command SelectUnits { get; set; }
 
@@ -76,11 +46,7 @@ namespace WeatherTwentyOne.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new PropertyChangedEventArgs(propertyName));
-        }
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

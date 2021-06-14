@@ -1,9 +1,12 @@
 ﻿using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
 using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
 using WeatherTwentyOne.Pages;
 using Application = Microsoft.Maui.Controls.Application;
 using WindowsConfiguration = Microsoft.Maui.Controls.PlatformConfiguration.Windows;
+
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
 namespace WeatherTwentyOne
 {
