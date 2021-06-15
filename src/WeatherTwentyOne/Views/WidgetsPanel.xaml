@@ -6,15 +6,16 @@
         <Grid.Resources>
             <ResourceDictionary>
                 <DataTemplate x:Key="MetricDataTemplate">
-                    <Frame Margin="25"
+                    <Frame
+                        Margin="25"
                         HorizontalOptions="Start"
-                        HeightRequest="124"
-                        WidthRequest="124"
+                        HeightRequest="154"
+                        WidthRequest="154"
+                        Padding="0"
                         CornerRadius="20"
                         HasShadow="False"
-                        BackgroundColor="{StaticResource Background_Mid}"
-                        >
-                        <Grid>
+                        BackgroundColor="{StaticResource Background_Mid}">
+                        <Grid Padding="20">
                             <Image Source="{Binding Icon}"
                                 WidthRequest="45"
                                 HeightRequest="45"

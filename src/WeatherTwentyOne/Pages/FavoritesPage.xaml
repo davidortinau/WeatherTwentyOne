@@ -22,15 +22,18 @@
                 <DataTemplate x:Key="FavouriteTemplate">
                     <Frame
                         Margin="{OnIdiom Phone=15,Default=25}"
+                        Padding="0"
                         HorizontalOptions="Center"
-                        HeightRequest="124"
-                        WidthRequest="124"
+                        HeightRequest="154"
+                        WidthRequest="154"
                         CornerRadius="20"
                         HasShadow="False"
                         AttachedHandler="OnAttached"
                         Opacity="0"
                         BackgroundColor="{StaticResource Background_Mid}">
-                        <Grid RowDefinitions="42,40,*">
+                        <Grid
+                            RowDefinitions="42,40,*"
+                            Padding="20">
                             <Image
                                 Source="{Binding Icon}"
                                 WidthRequest="36"
@@ -78,10 +81,9 @@
                 <!-- Search Box -->
                 <StackLayout
                     Orientation="Horizontal"
-                    HeightRequest="40"
                     VerticalOptions="Start"
                     Spacing="18"
-                    Margin="{OnIdiom Phone='15,15,15,0', Default='25,25,25,0'}"
+                    Padding="{OnIdiom Phone='15,15,15,0', Default='25,25,25,0'}"
                     >
                     <Image
                         Source="search_icon.png"
