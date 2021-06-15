@@ -27,6 +27,8 @@
                         WidthRequest="124"
                         CornerRadius="20"
                         HasShadow="False"
+                        AttachedHandler="OnAttached"
+                        Opacity="0"
                         BackgroundColor="{StaticResource Background_Mid}">
                         <Grid RowDefinitions="42,40,*">
                             <Image
