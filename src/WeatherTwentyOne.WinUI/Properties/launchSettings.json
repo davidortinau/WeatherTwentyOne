@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "WeatherTwentyOne.WinUI": {
+      "commandName": "AppContainer"
+    }
+  }
+}

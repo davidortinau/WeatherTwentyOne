@@ -1,10 +1,11 @@
-﻿using Microsoft.Maui;
+﻿using System.Diagnostics;
+using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
 using Microsoft.Maui.Essentials;
-using Microsoft.Maui.Graphics;
-using System;
-using System.Diagnostics;
 using WeatherTwentyOne.Services;
+using Application = Microsoft.Maui.Controls.Application;
+using WindowsConfiguration = Microsoft.Maui.Controls.PlatformConfiguration.Windows;
 
 namespace WeatherTwentyOne.Pages
 {
@@ -27,10 +28,8 @@ namespace WeatherTwentyOne.Pages
             }
 
 #if WINDOWS
-            Microsoft.Maui.MauiWinUIApplication.Current.MainWindow.Title = "Weather TwentyOne";
-            WinUI.MauiWinUIWindowExtensions.SetIcon(
-                Microsoft.Maui.MauiWinUIApplication.Current.MainWindow,
-                "Resources/trayicon.ico");
+            MauiWinUIApplication.Current.MainWindow.Title = "Weather TwentyOne";
+            MauiWinUIApplication.Current.MainWindow.SetIcon("Resources/trayicon.ico");
 #endif
         }
 
@@ -39,9 +38,9 @@ namespace WeatherTwentyOne.Pages
             try
             {
 #if WINDOWS
-                AppActions.IconDirectory = "Images";
+                AppActions.IconDirectory = Application.Current.On<WindowsConfiguration>().GetImageDirectory();
 #endif
-                AppActions.SetAsync(   
+                AppActions.SetAsync(
                     new AppAction("current_info", "Check Current Weather", icon: "current_info"),
                     new AppAction("add_location", "Add a Location", icon: "add_location")
                 );
@@ -59,7 +58,7 @@ namespace WeatherTwentyOne.Pages
             if (trayService != null)
             {
                 trayService.Initialize();
-                trayService.ClickHandler = () => 
+                trayService.ClickHandler = () =>
                     ServiceProvider.GetService<INotificationService>()
                         ?.ShowNotification("Hello Build! 😻 From .NET MAUI", "How's your weather?  It's sunny where we are 🌞");
             }

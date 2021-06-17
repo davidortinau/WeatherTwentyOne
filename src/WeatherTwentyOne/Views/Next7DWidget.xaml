@@ -8,13 +8,17 @@
         <c:MaxTempOffsetConverter x:Key="MaxTempOffsetConverter"/>
         <c:MinTempOffsetConverter x:Key="MinTempOffsetConverter"/>
     </StackLayout.Resources>
+
     <Label
         Text="Daily Forecasts"
+        Margin="{OnIdiom Phone='15,0',Default='25,0'}"
         class="SectionTitle"/>
+
     <ScrollView Orientation="Horizontal">
         <StackLayout
             Orientation="Horizontal"
             Spacing="12"
+            Padding="{OnIdiom Phone='15,0',Default='25,0'}"
             BindableLayout.ItemsSource="{Binding Week}">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
@@ -24,7 +28,9 @@
                         <Label Text="{Binding Temperature.Maximum.Value, StringFormat='{0:F0}°'}" class="Subhead"
                                HeightRequest="34" HorizontalOptions="Center"/>
                         <Image Source="{Binding Day.Phrase, StringFormat='{0:F2}.png'}"
-                               HeightRequest="34" HorizontalOptions="Center"/>
+                               WidthRequest="34"
+                               HeightRequest="34"
+                               HorizontalOptions="Center"/>
                         <BoxView
                             WidthRequest="1"
                             HeightRequest="1"
@@ -55,20 +61,22 @@
                             />
                         <BoxView class="HRule"/>
                         <StackLayout
-                            IsVisible="{OnPlatform Android=False, Default=True}"
                             Orientation="Horizontal"
                             HeightRequest="40"
                             HorizontalOptions="Center">
                             <Image
-                                Source="sm_solid_umbrella.png" HeightRequest="20"
+                                Source="sm_solid_umbrella.png"
+                                WidthRequest="16"
+                                HeightRequest="16"
                                 VerticalOptions="Center"/>
                             <Label
                                 Text="13%" class="SubContent" VerticalOptions="Center"/>
                         </StackLayout>
-                        
+
                     </StackLayout>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
         </StackLayout>
     </ScrollView>
+
 </StackLayout>

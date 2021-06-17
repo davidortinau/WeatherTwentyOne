@@ -7,53 +7,53 @@
     ios:Page.UseSafeArea="True"
     Title="Redmond, WA"
     x:Class="WeatherTwentyOne.Pages.HomePage">
+
     <Grid
-        RowDefinitions="{OnPlatform iOS='68,*', Default='*'}">
-        <Grid
-            Grid.Row="{OnPlatform iOS=1, Default=0}"
-            ColumnDefinitions="{OnIdiom Phone='15,*,15', Default='68,15,*,15,480'}"
-            RowDefinitions="{OnIdiom Phone='15,*,68', Default='15,*'}">
+        Margin="{OnPlatform iOS='0,70,0,0', Default='0'}"
+        ColumnDefinitions="{OnIdiom Phone='*', Default='68,*,480'}"
+        RowDefinitions="{OnIdiom Phone='*,68', Default='*'}"
+        >
 
-            <!-- Main content -->
-            <ScrollView
-                Grid.Column="{OnIdiom Phone=1,Default=2}"
-                Grid.Row="1">
-                <StackLayout
-                    Spacing="25">
-                    <BoxView HeightRequest="{OnIdiom Phone=15,Default=50}" />
-                    <!-- Top widgets -->
-                    <StackLayout
-                        IsVisible="{OnIdiom Phone=False, Default=True}"
-                        Orientation="Horizontal"
-                        HorizontalOptions="Center"
-                        Spacing="50">
-                        <v:CurrentWidget/>
-                        <BoxView WidthRequest="50"/>
-                        <v:WindLiveWidget
-                            x:Name="WindWidget" />
-                    </StackLayout>
-                    <v:CurrentWidget IsVisible="{OnIdiom Phone=True, Default=False}"/>
-                    <BoxView HeightRequest="{OnIdiom Phone=15,Default=50}" />
-                    <v:Next24HrWidget />
-                    <v:Next7DWidget />
-                    <BoxView HeightRequest="{OnIdiom Phone=15,Default=50}" />
-                </StackLayout>
-            </ScrollView>
+        <!-- Main content -->
+        <ScrollView
+            Grid.Column="{OnIdiom Phone=0,Default=1}">
+            <StackLayout
+                Padding="{OnIdiom Phone='0,50',Default='0,50'}"
+                Spacing="{OnIdiom Phone=25,Default=50}">
 
-            <!-- Desktop Menu -->
-            <v:NavBarView
-                x:Name="NavBar"
-                Grid.Column="0"
-                Grid.ColumnSpan="{OnIdiom Phone=3,Default=1}"
-                Grid.Row="{OnIdiom Phone=2, Default=0}"
-                Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
+                <!-- Top widgets -->
+                <FlexLayout
+                    IsVisible="{OnIdiom Phone=False, Default=True}"
+                    AlignItems="Center"
+                    AlignContent="Center"
+                    JustifyContent="SpaceEvenly">
+                    <v:CurrentWidget
+                        WidthRequest="200" />
+                    <v:WindLiveWidget
+                        x:Name="WindWidget"
+                        WidthRequest="200" />
+                </FlexLayout>
+                <v:CurrentWidget
+                    IsVisible="{OnIdiom Phone=True, Default=False}"/>
 
-            <!-- Widget panel -->
-            <v:WidgetsPanel
-                IsVisible="{OnIdiom Phone=False, Default=True}"
-                Grid.Row="1"
-                Grid.Column="{OnIdiom Phone=0, Default=4}" />
+                <BoxView HeightRequest="1" />
 
-        </Grid>
+                <v:Next24HrWidget />
+                <v:Next7DWidget />
+
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Menu -->
+        <v:NavBarView
+            x:Name="NavBar"
+            Grid.Row="{OnIdiom Phone=1, Default=0}"/>
+
+        <!-- Widget panel -->
+        <v:WidgetsPanel
+            IsVisible="{OnIdiom Phone=False, Default=True}"
+            Grid.Column="{OnIdiom Phone=0, Default=2}" />
+
     </Grid>
+
 </ContentPage>

@@ -4,8 +4,8 @@ using Microsoft.Maui;
 namespace WeatherTwentyOne
 {
 	[IntentFilter(
-        new[] { Microsoft.Maui.Essentials.Platform.Intent.ActionAppAction },
-        Categories = new[] { Android.Content.Intent.CategoryDefault })]
+		new[] { Microsoft.Maui.Essentials.Platform.Intent.ActionAppAction },
+		Categories = new[] { Android.Content.Intent.CategoryDefault })]
 	[Activity(Theme = "@style/Maui.SplashTheme", MainLauncher = true)]
 	public class MainActivity : MauiAppCompatActivity
 	{

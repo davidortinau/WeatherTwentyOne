@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFrameworks>net6.0-windows10.0.19041</TargetFrameworks>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<SingleProject>true</SingleProject>
+		<RootNamespace>WeatherTwentyOne.WinUI</RootNamespace>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<WindowsPackageType>MSIX</WindowsPackageType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<MauiImage Include="..\WeatherTwentyOne\Resources\appicon.svg" Link="Resources\appicon.svg" ForegroundFile="..\WeatherTwentyOne\Resources\appiconfg.svg" IsAppIcon="true" Color="#081B25" />
+		<MauiSplashScreen Include="..\WeatherTwentyOne\Resources\appiconfg.svg" Link="Resources\appiconfg.svg" Color="#081B25" />
+		<MauiImage Include="..\WeatherTwentyOne\Resources\Images\*" Link="Resources\Images\%(Filename)%(Extension)" />
+		<MauiFont Include="..\WeatherTwentyOne\Resources\Fonts\*" Link="Resources\Fonts\%(Filename)%(Extension)" />
+		<Content Include="Resources\trayicon.ico" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\WeatherTwentyOne\**\*.cs" Exclude="..\WeatherTwentyOne\bin\**;..\WeatherTwentyOne\obj\**;..\WeatherTwentyOne\Android\**;..\WeatherTwentyOne\iOS\**;..\WeatherTwentyOne\MacCatalyst\**" Link="%(RecursiveDir)%(Filename)%(Extension)" />
+		<MauiXaml Include="..\WeatherTwentyOne\**\*.xaml" Exclude="..\WeatherTwentyOne\bin\**;..\WeatherTwentyOne\obj\**" Link="%(RecursiveDir)%(FileName)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.5.794" />
+		<PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.0.1" />
+		<PackageReference Include="PInvoke.User32" Version="0.7.104" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.ProjectReunion" Version="0.8.0-preview" />
+		<PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.0-preview" />
+		<PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.0-preview" />
+		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.19041.16" />
+		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.19041.16" />
+	</ItemGroup>
+
+</Project>

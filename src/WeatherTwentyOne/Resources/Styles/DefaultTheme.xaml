@@ -280,16 +280,17 @@
     
     <!-- data templates -->
     <DataTemplate x:Key="WeatherWidgetTemplate">
-        <Frame 
+        <Frame
             HorizontalOptions="Start"
-            HeightRequest="164" 
+            HeightRequest="164"
             WidthRequest="164"
+            Padding="0"
             CornerRadius="20"
             HasShadow="False"
-            BackgroundColor="{StaticResource Background_Mid}"
-                        >
-            <Grid HeightRequest="144" 
-                            WidthRequest="144">
+            BackgroundColor="{StaticResource Background_Mid}">
+            <Grid HeightRequest="144"
+                  WidthRequest="144"
+                  Padding="20">
                 <Image Source="{Binding .}"
                                    VerticalOptions="Start"
                                      HorizontalOptions="End"/>

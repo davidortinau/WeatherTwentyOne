@@ -6,10 +6,14 @@
         <Image
             VerticalOptions="Center"
             HorizontalOptions="Center"
+            WidthRequest="200"
+            HeightRequest="200"
             Source="compass_background.png" />
         <Image
             x:Name="Needle"
             Source="compass_needle.png"
+            WidthRequest="200"
+            HeightRequest="200"
             VerticalOptions="Center"
             HorizontalOptions="Center"
             Rotation="0" />

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WeatherTwentyOne.Services;
 
-namespace WeatherTwentyOne.WinUI.Windows
+namespace WeatherTwentyOne.WinUI
 {
 	public class TrayService : ITrayService
 	{

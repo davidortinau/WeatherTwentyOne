@@ -1,159 +1,132 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:v="clr-namespace:WeatherTwentyOne.Views" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:v="clr-namespace:WeatherTwentyOne.Views"
              xmlns:m="clr-namespace:WeatherTwentyOne.Models"
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              ios:Page.UseSafeArea="True"
              Title="Favorites"
-             x:Class="WeatherTwentyOne.Pages.FavoritesPage">
+             x:Class="WeatherTwentyOne.Pages.FavoritesPage"
+             >
+
     <Grid
-        RowDefinitions="{OnPlatform iOS='68,*', Default='*'}">
-        <Grid
-            Grid.Row="{OnPlatform iOS=1, Default=0}"
-            ColumnDefinitions="{OnIdiom Phone='15,*,15', Default='68,0,*'}"
-            RowDefinitions="{OnIdiom Phone='15,*,68', Default='15,*'}"
+        Margin="{OnPlatform iOS='0,70,0,0', Default='0'}"
+        ColumnDefinitions="{OnIdiom Phone='*', Default='68,*'}"
+        RowDefinitions="{OnIdiom Phone='*,68', Default='*'}"
+        >
+
+        <!-- Main Section -->
+        <ScrollView
+            Grid.Column="{OnIdiom Phone=0,Default=1}"
             >
-            
-            <!-- main content -->
-            <ScrollView Grid.Column="{OnIdiom Phone=1,Default=2}"
-                        Grid.Row="1">
-                <ScrollView.Resources>
-                    <DataTemplate x:Key="FavouriteTemplate">
-                        <Frame
-                            Margin="{OnIdiom Phone=15,Default=25}"
-                            HorizontalOptions="Center"
-                            HeightRequest="124" 
-                            WidthRequest="124"
-                            CornerRadius="20"
-                            HasShadow="False"
-                            BackgroundColor="{StaticResource Background_Mid}">
-                            <Grid RowDefinitions="42,40,*">
-                                <Image
-                                    Source="{Binding Icon}"
-                                    WidthRequest="36"
-                                    HeightRequest="36"
-                                    VerticalOptions="Start"
-                                    HorizontalOptions="End"/>
-                                <Label Text="{Binding Value}" class="LargeTitle"/>
+            <ScrollView.Resources>
+                <DataTemplate x:Key="FavouriteTemplate">
+                    <Frame
+                        Margin="{OnIdiom Phone=15,Default=25}"
+                        Padding="0"
+                        HorizontalOptions="Center"
+                        HeightRequest="154"
+                        WidthRequest="154"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        AttachedHandler="OnAttached"
+                        Opacity="0"
+                        BackgroundColor="{StaticResource Background_Mid}">
+                        <Grid
+                            RowDefinitions="42,40,*"
+                            Padding="20">
+                            <Image
+                                Source="{Binding Icon}"
+                                WidthRequest="36"
+                                HeightRequest="36"
+                                VerticalOptions="Start"
+                                HorizontalOptions="End"/>
+                            <Label Text="{Binding Value}" class="LargeTitle"/>
 
-                                <StackLayout
-                                    Spacing="0"
-                                    Grid.RowSpan="3"
-                                    VerticalOptions="Center">
-                                    <Label Text="{Binding Name}" class="Subhead" />
-                                    <Label Text="{Binding WeatherStation}" class="SubContent"/>
-                                </StackLayout>
+                            <StackLayout
+                                Spacing="0"
+                                Grid.RowSpan="3"
+                                VerticalOptions="Center">
+                                <Label Text="{Binding Name}" class="Subhead" />
+                                <Label Text="{Binding WeatherStation}" class="SubContent"/>
+                            </StackLayout>
 
-                                <StackLayout
-                                    Grid.Row="2"
-                                    Spacing="10"
-                                    Orientation="Horizontal"
-                                    VerticalOptions="End">
-                                    <Image Source="solid_umbrella.png" VerticalOptions="Center"/>
-                                    <Label Text="13%" class="Small" VerticalOptions="Center"/>
-                                </StackLayout>
+                            <StackLayout
+                                Grid.Row="2"
+                                Spacing="10"
+                                Orientation="Horizontal"
+                                VerticalOptions="End">
+                                <Image Source="solid_umbrella.png" VerticalOptions="Center"
+                                       WidthRequest="20" HeightRequest="20"/>
+                                <Label Text="13%" class="Small" VerticalOptions="Center"/>
+                            </StackLayout>
 
-                                <StackLayout
-                                    Grid.Row="2"
-                                    Spacing="10"
-                                    Orientation="Horizontal"
-                                    HorizontalOptions="End"
-                                    VerticalOptions="End">
-                                    <Image Source="solid_humidity.png" VerticalOptions="Center"/>
-                                    <Label Text="45%" class="Small" VerticalOptions="Center"/>
-                                </StackLayout>
-                            </Grid>
-                        </Frame>
-                    </DataTemplate>
-                    <DataTemplate x:Key="FavouriteTemplateAndroid">
-                        <Frame
-                            Margin="{OnIdiom Phone=15,Default=25}"
-                            HorizontalOptions="Center"
-                            HeightRequest="124"
-                            WidthRequest="124"
-                            CornerRadius="20"
-                            HasShadow="False"
-                            BackgroundColor="{StaticResource Background_Mid}">
-                            <Grid RowDefinitions="42,20,20,42" RowSpacing="0">
-                                <Image
-                                    Source="{Binding Icon}"
-                                    WidthRequest="36"
-                                    HeightRequest="36"
-                                    VerticalOptions="Start"
-                                    HorizontalOptions="End"/>
-                                <Label Text="{Binding Value}" class="LargeTitle"/>
+                            <StackLayout
+                                Grid.Row="2"
+                                Spacing="10"
+                                Orientation="Horizontal"
+                                HorizontalOptions="End"
+                                VerticalOptions="End">
+                                <Image Source="solid_humidity.png" VerticalOptions="Center"
+                                       WidthRequest="20" HeightRequest="20"/>
+                                <Label Text="45%" class="Small" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </ScrollView.Resources>
+            <StackLayout
+                Padding="15"
+                >
 
-                                <Label Text="{Binding Name}" class="Subhead"
-                                    Grid.Row="1" VerticalOptions="End" />
-                                <Label Text="{Binding WeatherStation}" class="SubContent"
-                                    Grid.Row="2" VerticalOptions="Start"/>
+                <!-- Search Box -->
+                <StackLayout
+                    Orientation="Horizontal"
+                    VerticalOptions="Start"
+                    Spacing="18"
+                    Padding="{OnIdiom Phone='15,15,15,0', Default='25,25,25,0'}"
+                    >
+                    <Image
+                        Source="search_icon.png"
+                        VerticalOptions="Center"
+                        HeightRequest="22"
+                        WidthRequest="22"/>
+                    <Label
+                        Text="Search"
+                        TextColor="#637989"
+                        FontSize="18"
+                        WidthRequest="240"
+                        VerticalOptions="Center"/>
+                </StackLayout>
 
-                                <HorizontalStackLayout
-                                    Grid.Row="3"
-                                    Spacing="10"
-                                    VerticalOptions="End">
-                                    <Image Source="solid_umbrella.png" VerticalOptions="Center"/>
-                                    <Label Text="13%" class="Small" VerticalOptions="Center"/>
-                                </HorizontalStackLayout>
-
-                                <HorizontalStackLayout
-                                    Grid.Row="3"
-                                    Spacing="10"
-                                    HorizontalOptions="End"
-                                    VerticalOptions="End">
-                                    <Image Source="solid_humidity.png" VerticalOptions="Center"/>
-                                    <Label Text="45%" class="Small" VerticalOptions="Center"/>
-                                </HorizontalStackLayout>
-                            </Grid>
-                        </Frame>
-                    </DataTemplate>
-                </ScrollView.Resources>
-
-                <FlexLayout Wrap="Wrap" Direction="Row"
-                        Padding="{OnIdiom Phone=0,Default=25}"
-                            JustifyContent="Start"
-                            AlignItems="Start"
-                            AlignContent="Start"
-                            BindableLayout.ItemTemplate="{OnPlatform Android={StaticResource FavouriteTemplateAndroid}, Default={StaticResource FavouriteTemplate}}"
-                            BindableLayout.ItemsSource="{Binding Favorites}"
-                            >
-                    <Grid HeightRequest="132" 
-                          WidthRequest="132" 
-                          FlexLayout.AlignSelf="Center"
-                          Margin="{OnIdiom Phone=15,Default=25}">
-                        <ImageButton 
+                <!-- Actual Content -->
+                <FlexLayout
+                    Wrap="Wrap" Direction="Row"
+                    JustifyContent="Start"
+                    AlignItems="Start"
+                    AlignContent="Start"
+                    BindableLayout.ItemTemplate="{StaticResource FavouriteTemplate}"
+                    BindableLayout.ItemsSource="{Binding Favorites}"
+                    >
+                    <Grid
+                        HeightRequest="132"
+                        WidthRequest="132"
+                        FlexLayout.AlignSelf="Center"
+                        Margin="{OnIdiom Phone=15,Default=25}">
+                        <ImageButton
                             BackgroundColor="Transparent"
-                            Source="add_icon.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            Source="add_icon.png"
+                            VerticalOptions="Center" HorizontalOptions="Center"/>
                     </Grid>
                 </FlexLayout>
 
-            </ScrollView>
-
-            <!-- Search Box -->
-            <StackLayout Orientation="Horizontal" 
-                         HeightRequest="40"
-                         VerticalOptions="Start"
-                         Margin="{OnPlatform Android='0,80', Default=0}"
-                         Spacing="18"
-                         Grid.Row="1" 
-                         Grid.Column="{OnIdiom Phone=1,Default=2}"
-                         Padding="{OnIdiom Phone='0',Default='50,0'}"
-                         BackgroundColor="{StaticResource Background_Dark}"
-                         >
-                <Image Source="search_icon.png" VerticalOptions="Center"/>
-                <Label Text="Search" 
-                       TextColor="#637989" 
-                       FontSize="18"
-                       WidthRequest="240"
-                       VerticalOptions="Center" />
             </StackLayout>
+        </ScrollView>
 
-            <!-- Menu -->
-            <v:NavBarView x:Name="NavBar"
-                Grid.Column="0"
-                Grid.ColumnSpan="{OnIdiom Phone=3,Default=1}"
-                Grid.Row="{OnIdiom Phone=2, Default=0}"
-                Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
-        </Grid>
+        <!-- Menu -->
+        <v:NavBarView
+            x:Name="NavBar"
+            Grid.Row="{OnIdiom Phone=1, Default=0}"/>
+
     </Grid>
+
 </ContentPage>
