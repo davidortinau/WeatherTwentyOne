@@ -21,7 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Include="..\WeatherTwentyOne\**\*.cs" Exclude="..\WeatherTwentyOne\bin\**;..\WeatherTwentyOne\obj\**;..\WeatherTwentyOne\Android\**;..\WeatherTwentyOne\iOS\**;..\WeatherTwentyOne\MacCatalyst\**" Link="%(RecursiveDir)%(Filename)%(Extension)" />
+		<Compile Include="..\WeatherTwentyOne\**\*.cs" Exclude="..\WeatherTwentyOne\bin\**;..\WeatherTwentyOne\obj\**;..\WeatherTwentyOne\Platforms\**" Link="%(RecursiveDir)%(Filename)%(Extension)" />
 		<MauiXaml Include="..\WeatherTwentyOne\**\*.xaml" Exclude="..\WeatherTwentyOne\bin\**;..\WeatherTwentyOne\obj\**" Link="%(RecursiveDir)%(FileName)%(Extension)" />
 	</ItemGroup>
 
