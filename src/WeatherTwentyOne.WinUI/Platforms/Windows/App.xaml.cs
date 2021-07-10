@@ -9,7 +9,7 @@ namespace WeatherTwentyOne.WinUI
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
-    public partial class App : MiddleApp
+    public partial class App : MauiWinUIApplication
     {
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -17,8 +17,10 @@ namespace WeatherTwentyOne.WinUI
         /// </summary>
         public App()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
+
+        protected override IStartup OnCreateStartup() => new Startup();
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
@@ -26,9 +28,5 @@ namespace WeatherTwentyOne.WinUI
 
             Microsoft.Maui.Essentials.Platform.OnLaunched(args);
         }
-    }
-
-    public class MiddleApp : MauiWinUIApplication<Startup>
-    {
     }
 }
