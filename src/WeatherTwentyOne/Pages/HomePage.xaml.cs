@@ -26,11 +26,6 @@ namespace WeatherTwentyOne.Pages
                 SetupAppActions();
                 SetupTrayIcon();
             }
-
-#if WINDOWS
-            MauiWinUIApplication.Current.MainWindow.Title = "Weather TwentyOne";
-            MauiWinUIApplication.Current.MainWindow.SetIcon("Resources/trayicon.ico");
-#endif
         }
 
         private void SetupAppActions()

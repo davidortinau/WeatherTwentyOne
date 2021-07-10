@@ -15,6 +15,6 @@ namespace WeatherTwentyOne
         }
 
         protected override Window CreateWindow(IActivationState activationState) =>
-            new Window(new NavigationPage(new HomePage()));
+            new Window(new NavigationPage(new HomePage())) { Title = "Weather TwentyOne" };
     }
 }
