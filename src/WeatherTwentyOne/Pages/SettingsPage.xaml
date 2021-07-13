@@ -1,115 +1,111 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:v="clr-namespace:WeatherTwentyOne.Views"
-             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
-             ios:Page.UseSafeArea="True"
-             Title="Settings"
-             x:Class="WeatherTwentyOne.Pages.SettingsPage">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:v="clr-namespace:WeatherTwentyOne.Views"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    ios:Page.UseSafeArea="True"
+    Title="Settings"
+    x:Class="WeatherTwentyOne.Pages.SettingsPage">
 
     <Grid
-        RowDefinitions="{OnPlatform iOS='68,*', Default='*'}">
-        <Grid
-            Grid.Row="{OnPlatform iOS=1, Default=0}"
-            ColumnDefinitions="{OnIdiom Phone='*', Default='68,*'}"
-            RowDefinitions="{OnIdiom Phone='*,68', Default='*,0'}"
-            >
-            <ScrollView Grid.Column="{OnIdiom Phone=0,Default=1}"
-                        Grid.Row="0"
-                        Margin="{OnIdiom Phone=15, Default=25}"
-                        >
+        ColumnDefinitions="{OnIdiom Phone='*', Default='68,*'}"
+        RowDefinitions="{OnIdiom Phone='*,68', Default='*,0'}"
+        >
+        <ScrollView Grid.Column="{OnIdiom Phone=0,Default=1}"
+                    Grid.Row="0"
+                    Margin="{OnIdiom Phone=15, Default=25}"
+                    >
+            <StackLayout>
                 <StackLayout>
-                    <StackLayout>
-                        <Image 
-                            HeightRequest="115"
-                            Aspect="AspectFit"
-                            Source="fluent_weather_moon_16_filled.png"/>
-                        <Label Text="{Binding Temperature}" 
-                                HorizontalOptions="Center"
-                                class="Title1"/>
-                        <Frame
-                            CornerRadius="15"
-                            HeightRequest="30"
-                            VerticalOptions="Start"
+                    <Image 
+                        HeightRequest="115"
+                        Aspect="AspectFit"
+                        Source="fluent_weather_moon_16_filled.png"/>
+                    <Label Text="{Binding Temperature}" 
                             HorizontalOptions="Center"
-                            Padding="15,0"
-                            BackgroundColor="{StaticResource Primary}"
-                            >
-                        <Label Text="Clear"
-                            VerticalOptions="Center"
-                            class="Headline"
-                            />
-                        </Frame>
-                    </StackLayout>
-                    
-                    <Label Text="Units" class="SectionTitle"/>
-
-                    <Grid RowDefinitions="*,*">
-                        <Label Grid.Row="0" Text="Imperial" class="Subhead"/>
-                        <Label Grid.Row="1"
-                            Text="˚F / mph / miles / inches" class="SubContent"/>
-                        <Image
-                            x:Name="Imperial"
-                            Grid.RowSpan="2"
-                            IsVisible="{Binding IsImperial}"
-                            Source="checkmark_icon.png"
-                            HorizontalOptions="End"
-                            VerticalOptions="Center"/>
-                        <Button BackgroundColor="Transparent"
-                                Grid.RowSpan="2"
-                                Command="{Binding SelectUnits}"
-                                CommandParameter="imperial"
-                                />
-                    </Grid>
-                    <BoxView class="HRule"/>
-
-                    <Grid RowDefinitions="*,*">
-                        <Label Grid.Row="0"
-                            Text="Metric" class="Subhead"/>
-                        <Label Grid.Row="1"
-                            Text="˚C / kmh / km / millimeters / milibars" class="SubContent"/>
-                        <Image x:Name="Metric"
-                            Grid.RowSpan="2"
-                            IsVisible="{Binding IsMetric}"
-                            Source="checkmark_icon.png"
-                            HorizontalOptions="End"
-                            VerticalOptions="Center"/>
-                        <Button BackgroundColor="Transparent"
-                                Grid.RowSpan="2"
-                                Command="{Binding SelectUnits}"
-                                CommandParameter="metric"
-                                />
-                    </Grid>
-                    <BoxView class="HRule"/>
-
-                    <Grid RowDefinitions="*,*">
-                        <Label Grid.Row="0"
-                            Text="Hybrid" class="Subhead"/>
-                        <Label Grid.Row="1"
-                            Text="˚C / mph / miles / millimeters / millibars" class="SubContent"/>
-                        <Image x:Name="Hybrid"
-                            Grid.RowSpan="2"
-                            IsVisible="{Binding IsHybrid}"
-                            Source="checkmark_icon.png"
-                            HorizontalOptions="End"
-                            VerticalOptions="Center"/>
-                        <Button BackgroundColor="Transparent"
-                                Grid.RowSpan="2"
-                                Command="{Binding SelectUnits}"
-                                CommandParameter="hybrid"
-                                />
-                    </Grid>
-                    <BoxView class="HRule"/>                                                
-
+                            class="Title1"/>
+                    <Frame
+                        CornerRadius="15"
+                        HeightRequest="30"
+                        VerticalOptions="Start"
+                        HorizontalOptions="Center"
+                        Padding="15,0"
+                        BackgroundColor="{StaticResource Primary}"
+                        >
+                    <Label Text="Clear"
+                        VerticalOptions="Center"
+                        class="Headline"
+                        />
+                    </Frame>
                 </StackLayout>
+                
+                <Label Text="Units" class="SectionTitle"/>
 
-            </ScrollView>
+                <Grid RowDefinitions="*,*">
+                    <Label Grid.Row="0" Text="Imperial" class="Subhead"/>
+                    <Label Grid.Row="1"
+                        Text="˚F / mph / miles / inches" class="SubContent"/>
+                    <Image
+                        x:Name="Imperial"
+                        Grid.RowSpan="2"
+                        IsVisible="{Binding IsImperial}"
+                        Source="checkmark_icon.png"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"/>
+                    <Button BackgroundColor="Transparent"
+                            Grid.RowSpan="2"
+                            Command="{Binding SelectUnits}"
+                            CommandParameter="imperial"
+                            />
+                </Grid>
+                <BoxView class="HRule"/>
 
-            <!-- Desktop Menu -->
-            <v:NavBarView x:Name="NavBar"
-                Grid.Column="0"
-                Grid.Row="{OnIdiom Phone=1, Default=0}"
-                Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
-        </Grid>
+                <Grid RowDefinitions="*,*">
+                    <Label Grid.Row="0"
+                        Text="Metric" class="Subhead"/>
+                    <Label Grid.Row="1"
+                        Text="˚C / kmh / km / millimeters / milibars" class="SubContent"/>
+                    <Image x:Name="Metric"
+                        Grid.RowSpan="2"
+                        IsVisible="{Binding IsMetric}"
+                        Source="checkmark_icon.png"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"/>
+                    <Button BackgroundColor="Transparent"
+                            Grid.RowSpan="2"
+                            Command="{Binding SelectUnits}"
+                            CommandParameter="metric"
+                            />
+                </Grid>
+                <BoxView class="HRule"/>
+
+                <Grid RowDefinitions="*,*">
+                    <Label Grid.Row="0"
+                        Text="Hybrid" class="Subhead"/>
+                    <Label Grid.Row="1"
+                        Text="˚C / mph / miles / millimeters / millibars" class="SubContent"/>
+                    <Image x:Name="Hybrid"
+                        Grid.RowSpan="2"
+                        IsVisible="{Binding IsHybrid}"
+                        Source="checkmark_icon.png"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"/>
+                    <Button BackgroundColor="Transparent"
+                            Grid.RowSpan="2"
+                            Command="{Binding SelectUnits}"
+                            CommandParameter="hybrid"
+                            />
+                </Grid>
+                <BoxView class="HRule"/>                                                
+
+            </StackLayout>
+
+        </ScrollView>
+
+        <!-- Desktop Menu -->
+        <v:NavBarView x:Name="NavBar"
+            Grid.Column="0"
+            Grid.Row="{OnIdiom Phone=1, Default=0}"
+            Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
     </Grid>
 
 </ContentPage>
