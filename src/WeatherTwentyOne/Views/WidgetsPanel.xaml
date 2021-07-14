@@ -16,6 +16,10 @@
                         HasShadow="False"
                         BackgroundColor="{StaticResource Background_Mid}">
                         <Grid Padding="20">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="2"
+                                    Tapped="OnTapped"/>
+                            </Grid.GestureRecognizers>
                             <Image Source="{Binding Icon}"
                                 WidthRequest="45"
                                 HeightRequest="45"

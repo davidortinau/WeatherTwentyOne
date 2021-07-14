@@ -9,7 +9,6 @@
              >
 
     <Grid
-        Margin="{OnPlatform iOS='0,70,0,0', Default='0'}"
         ColumnDefinitions="{OnIdiom Phone='*', Default='68,*'}"
         RowDefinitions="{OnIdiom Phone='*,68', Default='*'}"
         >

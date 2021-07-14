@@ -9,7 +9,7 @@
     x:Class="WeatherTwentyOne.Pages.MapPage">
 
     <Grid
-        RowDefinitions="{OnPlatform iOS='68,*', Default='*'}">
+        RowDefinitions="{OnPlatform iOS='0,*', Default='*'}">
         <Grid
             Grid.Row="{OnPlatform iOS=1, Default=0}"
             ColumnDefinitions="{OnIdiom Phone='*', Default='68,*,480'}"
