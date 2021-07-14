@@ -16,7 +16,7 @@ namespace WeatherTwentyOne.WinUI
 
 		public void Initialize()
 		{
-			tray = new WindowsTrayIcon("Resources/trayicon.ico");
+			tray = new WindowsTrayIcon("Platforms/Windows/trayicon.ico");
 			tray.LeftClick = () =>
 			{
 				Microsoft.Maui.MauiWinUIApplication.Current.MainWindow.BringToFront();

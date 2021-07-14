@@ -4,16 +4,13 @@
     <TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
     <OutputType>Exe</OutputType>
     <SingleProject>true</SingleProject>
+    <UseMaui>true</UseMaui>
     <RootNamespace>WeatherTwentyOne</RootNamespace>
     <ApplicationTitle>WeatherTwentyOne</ApplicationTitle>
     <ApplicationId>com.companyname.WeatherTwentyOne</ApplicationId>
     <ApplicationVersion>1.0</ApplicationVersion>
     <AndroidVersionCode>1</AndroidVersionCode>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.5.794" />
-  </ItemGroup>
 
   <ItemGroup>
     <MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" Color="#081B25" />
@@ -23,17 +20,14 @@
   </ItemGroup>
 
   <ItemGroup Condition="$(TargetFramework.Contains('-maccatalyst'))">
-    <BundleResource Include="MacCatalyst\trayicon.png" />
+    <BundleResource Include="Platforms\MacCatalyst\trayicon.png" />
   </ItemGroup>
 
   <PropertyGroup>
     <RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
     <RuntimeIdentifier Condition="$(TargetFramework.Contains('-maccatalyst'))">maccatalyst-x64</RuntimeIdentifier>
     <InvariantGlobalization Condition="$(TargetFramework.Contains('-maccatalyst'))">true</InvariantGlobalization>
-    <UseInterpreter Condition="$(TargetFramework.Contains('-android'))">True</UseInterpreter>
+    <UseInterpreter Condition="$(TargetFramework.Contains('-android'))">false</UseInterpreter>
   </PropertyGroup>
-  <ItemGroup Condition="$(TargetFramework.Contains('-android'))">
-    <AndroidEnvironment Include="Android\AndroidEnvironment.txt" />
-  </ItemGroup>
 
 </Project>

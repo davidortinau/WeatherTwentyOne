@@ -1,7 +1,8 @@
 {
   "profiles": {
     "WeatherTwentyOne.WinUI": {
-      "commandName": "AppContainer"
+      "commandName": "MsixPackage",
+      "nativeDebugging": false
     }
   }
 }

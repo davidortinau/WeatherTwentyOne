@@ -2,6 +2,7 @@
 using Microsoft.Maui;
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
+using Microsoft.Maui.LifecycleEvents;
 using WeatherTwentyOne.Services;
 
 namespace WeatherTwentyOne
@@ -25,6 +26,14 @@ namespace WeatherTwentyOne
                     fonts.AddFont("fa-solid-900.ttf", "FontAwesome");
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");
+                })
+                .ConfigureLifecycleEvents(lifecycle => {
+#if WINDOWS
+                    lifecycle
+                        .AddWindows(windows => windows.OnLaunched((app, args) => {
+                            MauiWinUIApplication.Current.MainWindow.SetIcon("Platforms/Windows/trayicon.ico");
+                        }));
+#endif
                 });
         }
     }

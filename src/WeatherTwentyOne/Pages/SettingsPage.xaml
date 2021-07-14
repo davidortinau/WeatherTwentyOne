@@ -6,15 +6,13 @@
              Title="Settings"
              x:Class="WeatherTwentyOne.Pages.SettingsPage">
 
-    <Grid
-        RowDefinitions="{OnPlatform iOS='68,*', Default='*'}">
+    
         <Grid
-            Grid.Row="{OnPlatform iOS=1, Default=0}"
             ColumnDefinitions="{OnIdiom Phone='*', Default='68,*'}"
-            RowDefinitions="{OnIdiom Phone='*,68', Default='*,0'}"
+            RowDefinitions="{OnIdiom Phone='100,*,68', Default='100,*,0'}"
             >
             <ScrollView Grid.Column="{OnIdiom Phone=0,Default=1}"
-                        Grid.Row="0"
+                        Grid.Row="1"
                         Margin="{OnIdiom Phone=15, Default=25}"
                         >
                 <StackLayout>
@@ -98,18 +96,59 @@
                                 CommandParameter="hybrid"
                                 />
                     </Grid>
-                    <BoxView class="HRule"/>                                                
+                    <BoxView class="HRule"/>
+
+                    <Label Text="More" class="SectionTitle"/>
+
+                    <Grid RowDefinitions="*,*">
+                        <Label Grid.Row="0"
+                            Text="Support" class="Subhead"/>
+                        <!-- <Label Grid.Row="1"
+                            Text="˚C / mph / miles / millimeters / millibars" class="SubContent"/> -->
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnSupportTapped"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                    <BoxView class="HRule"/>                                          
 
                 </StackLayout>
 
             </ScrollView>
 
+            
+
             <!-- Desktop Menu -->
             <v:NavBarView x:Name="NavBar"
                 Grid.Column="0"
-                Grid.Row="{OnIdiom Phone=1, Default=0}"
+                Grid.Row="{OnIdiom Phone=2, Default=0}"
                 Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
+
+            <Grid 
+                Grid.Row="0"
+                Grid.Column="{OnIdiom Phone=0, Default=1}"
+                Grid.ColumnDefinitions="16,80,8,*,100,16"
+                >
+                <Image Grid.Column="1"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    WidthRequest="80"
+                    HeightRequest="80"                    
+                    Source="https://devblogs.microsoft.com/xamarin/wp-content/uploads/sites/44/2019/03/Screen-Shot-2017-01-03-at-3.35.53-PM-150x150.png">
+                    <Image.Clip>
+                        <EllipseGeometry
+                            Center="40,40"
+                            RadiusX="40"
+                            RadiusY="40"/>
+                    </Image.Clip>
+                </Image>
+
+                <Label Text="David Ortinau" Grid.Column="3" LineBreakMode="WordWrap" VerticalOptions="Center" />
+
+                <Button Text="Sign Out" Clicked="OnSignOut" Grid.Column="4" HorizontalOptions="End" VerticalOptions="Center"/>
+
+                <BoxView Grid.ColumnSpan="6" Color="{StaticResource NeutralDarker}" HeightRequest="1" VerticalOptions="End"/>
+            </Grid>
         </Grid>
-    </Grid>
+    
 
 </ContentPage>
