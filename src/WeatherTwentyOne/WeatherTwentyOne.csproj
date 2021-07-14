@@ -27,7 +27,7 @@
     <RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
     <RuntimeIdentifier Condition="$(TargetFramework.Contains('-maccatalyst'))">maccatalyst-x64</RuntimeIdentifier>
     <InvariantGlobalization Condition="$(TargetFramework.Contains('-maccatalyst'))">true</InvariantGlobalization>
-    <UseInterpreter Condition="$(TargetFramework.Contains('-android'))">True</UseInterpreter>
+    <UseInterpreter Condition="$(TargetFramework.Contains('-android'))">false</UseInterpreter>
   </PropertyGroup>
 
 </Project>
