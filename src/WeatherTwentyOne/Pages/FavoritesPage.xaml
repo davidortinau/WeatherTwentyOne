@@ -14,10 +14,10 @@
         >
 
         <!-- Main Section -->
-        <ScrollView
+        <StackLayout
             Grid.Column="{OnIdiom Phone=0,Default=1}"
             >
-            <ScrollView.Resources>
+            <StackLayout.Resources>
                 <DataTemplate x:Key="FavouriteTemplate">
                     <Frame
                         Margin="{OnIdiom Phone=15,Default=25}"
@@ -72,7 +72,7 @@
                         </Grid>
                     </Frame>
                 </DataTemplate>
-            </ScrollView.Resources>
+            </StackLayout.Resources>
             <StackLayout
                 Padding="15"
                 >
@@ -119,7 +119,7 @@
                 </FlexLayout>
 
             </StackLayout>
-        </ScrollView>
+        </StackLayout>
 
         <!-- Menu -->
         <v:NavBarView

@@ -4,8 +4,8 @@
              x:Class="WeatherTwentyOne.Views.CurrentWidget">
 
     <Image
-        WidthRequest="200"
-        HeightRequest="200"
+        WidthRequest="100"
+        HeightRequest="100"
         Aspect="AspectFit"
         Source="weather_partly_cloudy_day.png" />
 

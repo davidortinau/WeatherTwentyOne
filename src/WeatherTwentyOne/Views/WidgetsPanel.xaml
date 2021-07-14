@@ -1,7 +1,8 @@
-<ScrollView xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:m="clr-namespace:WeatherTwentyOne.Models"
-             x:Class="WeatherTwentyOne.Views.WidgetsPanel">
+             x:Class="WeatherTwentyOne.Views.WidgetsPanel"
+			 BackgroundColor="{StaticResource Background_Dark}">
      <Grid ColumnDefinitions="Auto,Auto">
         <Grid.Resources>
             <ResourceDictionary>
@@ -67,4 +68,4 @@
                 WidthRequest="1"
                 HorizontalOptions="Start"/>
     </Grid>
-</ScrollView>
+</StackLayout>

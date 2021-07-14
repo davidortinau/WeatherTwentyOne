@@ -14,7 +14,7 @@
         Margin="{OnIdiom Phone='15,0',Default='25,0'}"
         class="SectionTitle"/>
 
-    <ScrollView Orientation="Horizontal">
+    <StackLayout Orientation="Horizontal">
         <StackLayout
             Orientation="Horizontal"
             Spacing="12"
@@ -77,6 +77,6 @@
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
         </StackLayout>
-    </ScrollView>
+    </StackLayout>
 
 </StackLayout>

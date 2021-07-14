@@ -14,11 +14,11 @@
         >
 
         <!-- Main content -->
-        <ScrollView
+        <StackLayout
             Grid.Column="{OnIdiom Phone=0,Default=1}">
             <StackLayout
                 Padding="{OnIdiom Phone='0,50',Default='0,50'}"
-                Spacing="{OnIdiom Phone=25,Default=50}">
+                Spacing="{OnIdiom Phone=25,Default=30}">
 
                 <!-- Top widgets -->
                 <FlexLayout
@@ -27,10 +27,10 @@
                     AlignContent="Center"
                     JustifyContent="SpaceEvenly">
                     <v:CurrentWidget
-                        WidthRequest="200" />
+                        WidthRequest="100" />
                     <v:WindLiveWidget
                         x:Name="WindWidget"
-                        WidthRequest="200" />
+                        WidthRequest="100" />
                 </FlexLayout>
                 <v:CurrentWidget
                     IsVisible="{OnIdiom Phone=True, Default=False}"/>
@@ -41,7 +41,7 @@
                 <v:Next7DWidget />
 
             </StackLayout>
-        </ScrollView>
+        </StackLayout>
 
         <!-- Menu -->
         <v:NavBarView
