@@ -1,0 +1,64 @@
+name: Build MAUI-Windows
+
+on:
+  push:
+    branches: [ main ]
+
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+env:
+    DOTNETVERSION:  6.0.100-preview.6.21355.2
+
+jobs:
+  buildwindows:
+    runs-on: windows-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      # open PR should remove need for the script SOON! https://github.com/microsoft/setup-msbuild/pull/56
+      - name: Install Visual Studio Preview
+        shell: pwsh
+        run: powershell .\build\install-vs.ps1
+
+      - name: Add msbuild to PATH
+        shell: pwsh
+        run: |
+          dotnet tool update -g dotnet-vs
+          & echo "$(vs where preview --prop=InstallationPath)\MSBuild\Current\Bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
+      - name:  install .NET 6 preview
+        shell: pwsh
+        run: |
+          $ProgressPreference = 'SilentlyContinue'
+          Invoke-WebRequest -Uri "https://dot.net/v1/dotnet-install.ps1" -OutFile dotnet-install.ps1
+          & .\dotnet-install.ps1 -Version ${{env.DOTNETVERSION}} -InstallDir "$env:ProgramFiles\dotnet\" -Verbose
+          & dotnet --list-sdks
+          
+      - name: Install and Run maui-check Tool
+        shell: pwsh
+        run: |
+          & dotnet tool update --global redth.net.maui.check
+          & maui-check --ci --non-interactive --fix --skip androidsdk --skip xcode --skip vswin --skip vsmac --skip edgewebview2
+
+      - name: Restore nuget packages
+        run: dotnet restore src\WeatherTwentyOne.sln
+
+      - name: Build Weather21
+        shell: pwsh
+        run: dotnet build src/WeatherTwentyOne -f net6.0-android -c Debug
+
+      - name: Build WinUI3 Debug
+        run: msbuild src\WeatherTwentyOne.sln -restore -p:Configuration=Debug
+
+      - name: Build WinUI3 Release
+        run: msbuild src\WeatherTwentyOne.sln -p:Configuration=Release
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: artifacts-windows
+          path: |
+            src\WeatherTwentyOne\bin\Debug\**\*-Signed.apk
