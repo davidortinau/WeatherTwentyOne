@@ -10,6 +10,7 @@
 		<RootNamespace>WeatherTwentyOne.WinUI</RootNamespace>
 		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
 		<WindowsPackageType>MSIX</WindowsPackageType>
+		<DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
 	</PropertyGroup>
 
 	<ItemGroup>

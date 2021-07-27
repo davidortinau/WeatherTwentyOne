@@ -36,9 +36,8 @@ namespace WeatherTwentyOne.Pages
 
         int tileCount = 0;
         List<Frame> tiles = new List<Frame>();
-        async void OnAttached(object sender, EventArgs e)
+        async void OnHandlerChanged(object sender, EventArgs e)
         {
-            
             Frame f = (Frame)sender;
             tiles.Add(f);
             tileCount++;

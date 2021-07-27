@@ -27,7 +27,7 @@
                         WidthRequest="154"
                         CornerRadius="20"
                         HasShadow="False"
-                        AttachedHandler="OnAttached"
+                        HandlerChanged="OnHandlerChanged"
                         Opacity="0"
                         BackgroundColor="{StaticResource Background_Mid}">
                         <Grid
