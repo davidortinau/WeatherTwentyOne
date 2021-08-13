@@ -1,4 +1,4 @@
-﻿<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<VerticalStackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
       x:Class="WeatherTwentyOne.Views.WindLiveWidget">
 
@@ -28,4 +28,4 @@
         HorizontalOptions="Center"
         class="Title"/>
 
-</StackLayout>
+</VerticalStackLayout>

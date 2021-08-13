@@ -1,4 +1,4 @@
-﻿<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<VerticalStackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:m="clr-namespace:WeatherTwentyOne.Models"
              x:Class="WeatherTwentyOne.Views.Next24HrWidget">
@@ -10,8 +10,7 @@
 
     <ScrollView
         Orientation="Horizontal">
-        <StackLayout
-            Orientation="Horizontal"
+        <HorizontalStackLayout
             Spacing="12"
             Padding="{OnIdiom Phone='15,0',Default='25,0'}"
             BindableLayout.ItemsSource="{Binding Hours}">
@@ -34,7 +33,7 @@
                     </StackLayout>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
-        </StackLayout>
+        </HorizontalStackLayout>
     </ScrollView>
 
-</StackLayout>
+</VerticalStackLayout>

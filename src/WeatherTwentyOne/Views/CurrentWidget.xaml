@@ -1,4 +1,4 @@
-﻿<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<VerticalStackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Spacing="15"
              x:Class="WeatherTwentyOne.Views.CurrentWidget">
@@ -6,6 +6,7 @@
     <Image
         WidthRequest="200"
         HeightRequest="200"
+        HorizontalOptions="Center"
         Aspect="AspectFit"
         Source="weather_partly_cloudy_day.png" />
 
@@ -31,9 +32,9 @@
                     Grid.Column="1"
                     Text="Clear"
                     HorizontalOptions="Center"
-                    FontSize="17"/>
+                    FontSize="18"/>
             </Grid>
         </Frame>
     </Grid>
 
-</StackLayout>
+</VerticalStackLayout>

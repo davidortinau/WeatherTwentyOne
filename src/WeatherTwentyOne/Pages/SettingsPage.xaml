@@ -15,8 +15,8 @@
                         Grid.Row="1"
                         Margin="{OnIdiom Phone=15, Default=25}"
                         >
-                <StackLayout>
-                    <StackLayout>
+                <VerticalStackLayout>
+                    <VerticalStackLayout Spacing="8">
                         <Image 
                             HeightRequest="115"
                             Aspect="AspectFit"
@@ -30,14 +30,14 @@
                             VerticalOptions="Start"
                             HorizontalOptions="Center"
                             Padding="15,0"
-                            BackgroundColor="{StaticResource Primary}"
-                            >
-                        <Label Text="Clear"
-                            VerticalOptions="Center"
-                            class="Headline"
+                            BackgroundColor="{StaticResource Primary}">
+                            <Label Text="Clear"
+                                VerticalOptions="Center"
+                                MinimumWidthRequest="200"
+                                class="Headline"
                             />
                         </Frame>
-                    </StackLayout>
+                    </VerticalStackLayout>
                     
                     <Label Text="Units" class="SectionTitle"/>
 
@@ -111,7 +111,7 @@
                     </Grid>
                     <BoxView class="HRule"/>                                          
 
-                </StackLayout>
+                </VerticalStackLayout>
 
             </ScrollView>
 
@@ -126,19 +126,20 @@
             <Grid 
                 Grid.Row="0"
                 Grid.Column="{OnIdiom Phone=0, Default=1}"
-                Grid.ColumnDefinitions="16,80,8,*,100,16"
+                Grid.ColumnDefinitions="16,120,8,*,100,16"
                 >
                 <Image Grid.Column="1"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    WidthRequest="80"
-                    HeightRequest="80"                    
+                    WidthRequest="120"
+                    HeightRequest="120"         
+                    Aspect="AspectFill"
                     Source="https://devblogs.microsoft.com/xamarin/wp-content/uploads/sites/44/2019/03/Screen-Shot-2017-01-03-at-3.35.53-PM-150x150.png">
                     <Image.Clip>
                         <EllipseGeometry
-                            Center="40,40"
-                            RadiusX="40"
-                            RadiusY="40"/>
+                            Center="60,60"
+                            RadiusX="60"
+                            RadiusY="60"/>
                     </Image.Clip>
                 </Image>
 

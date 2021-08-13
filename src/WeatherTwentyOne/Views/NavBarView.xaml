@@ -8,7 +8,7 @@
 
     <FlexLayout.Resources>
         <Style TargetType="ImageButton">
-            <Setter Property="Margin" Value="{OnIdiom Phone='25,5',Default='0,50,0,25'}"/>
+            <Setter Property="Margin" Value="{OnIdiom Phone='18,4',Default='0,50,0,25'}"/>
         </Style>
     </FlexLayout.Resources>
 
