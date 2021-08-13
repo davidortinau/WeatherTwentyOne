@@ -11,6 +11,7 @@
     <ApplicationVersion>1.0</ApplicationVersion>
     <AndroidVersionCode>1</AndroidVersionCode>
     <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
+	<_FastDeploymentDiagnosticLogging>true</_FastDeploymentDiagnosticLogging>
   </PropertyGroup>
 
   <ItemGroup>

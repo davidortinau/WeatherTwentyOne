@@ -21,8 +21,8 @@ namespace WeatherTwentyOne.Pages
         {
             base.OnAppearing();
 
-            await Task.Delay(300);
-            TransitionIn();
+            //await Task.Delay(300);
+            //TransitionIn();
         }
 
         async void TransitionIn()

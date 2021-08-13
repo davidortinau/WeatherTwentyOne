@@ -27,8 +27,6 @@
                         WidthRequest="154"
                         CornerRadius="20"
                         HasShadow="False"
-                        HandlerChanged="OnHandlerChanged"
-                        Opacity="0"
                         BackgroundColor="{StaticResource Background_Mid}">
                         <Grid
                             RowDefinitions="42,40,*"
@@ -41,45 +39,41 @@
                                 HorizontalOptions="End"/>
                             <Label Text="{Binding Value}" class="LargeTitle"/>
 
-                            <StackLayout
+                            <VerticalStackLayout
                                 Spacing="0"
                                 Grid.RowSpan="3"
                                 VerticalOptions="Center">
                                 <Label Text="{Binding Name}" class="Subhead" />
                                 <Label Text="{Binding WeatherStation}" class="SubContent"/>
-                            </StackLayout>
+                            </VerticalStackLayout>
 
-                            <StackLayout
+                            <HorizontalStackLayout
                                 Grid.Row="2"
                                 Spacing="10"
-                                Orientation="Horizontal"
                                 VerticalOptions="End">
                                 <Image Source="solid_umbrella.png" VerticalOptions="Center"
                                        WidthRequest="20" HeightRequest="20"/>
                                 <Label Text="13%" class="Small" VerticalOptions="Center"/>
-                            </StackLayout>
+                            </HorizontalStackLayout>
 
-                            <StackLayout
+                            <HorizontalStackLayout
                                 Grid.Row="2"
                                 Spacing="10"
-                                Orientation="Horizontal"
                                 HorizontalOptions="End"
                                 VerticalOptions="End">
                                 <Image Source="solid_humidity.png" VerticalOptions="Center"
                                        WidthRequest="20" HeightRequest="20"/>
                                 <Label Text="45%" class="Small" VerticalOptions="Center"/>
-                            </StackLayout>
+                            </HorizontalStackLayout>
                         </Grid>
                     </Frame>
                 </DataTemplate>
             </ScrollView.Resources>
             <StackLayout
-                Padding="15"
-                >
+                Padding="15">
 
                 <!-- Search Box -->
-                <StackLayout
-                    Orientation="Horizontal"
+                <HorizontalStackLayout
                     VerticalOptions="Start"
                     Spacing="18"
                     Padding="{OnIdiom Phone='15,15,15,0', Default='25,25,25,0'}"
@@ -95,28 +89,25 @@
                         FontSize="18"
                         WidthRequest="240"
                         VerticalOptions="Center"/>
-                </StackLayout>
+                </HorizontalStackLayout>
 
                 <!-- Actual Content -->
-                <FlexLayout
-                    Wrap="Wrap" Direction="Row"
-                    JustifyContent="Start"
-                    AlignItems="Start"
-                    AlignContent="Start"
-                    BindableLayout.ItemTemplate="{StaticResource FavouriteTemplate}"
+                <!-- this should be a FlexLayout, but that's busted in preview 7 with BindableLayout -->
+                <VerticalStackLayout
                     BindableLayout.ItemsSource="{Binding Favorites}"
+                    BindableLayout.ItemTemplate="{StaticResource FavouriteTemplate}"
                     >
                     <Grid
                         HeightRequest="132"
                         WidthRequest="132"
-                        FlexLayout.AlignSelf="Center"
+                        HorizontalOptions="Start"
                         Margin="{OnIdiom Phone=15,Default=25}">
                         <ImageButton
                             BackgroundColor="Transparent"
                             Source="add_icon.png"
                             VerticalOptions="Center" HorizontalOptions="Center"/>
                     </Grid>
-                </FlexLayout>
+                </VerticalStackLayout>
 
             </StackLayout>
         </ScrollView>

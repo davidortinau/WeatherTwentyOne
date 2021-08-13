@@ -1,13 +1,13 @@
-﻿<StackLayout  xmlns:c="clr-namespace:WeatherTwentyOne.Converters"
+﻿<VerticalStackLayout  xmlns:c="clr-namespace:WeatherTwentyOne.Converters"
               xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               xmlns:m="clr-namespace:WeatherTwentyOne.Models"
               x:Class="WeatherTwentyOne.Views.Next7DWidget">
-    <StackLayout.Resources>
+    <VerticalStackLayout.Resources>
         <c:TempSpanConverter x:Key="TempSpanConverter"/>
         <c:MaxTempOffsetConverter x:Key="MaxTempOffsetConverter"/>
         <c:MinTempOffsetConverter x:Key="MinTempOffsetConverter"/>
-    </StackLayout.Resources>
+    </VerticalStackLayout.Resources>
 
     <Label
         Text="Daily Forecasts"
@@ -15,14 +15,13 @@
         class="SectionTitle"/>
 
     <ScrollView Orientation="Horizontal">
-        <StackLayout
-            Orientation="Horizontal"
+        <HorizontalStackLayout
             Spacing="12"
             Padding="{OnIdiom Phone='15,0',Default='25,0'}"
             BindableLayout.ItemsSource="{Binding Week}">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout>
+                    <VerticalStackLayout>
                         <Label Text="{Binding DateTime, StringFormat='{0:ddd}'}" class="Subhead"
                                HeightRequest="34" HorizontalOptions="Center"/>
                         <Label Text="{Binding Temperature.Maximum.Value, StringFormat='{0:F0}°'}" class="Subhead"
@@ -73,10 +72,10 @@
                                 Text="13%" class="SubContent" VerticalOptions="Center"/>
                         </StackLayout>
 
-                    </StackLayout>
+                    </VerticalStackLayout>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
-        </StackLayout>
+        </HorizontalStackLayout>
     </ScrollView>
 
-</StackLayout>
+</VerticalStackLayout>

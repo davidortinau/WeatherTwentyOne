@@ -16,7 +16,7 @@
         <!-- Main content -->
         <ScrollView
             Grid.Column="{OnIdiom Phone=0,Default=1}">
-            <StackLayout
+            <VerticalStackLayout
                 Padding="{OnIdiom Phone='0,50',Default='0,50'}"
                 Spacing="{OnIdiom Phone=25,Default=50}">
 
@@ -40,7 +40,7 @@
                 <v:Next24HrWidget />
                 <v:Next7DWidget />
 
-            </StackLayout>
+            </VerticalStackLayout>
         </ScrollView>
 
         <!-- Menu -->
