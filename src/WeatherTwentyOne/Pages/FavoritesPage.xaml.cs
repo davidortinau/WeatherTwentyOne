@@ -1,10 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using Microsoft.Maui.Controls;
-using WeatherTwentyOne.ViewModels;
-
-namespace WeatherTwentyOne.Pages
+﻿namespace WeatherTwentyOne.Pages
 {
     public partial class FavoritesPage : ContentPage
     {

@@ -15,8 +15,8 @@ namespace WeatherTwentyOne.ViewModels
     {
         IWeatherService weatherService = new WeatherService(null);
         
-        private ObservableCollection<Location> favorites;
-        public ObservableCollection<Location> Favorites {
+        private ObservableCollection<WeatherClient2021.Location> favorites;
+        public ObservableCollection<WeatherClient2021.Location> Favorites {
             get {
                 return favorites;
             }
@@ -37,9 +37,9 @@ namespace WeatherTwentyOne.ViewModels
 
         }
 
-        private void UpdateFavorites(IEnumerable<Location> locations)
+        private void UpdateFavorites(IEnumerable<WeatherClient2021.Location> locations)
         {
-            favorites = new ObservableCollection<Location>();
+            favorites = new ObservableCollection<WeatherClient2021.Location>();
             for (int i = locations.Count() - 1; i >= 0; i--)
             {
                 favorites.Add(locations.ElementAt(i));

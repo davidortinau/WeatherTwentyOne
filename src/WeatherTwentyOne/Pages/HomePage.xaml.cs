@@ -1,13 +1,4 @@
-﻿using System.Diagnostics;
-using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
-using Microsoft.Maui.Essentials;
-using WeatherTwentyOne.Services;
-using Application = Microsoft.Maui.Controls.Application;
-using WindowsConfiguration = Microsoft.Maui.Controls.PlatformConfiguration.Windows;
-
-namespace WeatherTwentyOne.Pages
+﻿namespace WeatherTwentyOne.Pages
 {
     public partial class HomePage : ContentPage
     {

@@ -1,8 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-using WeatherTwentyOne.ViewModels;
-using System;
-
-namespace WeatherTwentyOne.Pages
+﻿namespace WeatherTwentyOne.Pages
 {
     public partial class SettingsPage : ContentPage
     {

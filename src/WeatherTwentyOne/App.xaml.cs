@@ -1,20 +1,13 @@
-﻿using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.Xaml;
-using WeatherTwentyOne.Pages;
-
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-
-namespace WeatherTwentyOne
+﻿namespace WeatherTwentyOne
 {
     public partial class App : Application
     {
         public App()
         {
             InitializeComponent();
+
+            MainPage = new NavigationPage(new HomePage());
         }
 
-        protected override Window CreateWindow(IActivationState activationState) =>
-            new Window(new NavigationPage(new HomePage())) { Title = "Weather TwentyOne" };
     }
 }

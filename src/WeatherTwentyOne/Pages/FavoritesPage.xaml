@@ -92,22 +92,25 @@
                 </HorizontalStackLayout>
 
                 <!-- Actual Content -->
-                <!-- this should be a FlexLayout, but that's busted in preview 7 with BindableLayout -->
-                <VerticalStackLayout
-                    BindableLayout.ItemsSource="{Binding Favorites}"
+                <FlexLayout
+                    Wrap="Wrap" Direction="Row"
+                    JustifyContent="Start"
+                    AlignItems="Start"
+                    AlignContent="Start"
                     BindableLayout.ItemTemplate="{StaticResource FavouriteTemplate}"
+                    BindableLayout.ItemsSource="{Binding Favorites}"
                     >
                     <Grid
                         HeightRequest="132"
                         WidthRequest="132"
-                        HorizontalOptions="Start"
+                        FlexLayout.AlignSelf="Center"
                         Margin="{OnIdiom Phone=15,Default=25}">
                         <ImageButton
                             BackgroundColor="Transparent"
                             Source="add_icon.png"
                             VerticalOptions="Center" HorizontalOptions="Center"/>
                     </Grid>
-                </VerticalStackLayout>
+                </FlexLayout>
 
             </StackLayout>
         </ScrollView>
