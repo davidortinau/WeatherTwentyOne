@@ -9,13 +9,13 @@
     x:Class="WeatherTwentyOne.Pages.HomePage">
 
     <Grid
-        ColumnDefinitions="{OnIdiom Phone='*', Default='68,*,480'}"
+        ColumnDefinitions="{OnIdiom Phone='*', Default='*,480'}"
         RowDefinitions="*"
         >
 
         <!-- Main content -->
         <ScrollView
-            Grid.Column="{OnIdiom Phone=0,Default=1}">
+            Grid.Column="0">
             <VerticalStackLayout
                 Padding="{OnIdiom Phone='0,50',Default='0,50'}"
                 Spacing="{OnIdiom Phone=25,Default=50}">
@@ -46,7 +46,7 @@
         <!-- Widget panel -->
         <v:WidgetsPanel
             IsVisible="{OnIdiom Phone=False, Default=True}"
-            Grid.Column="{OnIdiom Phone=0, Default=2}" />
+            Grid.Column="{OnIdiom Phone=0, Default=1}" />
 
     </Grid>
 

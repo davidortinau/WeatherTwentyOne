@@ -37,6 +37,12 @@
             Color="{StaticResource Background_Mid}"
             Size="16"/>
 
+    <Style TargetType="FlyoutItem">
+        <Setter Property="Shell.FlyoutBackground" Value="{StaticResource Background_Mid}"/>
+        <Setter Property="Shell.ForegroundColor" Value="{StaticResource Accent}"/>
+        <Setter Property="Shell.UnselectedColor" Value="{StaticResource TabOff}"/>
+    </Style>
+
     <Style TargetType="TabBar">
         <Setter Property="Shell.TabBarBackgroundColor"
             Value="{StaticResource Background_Mid}" />
