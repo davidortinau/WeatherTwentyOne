@@ -9,7 +9,7 @@
     
         <Grid
             ColumnDefinitions="{OnIdiom Phone='*', Default='68,*'}"
-            RowDefinitions="{OnIdiom Phone='100,*,68', Default='100,*,0'}"
+            RowDefinitions="{OnIdiom Phone='100,*', Default='100,*,0'}"
             >
             <ScrollView Grid.Column="{OnIdiom Phone=0,Default=1}"
                         Grid.Row="1"
@@ -116,12 +116,6 @@
             </ScrollView>
 
             
-
-            <!-- Desktop Menu -->
-            <v:NavBarView x:Name="NavBar"
-                Grid.Column="0"
-                Grid.Row="{OnIdiom Phone=2, Default=0}"
-                Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
 
             <Grid 
                 Grid.Row="0"

@@ -7,8 +7,6 @@
             InitializeComponent();
 
             BindingContext = new SettingsViewModel();
-
-            NavBar.ActiveTab = "Settings";
         }
 
         async void OnSignOut(object sender, EventArgs eventArgs)

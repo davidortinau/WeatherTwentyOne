@@ -7,16 +7,14 @@
             InitializeComponent();
 
             BindingContext = new FavoritesViewModel();
-
-            NavBar.ActiveTab = "Favorites";
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            //await Task.Delay(300);
-            //TransitionIn();
+            await Task.Delay(300);
+            TransitionIn();
         }
 
         async void TransitionIn()

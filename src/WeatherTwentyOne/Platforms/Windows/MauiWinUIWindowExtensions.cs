@@ -7,13 +7,13 @@ namespace WeatherTwentyOne
 {
     public static class WindowExtensions
     {
-        public static IntPtr GetNativeWindowHandle(this Window window)
+        public static IntPtr GetNativeWindowHandle(this Microsoft.Maui.Controls.Window window)
         {
             var nativeWindow = window.As<IWindowNative>();
             return nativeWindow.WindowHandle;
         }
 
-        public static void SetIcon(this Window window, string iconFilename)
+        public static void SetIcon(this Microsoft.Maui.Controls.Window window, string iconFilename)
         {
             var hwnd = window.GetNativeWindowHandle();
 
@@ -23,7 +23,7 @@ namespace WeatherTwentyOne
             PInvoke.User32.SendMessage(hwnd, PInvoke.User32.WindowMessage.WM_SETICON, (IntPtr)0, hIcon);
         }
 
-        public static void BringToFront(this Window window)
+        public static void BringToFront(this Microsoft.Maui.Controls.Window window)
         {
             var hwnd = window.GetNativeWindowHandle();
 
@@ -33,7 +33,7 @@ namespace WeatherTwentyOne
             _ = PInvoke.User32.SetForegroundWindow(hwnd);
         }
 
-        public static void MinimizeToTray(this Window window)
+        public static void MinimizeToTray(this Microsoft.Maui.Controls.Window window)
         {
             var hwnd = window.GetNativeWindowHandle();
 

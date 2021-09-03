@@ -8,8 +8,6 @@
         {
             InitializeComponent();
 
-            NavBar.ActiveTab = "Home";
-
             if (!isSetup)
             {
                 isSetup = true;

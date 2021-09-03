@@ -31,11 +31,22 @@
     <Color x:Key="TabOff">#91A7B7</Color>
 
     <FontImageSource
-                x:Key="SearchIcon"
-                FontFamily="FontAwesome"
-                Glyph="{x:Static app:IconFont.Search}"
-                Color="{StaticResource Background_Mid}"
-                Size="16"/>
+            x:Key="SearchIcon"
+            FontFamily="FontAwesome"
+            Glyph="{x:Static app:IconFont.Search}"
+            Color="{StaticResource Background_Mid}"
+            Size="16"/>
+
+    <Style TargetType="TabBar">
+        <Setter Property="Shell.TabBarBackgroundColor"
+            Value="{StaticResource Background_Mid}" />
+        <Setter Property="Shell.TabBarTitleColor"
+            Value="{StaticResource Accent}" />
+        <Setter Property="Shell.TabBarUnselectedColor"
+            Value="{StaticResource TabOff}" />
+        <Setter Property="Shell.TabBarForegroundColor"
+            Value="{StaticResource Accent}" />
+    </Style>
 
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="Padding" Value="0"/>

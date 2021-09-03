@@ -5,8 +5,6 @@
         public MapPage()
         {
             InitializeComponent(); 
-            
-            NavBar.ActiveTab = "Map";
         }
     }
 }
