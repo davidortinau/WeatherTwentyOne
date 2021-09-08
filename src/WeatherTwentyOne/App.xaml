@@ -12,6 +12,7 @@
     <Application.MainPage>
         <Shell 
             FlyoutWidth="68"
+            FlyoutBackgroundColor="Red"
             FlyoutBehavior="{OnIdiom Phone=Disable, Default=Locked}">
 
             <Shell.FlyoutHeaderTemplate>
@@ -48,6 +49,9 @@
             </FlyoutItem>
             <FlyoutItem Title="Map" Icon="tab_map.png">
                 <ShellContent ContentTemplate="{DataTemplate page:MapPage}"/>
+            </FlyoutItem>
+            <FlyoutItem Route="settings" FlyoutItemIsVisible="False" >
+                <ShellContent ContentTemplate="{DataTemplate page:SettingsPage}"/>
             </FlyoutItem>
 
             <!-- Phone -->

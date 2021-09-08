@@ -3,13 +3,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:m="clr-namespace:WeatherTwentyOne.Models"
     xmlns:v="clr-namespace:WeatherTwentyOne.Views"
-    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
-    ios:Page.UseSafeArea="True"
     Title="Redmond, WA"
     x:Class="WeatherTwentyOne.Pages.HomePage">
 
     <Grid
-        ColumnDefinitions="{OnIdiom Phone='*', Default='*,480'}"
+        ColumnDefinitions="{OnIdiom Phone='*', Desktop='*,480', Default='*,500'}"
         RowDefinitions="*"
         >
 

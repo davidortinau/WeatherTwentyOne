@@ -8,12 +8,12 @@
 
             //MainPage = new NavigationPage(new HomePage());
 
-            Routing.RegisterRoute("settings", typeof(SettingsPage));
+            //Routing.RegisterRoute("settings", typeof(SettingsPage));
         }
 
         void TapGestureRecognizer_Tapped(System.Object sender, System.EventArgs e)
         {
-            Shell.Current.GoToAsync("settings");
+            Shell.Current.GoToAsync("///settings");
         }
     }
 }

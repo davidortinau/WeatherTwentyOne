@@ -5,13 +5,12 @@
              ios:Page.UseSafeArea="True"
              Title="Settings"
              x:Class="WeatherTwentyOne.Pages.SettingsPage">
-
     
         <Grid
-            ColumnDefinitions="{OnIdiom Phone='*', Default='68,*'}"
+            ColumnDefinitions="*"
             RowDefinitions="{OnIdiom Phone='100,*', Default='100,*,0'}"
             >
-            <ScrollView Grid.Column="{OnIdiom Phone=0,Default=1}"
+            <ScrollView Grid.Column="0"
                         Grid.Row="1"
                         Margin="{OnIdiom Phone=15, Default=25}"
                         >
@@ -119,7 +118,7 @@
 
             <Grid 
                 Grid.Row="0"
-                Grid.Column="{OnIdiom Phone=0, Default=1}"
+                Grid.Column="0"
                 Grid.ColumnDefinitions="16,120,8,*,100,16"
                 >
                 <Image Grid.Column="1"

@@ -8,15 +8,8 @@
              x:Class="WeatherTwentyOne.Pages.FavoritesPage"
              >
 
-    <Grid
-        ColumnDefinitions="{OnIdiom Phone='*', Default='68,*'}"
-        RowDefinitions="*"
-        >
-
-        <!-- Main Section -->
-        <ScrollView
-            Grid.Column="{OnIdiom Phone=0,Default=1}"
-            >
+    
+        <ScrollView>
             <ScrollView.Resources>
                 <DataTemplate x:Key="FavouriteTemplate">
                     <Frame
@@ -114,7 +107,5 @@
 
             </StackLayout>
         </ScrollView>
-
-    </Grid>
 
 </ContentPage>

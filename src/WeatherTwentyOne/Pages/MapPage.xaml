@@ -9,7 +9,8 @@
     x:Class="WeatherTwentyOne.Pages.MapPage">
 
         <Grid
-            ColumnDefinitions="{OnIdiom Phone='*', Default='*,480'}">
+            ColumnDefinitions="{OnIdiom Phone='*', Desktop='*,500', Default='*,500'}"
+            RowDefinitions="*">
 
             <!-- Main content -->
             <WebView
