@@ -40,7 +40,7 @@
                     
                     <Label Text="Units" class="SectionTitle"/>
 
-                    <Grid RowDefinitions="*,*">
+                    <Grid RowDefinitions="24,24">
                         <Label Grid.Row="0" Text="Imperial" class="Subhead"/>
                         <Label Grid.Row="1"
                             Text="˚F / mph / miles / inches" class="SubContent"/>
@@ -59,7 +59,7 @@
                     </Grid>
                     <BoxView class="HRule"/>
 
-                    <Grid RowDefinitions="*,*">
+                    <Grid RowDefinitions="24,24">
                         <Label Grid.Row="0"
                             Text="Metric" class="Subhead"/>
                         <Label Grid.Row="1"
@@ -78,7 +78,7 @@
                     </Grid>
                     <BoxView class="HRule"/>
 
-                    <Grid RowDefinitions="*,*">
+                    <Grid RowDefinitions="24,24">
                         <Label Grid.Row="0"
                             Text="Hybrid" class="Subhead"/>
                         <Label Grid.Row="1"
@@ -97,9 +97,9 @@
                     </Grid>
                     <BoxView class="HRule"/>
 
-                    <Label Text="More" class="SectionTitle"/>
+                    <Label Text="More" class="SectionTitle" Margin="0,20,0,0"/>
 
-                    <Grid RowDefinitions="*,*">
+                    <Grid RowDefinitions="24,24">
                         <Label Grid.Row="0"
                             Text="Support" class="Subhead"/>
                         <!-- <Label Grid.Row="1"
@@ -124,15 +124,15 @@
                 <Image Grid.Column="1"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    WidthRequest="120"
-                    HeightRequest="120"         
+                    WidthRequest="80"
+                    HeightRequest="80"         
                     Aspect="AspectFill"
                     Source="https://devblogs.microsoft.com/xamarin/wp-content/uploads/sites/44/2019/03/Screen-Shot-2017-01-03-at-3.35.53-PM-150x150.png">
                     <Image.Clip>
                         <EllipseGeometry
-                            Center="60,60"
-                            RadiusX="60"
-                            RadiusY="60"/>
+                            Center="40,40"
+                            RadiusX="40"
+                            RadiusY="40"/>
                     </Image.Clip>
                 </Image>
 
