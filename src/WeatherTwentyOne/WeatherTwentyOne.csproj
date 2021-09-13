@@ -2,12 +2,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
-    <!--<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) and '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>-->
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) and '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>
     <OutputType>Exe</OutputType>
     <SingleProject>true</SingleProject>
-    <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+    
+	<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
     <UseMaui>true</UseMaui>
-    <RootNamespace>WeatherTwentyOne</RootNamespace>
+    
+	<RootNamespace>WeatherTwentyOne</RootNamespace>
     <ApplicationTitle>WeatherTwentyOne</ApplicationTitle>
     <ApplicationId>com.companyname.WeatherTwentyOne</ApplicationId>
     <ApplicationVersion>1.0</ApplicationVersion>
@@ -37,10 +39,9 @@
 	    <PackageReference Include="Microsoft.WindowsAppSDK.InteractiveExperiences" Version="1.0.0-experimental1" NoWarn="NU1701" />
     </ItemGroup>
 
-    <PropertyGroup>
-		<!-- Required - WinUI can't deploy in a multi-targeting environment -->
-		<AppxPackageRecipe>bin\$(Configuration)\net6.0-windows10.0.19041\win-x64\WeatherTwentyOne.build.appxrecipe</AppxPackageRecipe>
-		<RuntimeIdentifier Condition="$(TargetFramework.Contains('-windows'))">win-x64</RuntimeIdentifier>
+    <PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
+		<OutputType>WinExe</OutputType>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	</PropertyGroup>
 
 
