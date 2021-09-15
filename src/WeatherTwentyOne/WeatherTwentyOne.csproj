@@ -37,6 +37,9 @@
 	    <PackageReference Include="Microsoft.WindowsAppSDK.Foundation" Version="1.0.0-experimental1" />
 	    <PackageReference Include="Microsoft.WindowsAppSDK.WinUI" Version="1.0.0-experimental1" />
 	    <PackageReference Include="Microsoft.WindowsAppSDK.InteractiveExperiences" Version="1.0.0-experimental1" NoWarn="NU1701" />
+
+		<PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.0.1" />
+		<PackageReference Include="PInvoke.User32" Version="0.7.104" />
     </ItemGroup>
 
     <PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
