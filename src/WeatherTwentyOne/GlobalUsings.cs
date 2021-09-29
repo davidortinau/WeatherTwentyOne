@@ -7,7 +7,6 @@ global using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
 global using Microsoft.Maui.Hosting;
 global using Microsoft.Maui.LifecycleEvents;
 
-
 global using System;
 global using System.Diagnostics;
 global using System.Threading.Tasks;

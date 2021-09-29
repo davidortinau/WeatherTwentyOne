@@ -1,51 +1,49 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
-    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) and '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>
-    <OutputType>Exe</OutputType>
-    <SingleProject>true</SingleProject>
-    
-	<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
-    <UseMaui>true</UseMaui>
-    
-	<RootNamespace>WeatherTwentyOne</RootNamespace>
-    <ApplicationTitle>WeatherTwentyOne</ApplicationTitle>
-    <ApplicationId>com.companyname.WeatherTwentyOne</ApplicationId>
-    <ApplicationVersion>1.0</ApplicationVersion>
-    <AndroidVersionCode>1</AndroidVersionCode>
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) and '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>
+		<OutputType>Exe</OutputType>
+		<SingleProject>true</SingleProject>
 
-    <!-- Required for C# Hot Reload -->
-	<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
-  </PropertyGroup>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<UseMaui>true</UseMaui>
 
-  <ItemGroup>
-    <MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" Color="#081B25" />
-    <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#081B25" />
-    <MauiImage Include="Resources\Images\*" />
-    <MauiFont Include="Resources\Fonts\*" />
-  </ItemGroup>
+		<RootNamespace>WeatherTwentyOne</RootNamespace>
+		<ApplicationTitle>WeatherTwentyOne</ApplicationTitle>
+		<ApplicationId>com.companyname.WeatherTwentyOne</ApplicationId>
+		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 
-  <ItemGroup Condition="$(TargetFramework.Contains('-maccatalyst'))">
-    <BundleResource Include="Platforms\MacCatalyst\trayicon.png" />
-  </ItemGroup>
+		<!-- Required for C# Hot Reload -->
+		<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
+	</PropertyGroup>
 
-  
-    <ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
-	    <!-- Required - WinUI does not yet have buildTransitive for everything -->
-	    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-experimental1" />
-	    <PackageReference Include="Microsoft.WindowsAppSDK.Foundation" Version="1.0.0-experimental1" />
-	    <PackageReference Include="Microsoft.WindowsAppSDK.WinUI" Version="1.0.0-experimental1" />
-	    <PackageReference Include="Microsoft.WindowsAppSDK.InteractiveExperiences" Version="1.0.0-experimental1" NoWarn="NU1701" />
+	<ItemGroup>
+		<MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" Color="#081B25" />
+		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#081B25" />
+		<MauiImage Include="Resources\Images\*" />
+		<MauiFont Include="Resources\Fonts\*" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.Contains('-maccatalyst'))">
+		<BundleResource Include="Platforms\MacCatalyst\trayicon.png" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
+		<!-- Required - WinUI does not yet have buildTransitive for everything -->
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-experimental1" />
+		<PackageReference Include="Microsoft.WindowsAppSDK.Foundation" Version="1.0.0-experimental1" />
+		<PackageReference Include="Microsoft.WindowsAppSDK.WinUI" Version="1.0.0-experimental1" />
+		<PackageReference Include="Microsoft.WindowsAppSDK.InteractiveExperiences" Version="1.0.0-experimental1" NoWarn="NU1701" />
 
 		<PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.0.1" />
 		<PackageReference Include="PInvoke.User32" Version="0.7.104" />
-    </ItemGroup>
+	</ItemGroup>
 
-    <PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
+	<PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
 		<OutputType>WinExe</OutputType>
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	</PropertyGroup>
-
 
 </Project>

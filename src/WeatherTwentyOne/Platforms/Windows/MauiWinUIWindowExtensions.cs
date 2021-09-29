@@ -1,6 +1,4 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using Microsoft.UI.Xaml;
+﻿using System.Runtime.InteropServices;
 using WinRT;
 
 namespace WeatherTwentyOne
