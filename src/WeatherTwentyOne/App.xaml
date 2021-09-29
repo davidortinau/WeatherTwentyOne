@@ -13,7 +13,7 @@
         <Shell 
             FlyoutWidth="68"
             FlyoutBackgroundColor="Red"
-            FlyoutBehavior="{OnIdiom Phone=Disable, Default=Locked}">
+            FlyoutBehavior="{OnIdiom Phone=Disabled, Default=Locked}">
 
             <Shell.FlyoutHeaderTemplate>
                 <DataTemplate>
