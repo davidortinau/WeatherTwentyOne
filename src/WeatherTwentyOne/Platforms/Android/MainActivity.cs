@@ -6,7 +6,7 @@ namespace WeatherTwentyOne
 	[IntentFilter(
 		new[] { Microsoft.Maui.Essentials.Platform.Intent.ActionAppAction },
 		Categories = new[] { Android.Content.Intent.CategoryDefault })]
-	[Activity(Theme = "@style/Maui.SplashTheme", MainLauncher = true)]
+	[Activity(Theme = "@style/Maui.MainTheme", MainLauncher = true)]
 	public class MainActivity : MauiAppCompatActivity
 	{
 
