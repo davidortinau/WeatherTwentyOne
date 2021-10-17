@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui;
+using Microsoft.Maui.Hosting;
 using Microsoft.UI.Xaml;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -20,7 +21,7 @@ namespace WeatherTwentyOne.WinUI
             InitializeComponent();
         }
 
-        protected override IStartup OnCreateStartup() => new Startup();
+        // protected override IStartup OnCreateStartup() => new Startup();
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
@@ -28,5 +29,8 @@ namespace WeatherTwentyOne.WinUI
 
             Microsoft.Maui.Essentials.Platform.OnLaunched(args);
         }
+
+
+        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
     }
 }
