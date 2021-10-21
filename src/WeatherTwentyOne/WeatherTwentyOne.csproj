@@ -8,10 +8,17 @@
     <RootNamespace>WeatherTwentyOne</RootNamespace>
     <ApplicationTitle>WeatherTwentyOne</ApplicationTitle>
     <ApplicationId>com.companyname.WeatherTwentyOne</ApplicationId>
-    <ApplicationVersion>1.0</ApplicationVersion>
-    <AndroidVersionCode>1</AndroidVersionCode>
-    <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
-	<_FastDeploymentDiagnosticLogging>true</_FastDeploymentDiagnosticLogging>
+    <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+    <SingleProject>true</SingleProject>
+    <ApplicationVersion>1</ApplicationVersion>
+
+    <!-- Required for C# Hot Reload -->
+	  <UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
+
+	  <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-ios'">14.2</SupportedOSPlatformVersion>
+	  <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">14.0</SupportedOSPlatformVersion>
+	  <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-android'">21.0</SupportedOSPlatformVersion>
+	  <SupportedOSPlatformVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.18362.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,15 +28,18 @@
     <MauiFont Include="Resources\Fonts\*" />
   </ItemGroup>
 
-  <ItemGroup Condition="$(TargetFramework.Contains('-maccatalyst'))">
-    <BundleResource Include="Platforms\MacCatalyst\trayicon.png" />
-  </ItemGroup>
+  <ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
+		<!-- Required - WinUI does not yet have buildTransitive for everything -->
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-experimental1" />
+		<PackageReference Include="Microsoft.WindowsAppSDK.Foundation" Version="1.0.0-experimental1" />
+		<PackageReference Include="Microsoft.WindowsAppSDK.WinUI" Version="1.0.0-experimental1" />
+		<PackageReference Include="Microsoft.WindowsAppSDK.InteractiveExperiences" Version="1.0.0-experimental1" NoWarn="NU1701" />
+		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.26-experimental1" />
+	</ItemGroup>
 
-  <PropertyGroup>
-    <RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
-    <RuntimeIdentifier Condition="$(TargetFramework.Contains('-maccatalyst'))">maccatalyst-x64</RuntimeIdentifier>
-    <InvariantGlobalization Condition="$(TargetFramework.Contains('-maccatalyst'))">true</InvariantGlobalization>
-    <UseInterpreter Condition="$(TargetFramework.Contains('-android'))">false</UseInterpreter>
-  </PropertyGroup>
+    <PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
+		<OutputType>WinExe</OutputType>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	</PropertyGroup>
 
 </Project>
