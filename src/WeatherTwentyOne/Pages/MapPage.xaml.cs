@@ -6,9 +6,7 @@ namespace WeatherTwentyOne.Pages
     {
         public MapPage()
         {
-            InitializeComponent(); 
-            
-            NavBar.ActiveTab = "Map";
+            InitializeComponent();
         }
     }
 }

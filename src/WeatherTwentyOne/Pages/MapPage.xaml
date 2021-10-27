@@ -3,38 +3,23 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:m="clr-namespace:WeatherTwentyOne.Models"
     xmlns:v="clr-namespace:WeatherTwentyOne.Views"
-    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
-    ios:Page.UseSafeArea="True"
     Title="Wind Map"
     x:Class="WeatherTwentyOne.Pages.MapPage">
 
     <Grid
-        RowDefinitions="{OnPlatform iOS='0,*', Default='*'}">
-        <Grid
-            Grid.Row="{OnPlatform iOS=1, Default=0}"
-            ColumnDefinitions="{OnIdiom Phone='*', Default='68,*,480'}"
-            RowDefinitions="{OnIdiom Phone='*,68', Default='*,0'}">
+        Grid.Row="{OnPlatform iOS=1, Default=0}"
+        ColumnDefinitions="{OnIdiom Phone='*', Default='*,480'}"
+        RowDefinitions="*">
 
-            <!-- Main content -->
-            <WebView
-                Grid.Column="{OnIdiom Phone=0, Default=1}"
-                Grid.Row="0"
-                Source="https://embed.windy.com" />
+        <!-- Main content -->
+        <WebView
+            Source="https://embed.windy.com" />
 
-            <!-- Desktop Menu -->
-            <v:NavBarView 
-                x:Name="NavBar"
-                Grid.Column="0"
-                Grid.Row="{OnIdiom Phone=1, Default=0}"
-                Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
-
-            <!-- Widget panel -->
-            <v:WidgetsPanel
-                IsVisible="{OnIdiom Phone=False, Default=True}"
-                Grid.Row="0"
-                Grid.Column="{OnIdiom Phone=0, Default=2}" />
+        <!-- Widget panel -->
+        <v:WidgetsPanel
+            IsVisible="{OnIdiom Phone=False, Default=True}"
+            Grid.Column="{OnIdiom Phone=0, Default=1}" />
             
-        </Grid>
     </Grid>
 
 </ContentPage>

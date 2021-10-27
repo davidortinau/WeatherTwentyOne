@@ -3,8 +3,6 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Xaml;
 using WeatherTwentyOne.Pages;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-
 namespace WeatherTwentyOne
 {
     public partial class App : Application
@@ -12,9 +10,13 @@ namespace WeatherTwentyOne
         public App()
         {
             InitializeComponent();
+
+            Routing.RegisterRoute("settings", typeof(SettingsPage));
         }
 
-        protected override Window CreateWindow(IActivationState activationState) =>
-            new Window(new NavigationPage(new HomePage())) { Title = "Weather TwentyOne" };
+        void TapGestureRecognizer_Tapped(System.Object sender, System.EventArgs e)
+        {
+            Shell.Current.GoToAsync("///settings");
+        }
     }
 }

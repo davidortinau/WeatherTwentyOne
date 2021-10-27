@@ -2,9 +2,86 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:windows="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;assembly=Microsoft.Maui.Controls"
              xmlns:local="clr-namespace:WeatherTwentyOne"
+             xmlns:page="clr-namespace:WeatherTwentyOne.Pages"
              x:Class="WeatherTwentyOne.App"
              windows:Application.ImageDirectory="Assets">
     <Application.Resources>
         <ResourceDictionary Source="Resources/Styles/DefaultTheme.xaml"/>
     </Application.Resources>
+
+    <Application.MainPage>
+        <Shell 
+            FlyoutWidth="68"
+            FlyoutBackgroundColor="Red"
+            FlyoutBehavior="{OnIdiom Phone=Disabled, Default=Locked}">
+
+            <Shell.FlyoutHeaderTemplate>
+                <DataTemplate>
+                    <BoxView HeightRequest="68"/>
+                </DataTemplate>
+
+            </Shell.FlyoutHeaderTemplate>
+
+            <Shell.FlyoutFooterTemplate>
+                <DataTemplate>
+                    <Grid RowDefinitions="68">
+                        <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+
+                            </Grid.GestureRecognizers>
+                        <Image Source="tab_settings.png"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                        >
+                            
+                        </Image>
+                    </Grid>
+                </DataTemplate>
+
+            </Shell.FlyoutFooterTemplate>
+
+            <!-- Desktop/Tablet-->
+            <FlyoutItem Title="Home" Icon="tab_home.png">
+                <ShellContent ContentTemplate="{DataTemplate page:HomePage}"/>
+            </FlyoutItem>
+            <FlyoutItem Title="Favorites" Icon="tab_favorites.png">
+                <ShellContent ContentTemplate="{DataTemplate page:FavoritesPage}"/>
+            </FlyoutItem>
+            <FlyoutItem Title="Map" Icon="tab_map.png">
+                <ShellContent ContentTemplate="{DataTemplate page:MapPage}"/>
+            </FlyoutItem>
+            <FlyoutItem Route="settings" FlyoutItemIsVisible="False" >
+                <ShellContent ContentTemplate="{DataTemplate page:SettingsPage}"/>
+            </FlyoutItem>
+
+            <!-- Phone -->
+            <TabBar>
+                <Tab Title="Home" Icon="tab_home.png">
+                    <ShellContent ContentTemplate="{DataTemplate page:HomePage}"/>
+                </Tab>
+                <Tab Title="Favorites" Icon="tab_favorites.png">
+                    <ShellContent ContentTemplate="{DataTemplate page:FavoritesPage}"/>
+                </Tab>
+                <Tab Title="Map" Icon="tab_map.png">
+                    <ShellContent ContentTemplate="{DataTemplate page:MapPage}"/>
+                </Tab>
+                <Tab Title="Settings" Icon="tab_settings.png">
+                    <ShellContent ContentTemplate="{DataTemplate page:SettingsPage}"/>
+                </Tab>
+            </TabBar>
+
+            <Shell.ItemTemplate>
+                <DataTemplate>
+                    <Grid
+                        RowDefinitions="68" HeightRequest="68">
+                        <Image Source="{Binding FlyoutIcon}"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               />
+                    </Grid>
+                </DataTemplate>
+
+            </Shell.ItemTemplate>
+        </Shell>
+    </Application.MainPage>
 </Application>

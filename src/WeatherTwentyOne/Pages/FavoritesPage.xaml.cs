@@ -13,8 +13,6 @@ namespace WeatherTwentyOne.Pages
             InitializeComponent();
 
             BindingContext = new FavoritesViewModel();
-
-            NavBar.ActiveTab = "Favorites";
         }
 
         protected override async void OnAppearing()

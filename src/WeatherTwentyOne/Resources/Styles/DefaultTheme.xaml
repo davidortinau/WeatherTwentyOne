@@ -37,6 +37,41 @@
                 Color="{StaticResource Background_Mid}"
                 Size="16"/>
 
+     <!-- SHELL -->
+    <Style x:Key="BaseStyle"
+           TargetType="Element">
+                <Setter Property="Shell.FlyoutBackground"
+                        Value="{StaticResource Background_Mid}"/>
+                <Setter Property="Shell.BackgroundColor"
+                    Value="{StaticResource Background_Mid}" />
+                <Setter Property="Shell.ForegroundColor"
+                    Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+                <Setter Property="Shell.TitleColor"
+                    Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+                <Setter Property="Shell.DisabledColor"
+                    Value="#B4000000" />
+                <Setter Property="Shell.UnselectedColor"
+                    Value="#CC0000" />
+                <Setter Property="Shell.NavBarHasShadow"
+                    Value="False"/>
+        
+            </Style>
+
+    <Style BasedOn="{StaticResource BaseStyle}"
+           ApplyToDerivedTypes="True"
+           TargetType="FlyoutItem" />
+
+    <Style TargetType="TabBar">
+        <Setter Property="Shell.TabBarBackgroundColor"
+            Value="{StaticResource Background_Mid}" />
+        <Setter Property="Shell.TabBarTitleColor"
+            Value="{StaticResource Accent}" />
+        <Setter Property="Shell.TabBarUnselectedColor"
+            Value="{StaticResource TabOff}" />
+        <Setter Property="Shell.TabBarForegroundColor"
+            Value="{StaticResource Accent}" />
+    </Style>
+
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="Padding" Value="0"/>
         <Setter Property="BackgroundColor" Value="{StaticResource Background_Dark}"/>

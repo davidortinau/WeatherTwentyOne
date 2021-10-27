@@ -8,15 +8,8 @@
              x:Class="WeatherTwentyOne.Pages.FavoritesPage"
              >
 
-    <Grid
-        ColumnDefinitions="{OnIdiom Phone='*', Default='68,*'}"
-        RowDefinitions="{OnIdiom Phone='*,68', Default='*'}"
-        >
-
         <!-- Main Section -->
-        <ScrollView
-            Grid.Column="{OnIdiom Phone=0,Default=1}"
-            >
+        <ScrollView>
             <ScrollView.Resources>
                 <DataTemplate x:Key="FavouriteTemplate">
                     <Frame
@@ -93,9 +86,13 @@
 
                 <!-- Actual Content -->
                 <!-- this should be a FlexLayout, but that's busted in preview 7 with BindableLayout -->
-                <VerticalStackLayout
-                    BindableLayout.ItemsSource="{Binding Favorites}"
+                <FlexLayout
+                    Wrap="Wrap" Direction="Row"
+                    JustifyContent="Start"
+                    AlignItems="Start"
+                    AlignContent="Start"
                     BindableLayout.ItemTemplate="{StaticResource FavouriteTemplate}"
+                    BindableLayout.ItemsSource="{Binding Favorites}"
                     >
                     <Grid
                         HeightRequest="132"
@@ -107,16 +104,9 @@
                             Source="add_icon.png"
                             VerticalOptions="Center" HorizontalOptions="Center"/>
                     </Grid>
-                </VerticalStackLayout>
+                </FlexLayout>
 
             </StackLayout>
         </ScrollView>
-
-        <!-- Menu -->
-        <v:NavBarView
-            x:Name="NavBar"
-            Grid.Row="{OnIdiom Phone=1, Default=0}"/>
-
-    </Grid>
 
 </ContentPage>
