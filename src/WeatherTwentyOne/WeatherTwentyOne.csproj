@@ -41,6 +41,8 @@
 		<!-- Required - WinUI does not yet have buildTransitive for everything -->
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-preview3" />
 		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.29-preview3" />
+		<PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.0.1" />
+		<PackageReference Include="PInvoke.User32" Version="0.7.104" />
 	</ItemGroup>
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
