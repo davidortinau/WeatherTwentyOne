@@ -11,6 +11,9 @@ namespace WeatherTwentyOne
         {
             InitializeComponent();
 
+            if(Device.Idiom == TargetIdiom.Phone)
+                Shell.Current.CurrentItem = PhoneTabs;
+
             Routing.RegisterRoute("settings", typeof(SettingsPage));
         }
 

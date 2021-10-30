@@ -10,7 +10,7 @@
 
     <GridLayout
         ColumnDefinitions="{OnIdiom Phone='*', Default='*,500'}"
-        RowDefinitions="{OnIdiom Phone='*,68', Default='*'}"
+        RowDefinitions="*"
         >
 
         <!-- Main content -->
@@ -21,6 +21,7 @@
 
                 <!-- Top widgets -->
                 <FlexLayout
+                    IsVisible="{OnIdiom Phone=False, Default=True}"
                     MinimumHeightRequest="360"
                     AlignItems="Center"
                     AlignContent="Center"
@@ -34,7 +35,7 @@
 
                 <v:CurrentWidget
                     IsVisible="{OnIdiom Phone=True, Default=False}"/>
-
+    
                 <BoxView HeightRequest="1" />
 
                 <v:Next24HrWidget />
@@ -44,7 +45,8 @@
         </ScrollView>
 
         <!-- Widget panel -->
-        <v:WidgetsPanel GridLayout.Column="{OnIdiom Phone=0, Default=1}"/>
+        <v:WidgetsPanel GridLayout.Column="{OnIdiom Phone=0, Default=1}"
+                        IsVisible="{OnIdiom Phone=False, Default=True}"/>
 
     </GridLayout>
 

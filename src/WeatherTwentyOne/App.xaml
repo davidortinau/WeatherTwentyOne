@@ -40,6 +40,8 @@
 
             </Shell.FlyoutFooterTemplate>
 
+            
+
             <!-- Desktop/Tablet-->
             <FlyoutItem Title="Home" Icon="tab_home.png">
                 <ShellContent ContentTemplate="{DataTemplate page:HomePage}"/>
@@ -55,7 +57,7 @@
             </FlyoutItem>
 
             <!-- Phone -->
-            <TabBar>
+            <TabBar x:Name="PhoneTabs">
                 <Tab Title="Home" Icon="tab_home.png">
                     <ShellContent ContentTemplate="{DataTemplate page:HomePage}"/>
                 </Tab>
@@ -69,6 +71,8 @@
                     <ShellContent ContentTemplate="{DataTemplate page:SettingsPage}"/>
                 </Tab>
             </TabBar>
+
+
 
             <Shell.ItemTemplate>
                 <DataTemplate>

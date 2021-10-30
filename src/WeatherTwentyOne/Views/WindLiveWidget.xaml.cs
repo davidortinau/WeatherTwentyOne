@@ -12,8 +12,11 @@ namespace WeatherTwentyOne.Views
 
         public WindLiveWidget()
         {
-            InitializeComponent();
+            InitializeComponent();            
+        }
 
+        public void OnTapped(object sender, EventArgs e)
+        {
             if (aTimer == null && Device.RuntimePlatform != Device.Android)
                 Start();
         }
@@ -45,7 +48,7 @@ namespace WeatherTwentyOne.Views
             });
         }
 
-        readonly double[] WindValues = { 98, 84, 140, 92, 55 };
+        readonly double[] WindValues = { 98, 84, 140, 92, 55 };//98, 84, 140, 92, 55
 
         private int GetDirection()
         {

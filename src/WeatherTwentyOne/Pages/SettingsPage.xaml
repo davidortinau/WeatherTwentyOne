@@ -14,7 +14,7 @@
             <ScrollView Grid.Row="1"
                         Margin="{OnIdiom Phone=15, Default=25}"
                         >
-                <VerticalStackLayout>
+                <VerticalStackLayout Spacing="8">
                     <VerticalStackLayout Spacing="8">
                         <Image 
                             HeightRequest="115"
@@ -23,24 +23,32 @@
                         <Label Text="{Binding Temperature}" 
                                 HorizontalOptions="Center"
                                 class="Title1"/>
-                        <Frame
-                            CornerRadius="15"
+                        <Border
                             HeightRequest="30"
                             VerticalOptions="Start"
                             HorizontalOptions="Center"
                             Padding="15,0"
+                            Stroke="Transparent"
+                            
                             BackgroundColor="{StaticResource Primary}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="60"/>
+                        </Border.StrokeShape>
                             <Label Text="Clear"
+                                   HorizontalOptions="Center"
                                 VerticalOptions="Center"
-                                MinimumWidthRequest="200"
                                 class="Headline"
                             />
-                        </Frame>
+                        </Border>
                     </VerticalStackLayout>
                     
                     <Label Text="Units" class="SectionTitle"/>
 
                     <Grid RowDefinitions="*,*">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SelectUnits}"
+                                              CommandParameter="imperial"/>
+                    </Grid.GestureRecognizers>
                         <Label Grid.Row="0" Text="Imperial" class="Subhead"/>
                         <Label Grid.Row="1"
                             Text="˚F / mph / miles / inches" class="SubContent"/>
@@ -51,50 +59,44 @@
                             Source="checkmark_icon.png"
                             HorizontalOptions="End"
                             VerticalOptions="Center"/>
-                        <Button BackgroundColor="Transparent"
-                                Grid.RowSpan="2"
-                                Command="{Binding SelectUnits}"
-                                CommandParameter="imperial"
-                                />
+                        
                     </Grid>
                     <BoxView class="HRule"/>
 
                     <Grid RowDefinitions="*,*">
-                        <Label Grid.Row="0"
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SelectUnits}"
+                                              CommandParameter="metric"/>
+                    </Grid.GestureRecognizers>
+                    <Label Grid.Row="0"
                             Text="Metric" class="Subhead"/>
                         <Label Grid.Row="1"
                             Text="˚C / kmh / km / millimeters / milibars" class="SubContent"/>
-                        <Image x:Name="Metric"
+                    <Image x:Name="Metric"
                             Grid.RowSpan="2"
                             IsVisible="{Binding IsMetric}"
                             Source="checkmark_icon.png"
                             HorizontalOptions="End"
                             VerticalOptions="Center"/>
-                        <Button BackgroundColor="Transparent"
-                                Grid.RowSpan="2"
-                                Command="{Binding SelectUnits}"
-                                CommandParameter="metric"
-                                />
-                    </Grid>
+                </Grid>
                     <BoxView class="HRule"/>
 
                     <Grid RowDefinitions="*,*">
-                        <Label Grid.Row="0"
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SelectUnits}"
+                                              CommandParameter="hybrid"/>
+                    </Grid.GestureRecognizers>
+                    <Label Grid.Row="0"
                             Text="Hybrid" class="Subhead"/>
                         <Label Grid.Row="1"
                             Text="˚C / mph / miles / millimeters / millibars" class="SubContent"/>
-                        <Image x:Name="Hybrid"
+                    <Image x:Name="Hybrid"
                             Grid.RowSpan="2"
                             IsVisible="{Binding IsHybrid}"
                             Source="checkmark_icon.png"
                             HorizontalOptions="End"
                             VerticalOptions="Center"/>
-                        <Button BackgroundColor="Transparent"
-                                Grid.RowSpan="2"
-                                Command="{Binding SelectUnits}"
-                                CommandParameter="hybrid"
-                                />
-                    </Grid>
+                </Grid>
                     <BoxView class="HRule"/>
 
                     <Label Text="More" class="SectionTitle"/>
@@ -115,25 +117,40 @@
             </ScrollView>
 
             <Grid 
-                Grid.Row="0"
-                Grid.ColumnDefinitions="16,120,8,*,100,16"
+                Grid.Row="0" 
+                Grid.ColumnDefinitions="16,75,16,*,100,16"
                 >
-                <Image Grid.Column="1"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    WidthRequest="60"
-                    HeightRequest="60"         
-                    Aspect="AspectFill"
-                    Source="https://devblogs.microsoft.com/xamarin/wp-content/uploads/sites/44/2019/03/Screen-Shot-2017-01-03-at-3.35.53-PM-150x150.png">
+
+            <!--<BoxView Color="Red" 
+                     HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="75"
+                        HeightRequest="75"
+                     Grid.Column="1">
+                <BoxView.Clip>
+                    <EllipseGeometry 
+                                Center="75,75"
+                                RadiusX="75"
+                                RadiusY="75"/>
+                </BoxView.Clip>
+            </BoxView>-->
+
+            <Image  HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        GridLayout.Column="1"
+                        WidthRequest="75"
+                        HeightRequest="75"
+                        Aspect="AspectFill"
+                        Source="https://devblogs.microsoft.com/xamarin/wp-content/uploads/sites/44/2019/03/Screen-Shot-2017-01-03-at-3.35.53-PM-150x150.png">
                     <Image.Clip>
-                        <EllipseGeometry
-                            Center="60,60"
-                            RadiusX="60"
-                            RadiusY="60"/>
+                        <EllipseGeometry 
+                                Center="98,98"
+                                RadiusX="98"
+                                RadiusY="98"/>
                     </Image.Clip>
                 </Image>
 
-                <Label Text="David Ortinau" Grid.Column="3" LineBreakMode="WordWrap" VerticalOptions="Center" />
+            <Label Text="David Ortinau" Grid.Column="3" LineBreakMode="WordWrap" VerticalOptions="Center" />
 
                 <Button Text="Sign Out" Clicked="OnSignOut" Grid.Column="4" HorizontalOptions="End" VerticalOptions="Center"/>
 

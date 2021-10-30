@@ -3,6 +3,9 @@
       x:Class="WeatherTwentyOne.Views.WindLiveWidget">
 
     <Grid>
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTapped"/>
+        </Grid.GestureRecognizers>
         <Image
             VerticalOptions="Center"
             HorizontalOptions="Center"
@@ -16,7 +19,7 @@
             HeightRequest="200"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            Rotation="0" />
+             />
     </Grid>
 
     <Label

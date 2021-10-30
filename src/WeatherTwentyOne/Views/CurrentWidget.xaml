@@ -8,33 +8,31 @@
         HeightRequest="200"
         HorizontalOptions="Center"
         Aspect="AspectFit"
-        Source="weather_partly_cloudy_day.png" />
+        Source="weather_partly_cloudy_day.png">
+        <Image.Shadow>
+            <Shadow Brush="#2B0B98" Offset="20,20" Radius="60" Opacity="0.8"/>
+        </Image.Shadow>
+    </Image>
 
     <Label
         Text="52℉"
         HorizontalOptions="Center"
         class="Title1" />
 
-    <Grid>
-        <Frame
-            CornerRadius="15"
+    <Border BackgroundColor="{StaticResource Primary}"
+            Stroke="Transparent"
+            StrokeThickness="1"
             HorizontalOptions="Center"
-            Padding="0"
-            BackgroundColor="{StaticResource Primary}">
-            <Grid
-                RowDefinitions="4,*,4"
-                ColumnDefinitions="15,*,15"
-                RowSpacing="0"
-                ColumnSpacing="0"
-                HorizontalOptions="Center">
-                <Label
-                    Grid.Row="1"
-                    Grid.Column="1"
+            Padding="15,4"
+            >
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="60"/>
+        </Border.StrokeShape>
+        <Label
                     Text="Clear"
                     HorizontalOptions="Center"
                     FontSize="18"/>
-            </Grid>
-        </Frame>
-    </Grid>
+    </Border>
+    
 
 </VerticalStackLayout>
