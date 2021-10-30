@@ -33,7 +33,6 @@
                         </Border.StrokeShape>
                         <Grid
                             Margin="20"
-                            BackgroundColor="Red"
                             ColumnDefinitions="*"
                             RowDefinitions="*">
                             <Grid.GestureRecognizers>

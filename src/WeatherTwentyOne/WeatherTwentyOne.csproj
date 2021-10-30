@@ -45,6 +45,16 @@
 		<PackageReference Include="PInvoke.User32" Version="0.7.104" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Platforms\Windows\trayicon.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Platforms\Windows\trayicon.ico">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
 	<PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
 		<OutputType>WinExe</OutputType>
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>

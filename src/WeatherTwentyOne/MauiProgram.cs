@@ -24,12 +24,13 @@ namespace WeatherTwentyOne
                 });
             builder.ConfigureLifecycleEvents(lifecycle => {
 #if WINDOWS
-                                lifecycle
-                                    .AddWindows(windows => windows.OnLaunched((app, args) => {
-                                        MauiWinUIApplication.Current.MainWindow.SetIcon("Platforms/Windows/trayicon.ico");
-                                    }));
+                lifecycle
+                    .AddWindows(windows => windows.OnLaunched((app, args) => {
+                        var winuiApp = (Microsoft.UI.Xaml.Window)MauiWinUIApplication.Current.Application.Windows[0].Handler!.NativeView!;
+                        winuiApp.SetIcon("Platforms/Windows/trayicon.ico");
+                    }));
 #endif
-                             });
+            });
 
             var services = builder.Services;
 #if WINDOWS

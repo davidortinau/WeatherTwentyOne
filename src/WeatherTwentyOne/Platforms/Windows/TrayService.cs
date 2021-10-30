@@ -1,4 +1,6 @@
 ﻿using Hardcodet.Wpf.TaskbarNotification.Interop;
+using Microsoft.Maui;
+using Microsoft.UI.Xaml;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +21,9 @@ namespace WeatherTwentyOne.WinUI
 			tray = new WindowsTrayIcon("Platforms/Windows/trayicon.ico");
 			tray.LeftClick = () =>
 			{
-				Microsoft.Maui.MauiWinUIApplication.Current.MainWindow.BringToFront();
+                var winuiApp = (Window)MauiWinUIApplication.Current.Application.Windows[0].Handler!.NativeView!;
+                winuiApp.BringToFront();
+                //Microsoft.Maui.MauiWinUIApplication.Current.Application.Windows[0].BringToFront();
 				ClickHandler?.Invoke();
 			};
 		}
