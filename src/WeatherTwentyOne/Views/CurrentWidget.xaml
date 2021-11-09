@@ -9,9 +9,9 @@
         HorizontalOptions="Center"
         Aspect="AspectFit"
         Source="weather_partly_cloudy_day.png">
-        <Image.Shadow>
-            <Shadow Brush="#2B0B98" Offset="20,20" Radius="60" Opacity="0.8"/>
-        </Image.Shadow>
+        <!--<Image.Shadow>
+            <Shadow Brush="#2B0B98" Offset="20,20" Radius="20" Opacity="0.8"/>
+        </Image.Shadow>-->
     </Image>
 
     <Label

@@ -14,7 +14,8 @@
     <SingleProject>true</SingleProject>
     <ApplicationVersion>1</ApplicationVersion>
 
-	<MauiVersion>6.0.101-preview.10.2068</MauiVersion>
+	<!-- (Optional) Pin to a specific version -->
+	<!--<MauiVersion>6.0.101-preview.10.2068</MauiVersion>-->
 
     <!-- Required for C# Hot Reload -->
 	<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
@@ -31,8 +32,11 @@
 	</PropertyGroup>
 
   <ItemGroup>
-    <MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" Color="#081B25" />
-    <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#081B25" />
+    <MauiIcon Include="Resources\appicon.svg" 
+			  ForegroundFile="Resources\appiconfg.svg" 
+			  Color="#081B25" />
+    <MauiSplashScreen Include="Resources\appiconfg.svg" 
+					  Color="#081B25" />
     <MauiImage Include="Resources\Images\*" />
     <MauiFont Include="Resources\Fonts\*" />
   </ItemGroup>

@@ -1,12 +1,9 @@
-﻿using Microsoft.Maui.Controls;
+﻿namespace WeatherTwentyOne.Views;
 
-namespace WeatherTwentyOne.Views
+public partial class CurrentWidget
 {
-    public partial class CurrentWidget
+    public CurrentWidget()
     {
-        public CurrentWidget()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

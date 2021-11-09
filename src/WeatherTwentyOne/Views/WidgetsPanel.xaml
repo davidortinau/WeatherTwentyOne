@@ -3,13 +3,94 @@
              xmlns:m="clr-namespace:WeatherTwentyOne.Models"
              x:Class="WeatherTwentyOne.Views.WidgetsPanel"
             ColumnDefinitions="1,*">
-    <ScrollView GridLayout.Column="1">
-     <FlexLayout
-            Wrap="Wrap" Direction="Row" Margin="5"
-            JustifyContent="SpaceBetween"
-            AlignItems="Start"
-            AlignContent="Start">
-            <BindableLayout.ItemsSource>
+    <GridLayout.Resources>
+        <DataTemplate x:Key="MetricTemplate">
+            <Frame
+                HeightRequest="154"
+                WidthRequest="154"
+                Padding="0"
+                CornerRadius="20"
+                HasShadow="False"
+                x:DataType="m:Metric"
+                BackgroundColor="{StaticResource Background_Mid}">
+                <Grid
+                    Margin="20"
+                    ColumnDefinitions="*"
+                    RowDefinitions="*">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="2"
+                                    Tapped="OnTapped"/>
+                    </Grid.GestureRecognizers>
+                    <Image Source="{Binding Icon}"
+                                WidthRequest="45"
+                                HeightRequest="45"
+                           Aspect="AspectFit"
+                                VerticalOptions="Start"
+                                HorizontalOptions="End"
+                                />
+
+                    <StackLayout 
+                        HorizontalOptions="Start"
+                        Spacing="0"
+                        VerticalOptions="End">
+                        <Label Text="{Binding Value}" class="LargeTitle"/>
+                        <Label Text="From" class="Subhead"/>
+                        <Label Text="{Binding WeatherStation}" class="SubContent"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="MetricBorderTemplate">
+            <Border
+                Margin="25"
+                HorizontalOptions="Start"
+                HeightRequest="154"
+                WidthRequest="154"
+                Stroke="Transparent"
+                BackgroundColor="{StaticResource Background_Mid}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40"/>
+                </Border.StrokeShape>
+                <Grid
+                    Margin="20"
+                    ColumnDefinitions="*"
+                    RowDefinitions="*">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="2"
+                                    Tapped="OnTapped"/>
+                    </Grid.GestureRecognizers>
+                    <Image Source="{Binding Icon}"
+                                WidthRequest="45"
+                                HeightRequest="45"
+                                VerticalOptions="Start"
+                                HorizontalOptions="End"
+                                   BackgroundColor="Green"
+                                />
+
+                    <StackLayout HorizontalOptions="Start"
+                                        Spacing="0"
+                                        VerticalOptions="End">
+                        <Label Text="{Binding Value}" class="LargeTitle"/>
+                        <Label Text="From" class="Subhead"/>
+                        <Label Text="{Binding WeatherStation}" class="SubContent"/>
+                    </StackLayout>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </GridLayout.Resources>
+
+     <CollectionView
+         GridLayout.Column="1"
+         Margin="5"
+         ItemTemplate="{StaticResource MetricTemplate}">
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical"
+                             Span="3"
+                             HorizontalItemSpacing="8"
+                             VerticalItemSpacing="8"/>
+        </CollectionView.ItemsLayout>
+            <CollectionView.ItemsSource>
                 <x:Array Type="{x:Type m:Metric}">
                     <m:Metric Title="Humidity" Icon="humidity_icon.png" WeatherStation="Pond Elementary" Value="78%"/>
                     <m:Metric Title="Rain" Icon="rain_icon.png" WeatherStation="Pond Elementary" Value="0.2in"/>
@@ -19,57 +100,10 @@
                     <m:Metric Title="Rain" Icon="rain_icon.png" WeatherStation="Rockwood Reservation" Value="0.2in"/>
                     <m:Metric Title="Chance of Rain" Icon="umbrella_icon.png" WeatherStation="County Library" Value="2%"/>
                 </x:Array>
-            </BindableLayout.ItemsSource>
-         <BindableLayout.ItemTemplate>
-             <DataTemplate>
-                    <Border
-                        Margin="25"
-                        HorizontalOptions="Start"
-                        HeightRequest="154"
-                        WidthRequest="154"
-                        BackgroundColor="{StaticResource Background_Mid}">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="20"/>
-                        </Border.StrokeShape>
-                        <Grid
-                            Margin="20"
-                            ColumnDefinitions="*"
-                            RowDefinitions="*">
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer NumberOfTapsRequired="2"
-                                    Tapped="OnTapped"/>
-                            </Grid.GestureRecognizers>
-                            <Image Source="{Binding Icon}"
-                                WidthRequest="45"
-                                HeightRequest="45"
-                                VerticalOptions="Start"
-                                HorizontalOptions="End"
-                                   BackgroundColor="Green"
-                                />
+        </CollectionView.ItemsSource>
 
-                            <StackLayout HorizontalOptions="Start"
-                                        Spacing="0"
-                                        VerticalOptions="End">
-                                <Label Text="{Binding Value}" class="LargeTitle"/>
-                                <Label Text="From" class="Subhead"/>
-                                <Label Text="{Binding WeatherStation}" class="SubContent"/>
-                            </StackLayout>
-                        </Grid>
-                    </Border>
-                </DataTemplate>
-
-         </BindableLayout.ItemTemplate>
-
-            <ContentView HeightRequest="132" 
-                          WidthRequest="132" 
-                          FlexLayout.AlignSelf="Center"
-                          Margin="{OnIdiom Phone=15,Default=25}">
-                <ImageButton 
-                            BackgroundColor="Transparent"
-                            Source="add_icon.png" VerticalOptions="Center" HorizontalOptions="Center"/>
-            </ContentView>
-        </FlexLayout>
-        </ScrollView>
+            
+        </CollectionView>
         <BoxView
             BackgroundColor="{StaticResource Background_Mid}"
             WidthRequest="1"

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace WeatherTwentyOne.Models;
 
-namespace WeatherTwentyOne.Models
+public class Metric
 {
-    public class Metric
-    {
-        public string Icon { get;set;}
-        public string Title { get; set; }
-        public string WeatherStation { get; set; }
-        public string Value { get; set; }
-    }
+    public string Icon { get; set; }
+    public string Title { get; set; }
+    public string WeatherStation { get; set; }
+    public string Value { get; set; }
 }

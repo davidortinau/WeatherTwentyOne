@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace WeatherTwentyOne.Services;
 
-namespace WeatherTwentyOne.Services
+public interface ITrayService
 {
-	public interface ITrayService
-	{
-		void Initialize();
+    void Initialize();
 
-		Action ClickHandler { get; set; }
-	}
+    Action ClickHandler { get; set; }
 }

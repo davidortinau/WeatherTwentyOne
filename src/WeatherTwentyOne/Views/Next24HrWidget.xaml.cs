@@ -1,15 +1,13 @@
-﻿using Microsoft.Maui.Controls;
-using WeatherTwentyOne.ViewModels;
+﻿using WeatherTwentyOne.ViewModels;
 
-namespace WeatherTwentyOne.Views
+namespace WeatherTwentyOne.Views;
+
+public partial class Next24HrWidget
 {
-    public partial class Next24HrWidget
+    public Next24HrWidget()
     {
-        public Next24HrWidget()
-        {
-            InitializeComponent();
+        InitializeComponent();
 
-            BindingContext = new HomeViewModel();
-        }
+        BindingContext = new HomeViewModel();
     }
 }

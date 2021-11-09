@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace WeatherTwentyOne.Resources.Styles;
 
-using Microsoft.Maui.Controls;
-
-namespace WeatherTwentyOne.Resources.Styles
+public partial class DefaultTheme : ResourceDictionary
 {
-    public partial class DefaultTheme : ResourceDictionary
+    public DefaultTheme()
     {
-        public DefaultTheme()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

@@ -1,44 +1,39 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using Microsoft.Maui.Controls;
-using WeatherTwentyOne.ViewModels;
+﻿using WeatherTwentyOne.ViewModels;
 
-namespace WeatherTwentyOne.Pages
+namespace WeatherTwentyOne.Pages;
+
+public partial class FavoritesPage : ContentPage
 {
-    public partial class FavoritesPage : ContentPage
+    public FavoritesPage()
     {
-        public FavoritesPage()
+        InitializeComponent();
+
+        BindingContext = new FavoritesViewModel();
+    }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        //await Task.Delay(300);
+        //TransitionIn();
+    }
+
+    async void TransitionIn()
+    {
+        foreach (var item in tiles)
         {
-            InitializeComponent();
-
-            BindingContext = new FavoritesViewModel();
+            item.FadeTo(1, 800);
+            await Task.Delay(50);
         }
+    }
 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-
-            //await Task.Delay(300);
-            //TransitionIn();
-        }
-
-        async void TransitionIn()
-        {
-            foreach (var item in tiles)
-            {
-                item.FadeTo(1, 800);
-                await Task.Delay(50);
-            }
-        }
-
-        int tileCount = 0;
-        List<Frame> tiles = new List<Frame>();
-        async void OnHandlerChanged(object sender, EventArgs e)
-        {
-            Frame f = (Frame)sender;
-            tiles.Add(f);
-            tileCount++;
-        }
+    int tileCount = 0;
+    List<Frame> tiles = new List<Frame>();
+    async void OnHandlerChanged(object sender, EventArgs e)
+    {
+        Frame f = (Frame)sender;
+        tiles.Add(f);
+        tileCount++;
     }
 }

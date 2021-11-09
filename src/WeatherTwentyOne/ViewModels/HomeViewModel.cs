@@ -1,24 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using WeatherTwentyOne.Models.WeatherTwentyOne.Models;
+﻿using WeatherTwentyOne.Models;
 
-namespace WeatherTwentyOne.ViewModels
+namespace WeatherTwentyOne.ViewModels;
+
+public class HomeViewModel
 {
-    public class HomeViewModel
+    public List<Forecast> Week { get; set; }
+
+    public List<Forecast> Hours { get; set; }
+
+    public HomeViewModel()
     {
-        public List<Forecast> Week {  get;set;}
+        InitData();
+    }
 
-        public List<Forecast> Hours { get;set;}
-
-        public HomeViewModel()
-        {
-            InitData();
-        }
-
-        private void InitData()
-        {
-            Week = new List<Forecast>
+    private void InitData()
+    {
+        Week = new List<Forecast>
             {
                 new Forecast
                 {
@@ -106,7 +103,7 @@ namespace WeatherTwentyOne.ViewModels
                 }
             };
 
-            Hours = new List<Forecast>
+        Hours = new List<Forecast>
             {
                 new Forecast
                 {
@@ -250,6 +247,5 @@ namespace WeatherTwentyOne.ViewModels
                     Temperature = new Temperature{ Minimum = new Minimum{ Unit = "F", Value = 47 }, Maximum = new Maximum { Unit = "F", Value = 67 } },
                 }
             };
-        }
     }
 }

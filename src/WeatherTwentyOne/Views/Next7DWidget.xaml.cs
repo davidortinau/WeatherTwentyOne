@@ -1,15 +1,13 @@
-﻿using Microsoft.Maui.Controls;
-using WeatherTwentyOne.ViewModels;
+﻿using WeatherTwentyOne.ViewModels;
 
-namespace WeatherTwentyOne.Views
+namespace WeatherTwentyOne.Views;
+
+public partial class Next7DWidget
 {
-    public partial class Next7DWidget
+    public Next7DWidget()
     {
-        public Next7DWidget()
-        {
-            InitializeComponent();
+        InitializeComponent();
 
-            BindingContext = new HomeViewModel();
-        }
+        BindingContext = new HomeViewModel();
     }
 }

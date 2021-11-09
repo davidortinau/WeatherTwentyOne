@@ -1,12 +1,9 @@
-﻿using Microsoft.Maui.Controls;
+﻿namespace WeatherTwentyOne.Pages;
 
-namespace WeatherTwentyOne.Pages
+public partial class MapPage : ContentPage
 {
-    public partial class MapPage : ContentPage
+    public MapPage()
     {
-        public MapPage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
