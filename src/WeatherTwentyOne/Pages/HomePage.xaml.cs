@@ -43,13 +43,13 @@ public partial class HomePage : ContentPage
 
     private void SetupTrayIcon()
     {
-        var trayService = ServiceProvider.GetService<ITrayService>();
+        var trayService = ServiceLocator.GetService<ITrayService>();
 
         if (trayService != null)
         {
             trayService.Initialize();
             trayService.ClickHandler = () =>
-                ServiceProvider.GetService<INotificationService>()
+                ServiceLocator.GetService<INotificationService>()
                     ?.ShowNotification("Hello Build! 😻 From .NET MAUI", "How's your weather?  It's sunny where we are 🌞");
         }
     }
