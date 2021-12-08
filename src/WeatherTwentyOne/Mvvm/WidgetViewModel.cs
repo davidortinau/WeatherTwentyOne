@@ -1,4 +1,4 @@
-﻿namespace WeatherTwentyOne.ViewModels.Widget;
+﻿namespace WeatherTwentyOne.Mvvm;
 
 public abstract class WidgetViewModel : BindableBase
 {

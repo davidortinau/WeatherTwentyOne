@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using WeatherClient2021;
+using WeatherTwentyOne.Mvvm;
 using Location = WeatherClient2021.Location;
 
 namespace WeatherTwentyOne.ViewModels;

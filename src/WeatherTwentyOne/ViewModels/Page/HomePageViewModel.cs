@@ -1,13 +1,14 @@
-﻿using WeatherTwentyOne.ViewModels.Widget;
+﻿using WeatherTwentyOne.Mvvm;
+using WeatherTwentyOne.ViewModels.Widget;
 
 namespace WeatherTwentyOne.ViewModels;
 
 public class HomePageViewModel : PageViewModel
 {
-    public HomePageViewModel()
+    public HomePageViewModel(IWidgetViewModelFactory viewModelFactory)
     {
-        WeekViewModel = ServiceLocator.GetService<WeekForecastsWidgetViewModel>();
-        DayViewModel = ServiceLocator.GetService<DayForecastsWidgetViewModel>();
+        WeekViewModel = viewModelFactory.Create<WeekForecastsWidgetViewModel>();
+        DayViewModel = viewModelFactory.Create<DayForecastsWidgetViewModel>();
     }
 
     public WeekForecastsWidgetViewModel WeekViewModel { get; private set; }

@@ -1,15 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace WeatherTwentyOne.ViewModels;
-
-public abstract class PageViewModel : BindableBase
-{
-    public virtual Task InitializeAsync()
-    {
-        return Task.CompletedTask;
-    }
-}
+namespace WeatherTwentyOne.Mvvm;
 
 /// <summary>
 /// Implementation of <see cref="INotifyPropertyChanged"/> to simplify models.

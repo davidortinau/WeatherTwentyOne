@@ -1,5 +1,6 @@
 ﻿using Microsoft.Maui.LifecycleEvents;
 using WeatherClient2021;
+using WeatherTwentyOne.Mvvm;
 using WeatherTwentyOne.Services;
 using WeatherTwentyOne.ViewModels;
 using WeatherTwentyOne.ViewModels.Widget;
@@ -32,6 +33,8 @@ public static class MauiProgram
 
         services.AddSingleton<IForecastService, ForecastService>();
         services.AddSingleton<IWeatherService, WeatherService>();
+
+        services.AddSingleton<IWidgetViewModelFactory, WidgetViewModelFactory>();
 
         services.AddTransient<FavoritesPageViewModel>();
         services.AddTransient<HomePageViewModel>();

@@ -1,3 +1,5 @@
+using WeatherTwentyOne.Mvvm;
+
 namespace WeatherTwentyOne.ViewModels;
 
 public class SettingsPageViewModel : PageViewModel

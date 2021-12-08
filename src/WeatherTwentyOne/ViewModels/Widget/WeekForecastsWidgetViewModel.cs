@@ -1,4 +1,5 @@
 ﻿using WeatherTwentyOne.Models;
+using WeatherTwentyOne.Mvvm;
 using WeatherTwentyOne.Services;
 
 namespace WeatherTwentyOne.ViewModels.Widget;
