@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
 using WeatherTwentyOne.Services;
+using WeatherTwentyOne.ViewModels;
 using Application = Microsoft.Maui.Controls.Application;
 using WindowsConfiguration = Microsoft.Maui.Controls.PlatformConfiguration.Windows;
 
@@ -9,6 +10,7 @@ namespace WeatherTwentyOne.Pages;
 public partial class HomePage : ContentPage
 {
     static bool isSetup = false;
+    private HomePageViewModel viewModel;
 
     public HomePage()
     {
@@ -21,6 +23,17 @@ public partial class HomePage : ContentPage
             SetupAppActions();
             SetupTrayIcon();
         }
+
+        viewModel = ServiceLocator.GetService<HomePageViewModel>();
+
+        BindingContext = viewModel;
+    }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        await viewModel.InitializeAsync();
     }
 
     private void SetupAppActions()

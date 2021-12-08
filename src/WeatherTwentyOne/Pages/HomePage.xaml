@@ -38,8 +38,8 @@
     
                 <BoxView HeightRequest="1" />
 
-                <v:Next24HrWidget />
-                <v:Next7DWidget />
+                <v:Next24HrWidget BindingContext="{Binding DayViewModel}" />
+                <v:Next7DWidget BindingContext="{Binding WeekViewModel}" />
 
             </VerticalStackLayout>
         </ScrollView>

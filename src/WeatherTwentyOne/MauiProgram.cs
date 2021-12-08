@@ -2,6 +2,7 @@
 using WeatherClient2021;
 using WeatherTwentyOne.Services;
 using WeatherTwentyOne.ViewModels;
+using WeatherTwentyOne.ViewModels.Widget;
 
 namespace WeatherTwentyOne;
 
@@ -35,6 +36,9 @@ public static class MauiProgram
         services.AddTransient<FavoritesPageViewModel>();
         services.AddTransient<HomePageViewModel>();
         services.AddTransient<SettingsPageViewModel>();
+
+        services.AddTransient<WeekForecastsWidgetViewModel>();
+        services.AddTransient<DayForecastsWidgetViewModel>();
 
 #if WINDOWS
             //services.AddSingleton<ITrayService, WinUI.TrayService>();
