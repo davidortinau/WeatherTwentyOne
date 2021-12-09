@@ -4,6 +4,7 @@ using WeatherTwentyOne.Mvvm;
 using WeatherTwentyOne.Services;
 using WeatherTwentyOne.ViewModels;
 using WeatherTwentyOne.ViewModels.Widget;
+using WeatherTwentyOne.Views;
 
 namespace WeatherTwentyOne;
 
@@ -35,13 +36,20 @@ public static class MauiProgram
         services.AddSingleton<IWeatherService, WeatherService>();
 
         services.AddSingleton<IWidgetViewModelFactory, WidgetViewModelFactory>();
-
+        
         services.AddTransient<FavoritesPageViewModel>();
         services.AddTransient<HomePageViewModel>();
         services.AddTransient<SettingsPageViewModel>();
 
         services.AddTransient<WeekForecastsWidgetViewModel>();
         services.AddTransient<DayForecastsWidgetViewModel>();
+
+        var viewModelMapper = new ViewModelMapper();
+
+        viewModelMapper.Register<Next24HrWidget, DayForecastsWidgetViewModel>();
+        viewModelMapper.Register<Next7DWidget, WeekForecastsWidgetViewModel>();
+
+        services.AddSingleton<IViewModelMapper>(viewModelMapper);
 
 #if WINDOWS
             //services.AddSingleton<ITrayService, WinUI.TrayService>();
