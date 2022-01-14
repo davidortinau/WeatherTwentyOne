@@ -14,9 +14,7 @@ public class TrayService : ITrayService
     {
         tray = new WindowsTrayIcon("Platforms/Windows/trayicon.ico");
         tray.LeftClick = () => {
-            var winuiApp = (Microsoft.Maui.Controls.Window)MauiWinUIApplication.Current.Application.Windows[0].Handler!.NativeView!;
-            winuiApp.BringToFront();
-            //Microsoft.Maui.MauiWinUIApplication.Current.Application.Windows[0].BringToFront();
+            WindowExtensions.BringToFront();
             ClickHandler?.Invoke();
         };
     }

@@ -16,10 +16,14 @@ public static class MauiProgram
             });
         builder.ConfigureLifecycleEvents(lifecycle => {
 #if WINDOWS
-            lifecycle
-                .AddWindows(windows => windows.OnLaunched((app, args) => {
-                    var winuiApp = (Microsoft.Maui.Controls.Window)MauiWinUIApplication.Current.Application.Windows[0];
-                    winuiApp.SetIcon("Platforms/Windows/trayicon.ico");
+        lifecycle
+            .AddWindows(windows =>
+                windows.OnNativeMessage((app, args) => {
+                    if (WindowExtensions.Hwnd == IntPtr.Zero)
+                    {
+                        WindowExtensions.Hwnd = args.Hwnd;
+                        WindowExtensions.SetIcon("Platforms/Windows/trayicon.ico");
+                    }
                 }));
 #endif
         });
