@@ -1,36 +1,12 @@
 # Weather '21
 
-This is a [.NET MAUI](https://github.com/dotnet/maui) app showcasing .NET 6 Preview progress. For more information about what's included, read the blogs: 
-
-* [.NET MAUI Preview 7](https://devblogs.microsoft.com/dotnet/announcing-net-maui-preview-7)
-* [.NET MAUI Preview 6](https://devblogs.microsoft.com/dotnet/announcing-net-maui-preview-6)
-* [.NET MAUI Preview 5](https://devblogs.microsoft.com/dotnet/announcing-net-maui-preview-5)
-* [.NET MAUI Preview 4](https://devblogs.microsoft.com/dotnet/announcing-net-maui-preview-4)
-
+This is a [.NET MAUI](https://github.com/dotnet/maui) app showcasing .NET 6 Preview progress. For more information about what's included, [read the blogs](https://devblogs.microsoft.com/dotnet/category/maui/).
 
 ![.NET MAUI Weather App on all platforms](images/maui-weather-hero-sm.png)
 
 ## Requirements
 
-To run this app, you'll need:
-
-* .NET 6 Preview 
-    * .NET MAUI and platform SDKs
-* Visual Studio 16.11 Preview 2
-
-The easiest way to get .NET 6 Preview is to install the `maui-check` dotnet tool from CLI and follow the instructions.
-
-Install: 
-```console
-dotnet tool install -g redth.net.maui.check
-```
-
-Run: 
-```console
-maui-check
-```
-
-For running on Mac you'll currently use your favorite text editor and terminal to edit and run apps. We expect Visual Studio for Mac .NET 6 support to begin arriving mid-year.
+Setup instructions for Windows and Mac are [here on the dotnet/maui wiki](https://github.com/dotnet/maui/wiki#getting-started).
 
 ## Platform Integrations
 
@@ -42,14 +18,14 @@ To demonstrate how easily you can enable platform-native integrations, we added 
 
 ![gallery of platform images](images/platform-integrations.png)
 
-## Single Project
+## Four Platforms, One Project
 
-The WeatherTwentyOne project is a multi-targeted SDK project that can run on Android, iOS, and macOS. To choose your platform to run on, use the new static run profiles from the run button.
+The WeatherTwentyOne project is a multi-targeted SDK project that can run on Android, iOS, macOS, and Windows. 
 
 ![run menu](images/run-static-profiles.png)
 
 ## Additional Resources
 
-https://github.com/dotnet/maui-samples
+https://docs.microsoft.com/dotnet/maui
 
 https://github.com/dotnet/maui
