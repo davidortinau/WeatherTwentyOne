@@ -40,22 +40,22 @@
      <!-- SHELL -->
     <Style x:Key="BaseStyle"
            TargetType="Element">
-        <Setter Property="Shell.FlyoutBackground"
-                        Value="{StaticResource Background_Mid}"/>
-        <Setter Property="Shell.BackgroundColor"
-                    Value="{StaticResource Background_Mid}" />
-                <Setter Property="Shell.ForegroundColor"
-                    Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
-                <Setter Property="Shell.TitleColor"
-                    Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
-                <Setter Property="Shell.DisabledColor"
-                    Value="#B4000000" />
-                <Setter Property="Shell.UnselectedColor"
-                    Value="#CC0000" />
-                <Setter Property="Shell.NavBarHasShadow"
-                    Value="False"/>
-        
-            </Style>
+            <Setter Property="Shell.FlyoutBackground"
+                        Value="{AppThemeBinding Light={StaticResource NeutralDarker}, Dark={StaticResource Background_Mid}}"/>
+            <Setter Property="Shell.BackgroundColor"
+                    Value="{AppThemeBinding Light={StaticResource NeutralDarker}, Dark={StaticResource Background_Mid}}" />
+            <Setter Property="Shell.ForegroundColor"
+                Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+            <Setter Property="Shell.TitleColor"
+                Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+            <Setter Property="Shell.DisabledColor"
+                Value="#B4000000" />
+            <Setter Property="Shell.UnselectedColor"
+                Value="#CC0000" />
+            <Setter Property="Shell.NavBarHasShadow"
+                Value="False"/>
+
+    </Style>
 
     <Style BasedOn="{StaticResource BaseStyle}"
            ApplyToDerivedTypes="True"

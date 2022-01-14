@@ -15,12 +15,12 @@
             FlyoutBackgroundColor="{StaticResource Background_Mid}"
             FlyoutBehavior="{OnIdiom Phone=Disabled, Default=Locked}">
 
-            <Shell.FlyoutHeaderTemplate>
+            <!--<Shell.FlyoutHeaderTemplate>
                 <DataTemplate>
                     <BoxView HeightRequest="68"/>
                 </DataTemplate>
 
-            </Shell.FlyoutHeaderTemplate>
+            </Shell.FlyoutHeaderTemplate>-->
 
             <Shell.FlyoutFooterTemplate>
                 <DataTemplate>

@@ -28,7 +28,7 @@ public partial class HomePage : ContentPage
         try
         {
 #if WINDOWS
-                AppActions.IconDirectory = Application.Current.On<WindowsConfiguration>().GetImageDirectory();
+            AppActions.IconDirectory = Application.Current.On<WindowsConfiguration>().GetImageDirectory();
 #endif
             AppActions.SetAsync(
                 new AppAction("current_info", "Check Current Weather", icon: "current_info"),

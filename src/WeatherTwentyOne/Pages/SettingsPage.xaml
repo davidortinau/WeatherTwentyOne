@@ -44,17 +44,18 @@
                     
                     <Label Text="Units" class="SectionTitle"/>
 
-                    <Grid RowDefinitions="*,*">
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SelectUnits}"
-                                              CommandParameter="imperial"/>
-                    </Grid.GestureRecognizers>
+                    <Grid RowDefinitions="30,30">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SelectUnits}"
+                                                  CommandParameter="imperial"/>
+                        </Grid.GestureRecognizers>
                         <Label Grid.Row="0" Text="Imperial" class="Subhead"/>
                         <Label Grid.Row="1"
                             Text="˚F / mph / miles / inches" class="SubContent"/>
                         <Image
                             x:Name="Imperial"
                             Grid.RowSpan="2"
+                            Aspect="Center"
                             IsVisible="{Binding IsImperial}"
                             Source="checkmark_icon.png"
                             HorizontalOptions="End"
@@ -63,7 +64,7 @@
                     </Grid>
                     <BoxView class="HRule"/>
 
-                    <Grid RowDefinitions="*,*">
+                <Grid RowDefinitions="30,30">
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SelectUnits}"
                                               CommandParameter="metric"/>
@@ -74,6 +75,7 @@
                             Text="˚C / kmh / km / millimeters / milibars" class="SubContent"/>
                     <Image x:Name="Metric"
                             Grid.RowSpan="2"
+                           Aspect="Center"
                             IsVisible="{Binding IsMetric}"
                             Source="checkmark_icon.png"
                             HorizontalOptions="End"
@@ -81,7 +83,7 @@
                 </Grid>
                     <BoxView class="HRule"/>
 
-                    <Grid RowDefinitions="*,*">
+                <Grid RowDefinitions="30,30">
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SelectUnits}"
                                               CommandParameter="hybrid"/>
@@ -92,25 +94,30 @@
                             Text="˚C / mph / miles / millimeters / millibars" class="SubContent"/>
                     <Image x:Name="Hybrid"
                             Grid.RowSpan="2"
+                           Aspect="Center"
                             IsVisible="{Binding IsHybrid}"
                             Source="checkmark_icon.png"
                             HorizontalOptions="End"
                             VerticalOptions="Center"/>
                 </Grid>
-                    <BoxView class="HRule"/>
+                <BoxView class="HRule"/>
 
-                    <Label Text="More" class="SectionTitle"/>
+                <Label Text="More" class="SectionTitle"/>
 
-                    <Grid RowDefinitions="*,*">
-                        <Label Grid.Row="0"
-                            Text="Support" class="Subhead"/>
-                        <!-- <Label Grid.Row="1"
-                            Text="˚C / mph / miles / millimeters / millibars" class="SubContent"/> -->
-                        <Grid.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnSupportTapped"/>
-                        </Grid.GestureRecognizers>
-                    </Grid>
-                    <BoxView class="HRule"/>                                          
+                <Label Grid.Row="0"
+                                Text="Support" class="Subhead">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSupportTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+
+                <BoxView class="HRule"/>
+
+                <FlexLayout HeightRequest="30" JustifyContent="SpaceBetween">
+                    <Label Text="Dark Mode" class="Subhead"/>
+                    <Switch IsToggled="{Binding IsDarkMode}" />
+                </FlexLayout>
 
                 </VerticalStackLayout>
 
