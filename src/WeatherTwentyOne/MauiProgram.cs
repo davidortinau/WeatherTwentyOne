@@ -18,7 +18,7 @@ public static class MauiProgram
 #if WINDOWS
             lifecycle
                 .AddWindows(windows => windows.OnLaunched((app, args) => {
-                    var winuiApp = (Microsoft.UI.Xaml.Window)MauiWinUIApplication.Current.Application.Windows[0].Handler!.NativeView!;
+                    var winuiApp = (Microsoft.Maui.Controls.Window)MauiWinUIApplication.Current.Application.Windows[0];
                     winuiApp.SetIcon("Platforms/Windows/trayicon.ico");
                 }));
 #endif

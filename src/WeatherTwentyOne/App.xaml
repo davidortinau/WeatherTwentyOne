@@ -12,7 +12,7 @@
     <Application.MainPage>
         <Shell 
             FlyoutWidth="68"
-            FlyoutBackgroundColor="Red"
+            FlyoutBackgroundColor="{StaticResource Background_Mid}"
             FlyoutBehavior="{OnIdiom Phone=Disabled, Default=Locked}">
 
             <Shell.FlyoutHeaderTemplate>
@@ -24,20 +24,18 @@
 
             <Shell.FlyoutFooterTemplate>
                 <DataTemplate>
-                    <Grid RowDefinitions="68">
-                        <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-
-                            </Grid.GestureRecognizers>
+                    <GridLayout RowDefinitions="68">
+                        <GridLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </GridLayout.GestureRecognizers>
                         <Image Source="tab_settings.png"
                                VerticalOptions="Center"
                                HorizontalOptions="Center"
                                WidthRequest="40"
                                HeightRequest="40"
-                        >
-                            
-                        </Image>
-                    </Grid>
+                        />
+
+                    </GridLayout>
                 </DataTemplate>
 
             </Shell.FlyoutFooterTemplate>

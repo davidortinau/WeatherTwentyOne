@@ -40,9 +40,9 @@
      <!-- SHELL -->
     <Style x:Key="BaseStyle"
            TargetType="Element">
-                <Setter Property="Shell.FlyoutBackground"
+        <Setter Property="Shell.FlyoutBackground"
                         Value="{StaticResource Background_Mid}"/>
-                <Setter Property="Shell.BackgroundColor"
+        <Setter Property="Shell.BackgroundColor"
                     Value="{StaticResource Background_Mid}" />
                 <Setter Property="Shell.ForegroundColor"
                     Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />

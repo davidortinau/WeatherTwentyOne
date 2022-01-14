@@ -5,6 +5,7 @@ global using Microsoft.Maui.Controls.Hosting;
 global using Microsoft.Maui.Controls.Xaml;
 global using Microsoft.Maui.Essentials;
 global using Microsoft.Maui.Hosting;
+global using WeatherTwentyOne.Services;
 global using System;
 global using System.Collections.Generic;
 global using System.IO;

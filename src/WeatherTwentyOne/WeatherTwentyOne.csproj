@@ -15,7 +15,7 @@
     <ApplicationVersion>1</ApplicationVersion>
 
 	<!-- (Optional) Pin to a specific version -->
-	<!--<MauiVersion>6.0.101-preview.10.2068</MauiVersion>-->
+	<!--<MauiVersion>6.0.101-preview.11.2349</MauiVersion>-->
 
     <!-- Required for C# Hot Reload -->
 	<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
@@ -25,6 +25,8 @@
 	<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-android'">21.0</SupportedOSPlatformVersion>
 	<SupportedOSPlatformVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.17763.0</SupportedOSPlatformVersion>
 	<TargetPlatformMinVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.17763.0</TargetPlatformMinVersion>
+	<CodesignKey>Apple Development: Dave Ortinau (W4L3MZPMK9)</CodesignKey>
+	<CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
 
 	<PropertyGroup>
@@ -32,19 +34,16 @@
 	</PropertyGroup>
 
   <ItemGroup>
-    <MauiIcon Include="Resources\appicon.svg" 
-			  ForegroundFile="Resources\appiconfg.svg" 
-			  Color="#081B25" />
-    <MauiSplashScreen Include="Resources\appiconfg.svg" 
-					  Color="#081B25" />
+    <MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#081B25" />
+    <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#081B25" />
     <MauiImage Include="Resources\Images\*" />
     <MauiFont Include="Resources\Fonts\*" />
   </ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
 		<!-- Required - WinUI does not yet have buildTransitive for everything -->
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-preview3" />
-		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.29-preview3" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0" />
+		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.30" />
 		<PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.0.1" />
 		<PackageReference Include="PInvoke.User32" Version="0.7.104" />
 	</ItemGroup>
@@ -67,5 +66,6 @@
       <CodesignKey>Apple Development: Dave Ortinau %28W4L3MZPMK9%29</CodesignKey>
       <CodesignProvision>VS: WildCard Development</CodesignProvision>
     </PropertyGroup>
+    <ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadGenericExceptionInfoBarWeatherTwentyOneHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>
