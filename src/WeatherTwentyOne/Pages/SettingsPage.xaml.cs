@@ -4,11 +4,22 @@ namespace WeatherTwentyOne.Pages;
 
 public partial class SettingsPage : ContentPage
 {
+    private SettingsPageViewModel viewModel;
+
     public SettingsPage()
     {
         InitializeComponent();
 
-        BindingContext = new SettingsViewModel();
+        viewModel = ServiceLocator.GetService<SettingsPageViewModel>();
+
+        BindingContext = viewModel;
+    }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        await viewModel.InitializeAsync();
     }
 
     async void OnSignOut(object sender, EventArgs eventArgs)

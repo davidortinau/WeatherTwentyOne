@@ -1,11 +1,11 @@
 ﻿namespace WeatherTwentyOne;
 
-public static class ServiceProvider
+public static class ServiceLocator
 {
     public static TService GetService<TService>()
         => Current.GetService<TService>();
 
-    public static IServiceProvider Current
+    private static IServiceProvider Current
         =>
 #if WINDOWS10_0_17763_0_OR_GREATER
 			MauiWinUIApplication.Current.Services;

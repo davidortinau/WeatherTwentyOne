@@ -25,14 +25,14 @@ public class WeatherService : IWeatherService
 
     private readonly HttpClient httpClient;
 
-    public WeatherService(HttpClient httpClient)
+    public WeatherService()
     {
-        this.httpClient = httpClient;
+        this.httpClient = new HttpClient();
     }
 
-    public Task<IEnumerable<Location>> GetLocations(string query)
+    public Task<IEnumerable<Location>> GetLocationsAsync(string query)
         => Task.FromResult(locations.Where(l => l.Name.Contains(query)));
 
-    public Task<WeatherResponse> GetWeather(Coordinate location)
+    public Task<WeatherResponse> GetWeatherAsync(Coordinate location)
         => httpClient.GetFromJsonAsync<WeatherResponse>($"/weather/{location}");
 }

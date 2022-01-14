@@ -4,19 +4,22 @@ namespace WeatherTwentyOne.Pages;
 
 public partial class FavoritesPage : ContentPage
 {
+    private FavoritesPageViewModel viewModel;
+
     public FavoritesPage()
     {
         InitializeComponent();
 
-        BindingContext = new FavoritesViewModel();
+        viewModel = ServiceLocator.GetService<FavoritesPageViewModel>();
+
+        BindingContext = viewModel;
     }
 
     protected override async void OnAppearing()
     {
         base.OnAppearing();
 
-        //await Task.Delay(300);
-        //TransitionIn();
+        await viewModel.InitializeAsync();
     }
 
     async void TransitionIn()

@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:m="clr-namespace:WeatherTwentyOne.Models"
     xmlns:v="clr-namespace:WeatherTwentyOne.Views"
+    xmlns:mvvm="clr-namespace:WeatherTwentyOne.Mvvm"
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     ios:Page.UseSafeArea="True"
     Title="Redmond, WA"
@@ -38,8 +39,8 @@
     
                 <BoxView HeightRequest="1" />
 
-                <v:Next24HrWidget />
-                <v:Next7DWidget />
+                <mvvm:ViewModelPresenter ViewModel="{Binding DayViewModel}" />
+                <mvvm:ViewModelPresenter ViewModel="{Binding WeekViewModel}" />
 
             </VerticalStackLayout>
         </ScrollView>

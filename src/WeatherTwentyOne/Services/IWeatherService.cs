@@ -2,6 +2,6 @@
 
 public interface IWeatherService
 {
-    Task<IEnumerable<Location>> GetLocations(string query);
-    Task<WeatherResponse> GetWeather(Coordinate location);
+    Task<IEnumerable<Location>> GetLocationsAsync(string query);
+    Task<WeatherResponse> GetWeatherAsync(Coordinate location);
 }
