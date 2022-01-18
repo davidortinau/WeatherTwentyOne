@@ -9,8 +9,9 @@ namespace WeatherTwentyOne.Pages;
 public partial class HomePage : ContentPage
 {
     static bool isSetup = false;
+    private ITrayService _trayService;
 
-    public HomePage()
+    public HomePage(IEnumerable<ITrayService> trayServices)
     {
         InitializeComponent();
 
@@ -21,6 +22,7 @@ public partial class HomePage : ContentPage
             SetupAppActions();
             SetupTrayIcon();
         }
+        _trayService = trayServices.FirstOrDefault();
     }
 
     private void SetupAppActions()
@@ -43,12 +45,10 @@ public partial class HomePage : ContentPage
 
     private void SetupTrayIcon()
     {
-        var trayService = ServiceProvider.GetService<ITrayService>();
-
-        if (trayService != null)
+        if (_trayService != null)
         {
-            trayService.Initialize();
-            trayService.ClickHandler = () =>
+            _trayService.Initialize();
+            _trayService.ClickHandler = () =>
                 ServiceProvider.GetService<INotificationService>()
                     ?.ShowNotification("Hello Build! 😻 From .NET MAUI", "How's your weather?  It's sunny where we are 🌞");
         }
