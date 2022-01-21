@@ -30,6 +30,13 @@
     <Color x:Key="Accent_Blue200">#72ACF1</Color>
     <Color x:Key="TabOff">#91A7B7</Color>
 
+    <!-- light theme alternatives -->
+    <Color x:Key="DarkGray">#212125</Color>
+    <Color x:Key="MidGray">#CFCFD3</Color>
+    <Color x:Key="LightGray">#EFEFEF</Color>
+
+
+
     <FontImageSource
                 x:Key="SearchIcon"
                 FontFamily="FontAwesome"
@@ -40,18 +47,26 @@
      <!-- SHELL -->
     <Style x:Key="BaseStyle"
            TargetType="Element">
-            <Setter Property="Shell.FlyoutBackground"
-                        Value="{AppThemeBinding Light={StaticResource NeutralDarker}, Dark={StaticResource Background_Mid}}"/>
+            <Setter Property="Shell.FlyoutBackgroundColor"
+                        Value="{AppThemeBinding 
+                                Light={StaticResource LightGray}, 
+                                Dark={StaticResource Background_Mid}}"/>
             <Setter Property="Shell.BackgroundColor"
-                    Value="{AppThemeBinding Light={StaticResource NeutralDarker}, Dark={StaticResource Background_Mid}}" />
+                    Value="{AppThemeBinding 
+                        Light={StaticResource LightGray}, 
+                        Dark={StaticResource Background_Mid}}" />
             <Setter Property="Shell.ForegroundColor"
-                Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+                Value="{AppThemeBinding 
+                        Light={StaticResource DarkGray}, 
+                        Dark={StaticResource White}}" />
             <Setter Property="Shell.TitleColor"
-                Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
-            <Setter Property="Shell.DisabledColor"
+                Value="{AppThemeBinding 
+                        Light={StaticResource DarkGray}, 
+                        Dark={StaticResource White}}" />
+            <!--<Setter Property="Shell.DisabledColor"
                 Value="#B4000000" />
             <Setter Property="Shell.UnselectedColor"
-                Value="#CC0000" />
+                Value="#CC0000" />-->
             <Setter Property="Shell.NavBarHasShadow"
                 Value="False"/>
 
@@ -74,13 +89,21 @@
 
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="Padding" Value="0"/>
-        <Setter Property="BackgroundColor" Value="{StaticResource Background_Dark}"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding 
+            Light={StaticResource MidGray},
+            Dark={StaticResource Background_Dark}}"/>
     </Style>
 
     <Style TargetType="NavigationPage" ApplyToDerivedTypes="True">
-        <Setter Property="BackgroundColor" Value="{StaticResource Background_Mid}"/>
-        <Setter Property="BarBackgroundColor" Value="{StaticResource Background_Mid}"/>
-        <Setter Property="BarTextColor" Value="{StaticResource White}"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding 
+            Light={StaticResource LightGray},
+            Dark={StaticResource Background_Dark}}"/>
+        <Setter Property="BarBackgroundColor" Value="{AppThemeBinding 
+            Light={StaticResource LightGray},
+            Dark={StaticResource Background_Dark}}"/>
+        <Setter Property="BarTextColor" Value="{AppThemeBinding 
+                                                Light={StaticResource DarkGray}, 
+                                                Dark={StaticResource White}}"/>
     </Style>
 
     <Style TargetType="Label">
@@ -88,7 +111,7 @@
         <Setter Property="FontSize"
                 Value="17"/>
         <Setter Property="TextColor"
-                Value="{StaticResource White}"/>
+                Value="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource White}}"/>
     </Style>
     <Style TargetType="Label"
             Class="LargeTitle">
@@ -119,15 +142,13 @@
             Class="Subhead">
         <Setter Property="FontSize"
                 Value="14"/>
-        <Setter Property="TextColor"
-                Value="{StaticResource White}"/>
     </Style>
     <Style TargetType="Label"
             Class="SubContent">
         <Setter Property="FontSize"
                 Value="14"/>
         <Setter Property="TextColor"
-                Value="{StaticResource TabOff}"/>
+                Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource TabOff}}"/>
     </Style>
     <Style TargetType="Label"
             Class="Footnote">

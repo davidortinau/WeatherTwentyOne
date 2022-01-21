@@ -12,7 +12,6 @@
     <Application.MainPage>
         <Shell 
             FlyoutWidth="68"
-            FlyoutBackgroundColor="{StaticResource Background_Mid}"
             FlyoutBehavior="{OnIdiom Phone=Disabled, Default=Locked}">
 
             <!--<Shell.FlyoutHeaderTemplate>

@@ -37,7 +37,7 @@
                             <Label Text="Clear"
                                    HorizontalOptions="Center"
                                 VerticalOptions="Center"
-                                class="Headline"
+                                TextColor="{StaticResource White}"
                             />
                         </Border>
                     </VerticalStackLayout>
@@ -151,9 +151,9 @@
                         Source="https://devblogs.microsoft.com/xamarin/wp-content/uploads/sites/44/2019/03/Screen-Shot-2017-01-03-at-3.35.53-PM-150x150.png">
                     <Image.Clip>
                         <EllipseGeometry 
-                                Center="98,98"
-                                RadiusX="98"
-                                RadiusY="98"/>
+                                Center="75,75"
+                                RadiusX="75"
+                                RadiusY="75"/>
                     </Image.Clip>
                 </Image>
 

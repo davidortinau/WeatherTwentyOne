@@ -12,7 +12,7 @@
                 CornerRadius="20"
                 HasShadow="False"
                 x:DataType="m:Metric"
-                BackgroundColor="{StaticResource Background_Mid}">
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource Background_Mid}}">
                 <Grid
                     Margin="20"
                     ColumnDefinitions="*"
@@ -48,7 +48,7 @@
                 HeightRequest="154"
                 WidthRequest="154"
                 Stroke="Transparent"
-                BackgroundColor="{StaticResource Background_Mid}">
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource Background_Mid}}">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="40"/>
                 </Border.StrokeShape>

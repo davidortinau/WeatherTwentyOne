@@ -45,6 +45,8 @@ public class SettingsViewModel : INotifyPropertyChanged
     {
         SelectUnits = new Command<string>(OnSelectUnits);
         ChangeThemeMode = new Command<bool>(OnChangeThemeMode);
+
+
     }
 
     private void OnChangeThemeMode(bool dark)

@@ -15,7 +15,7 @@
                 CornerRadius="20"
                 HasShadow="False"
                 x:DataType="c:Location"
-                BackgroundColor="{StaticResource Background_Mid}">
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource Background_Mid}}">
                 <GridLayout
                                 RowDefinitions="42,40,*"
                                 Padding="20">

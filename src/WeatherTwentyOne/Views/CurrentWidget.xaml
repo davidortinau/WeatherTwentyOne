@@ -30,6 +30,7 @@
         </Border.StrokeShape>
         <Label
                     Text="Clear"
+                    TextColor="{StaticResource White}"
                     HorizontalOptions="Center"
                     FontSize="18"/>
     </Border>
