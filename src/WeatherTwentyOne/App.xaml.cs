@@ -8,7 +8,7 @@ public partial class App : Application
     {
         InitializeComponent();
 
-        App.Current.UserAppTheme = OSAppTheme.Light;
+        //App.Current.UserAppTheme = OSAppTheme.Light;
 
         if (Device.Idiom == TargetIdiom.Phone)
             Shell.Current.CurrentItem = PhoneTabs;
