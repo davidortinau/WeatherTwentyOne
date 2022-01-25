@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 env:
-    DOTNETVERSION:  6.0.200
+    DOTNETVERSION:  6.0.200-preview.22055.15
     MAUIROLLBACKLINK: https://aka.ms/dotnet/maui/preview.12.json
 
 jobs:
