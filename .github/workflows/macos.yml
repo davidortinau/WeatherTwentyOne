@@ -1,0 +1,52 @@
+name: Build MacCatalyst
+# https://github.com/actions/virtual-environments
+
+on:
+  # push:
+  #   branches: [ main ]
+
+  # pull_request:
+  #   branches: [ main ]
+
+  workflow_dispatch:
+
+env:
+    DOTNETVERSION:  6.0.200
+    MAUIROLLBACKLINK: https://aka.ms/dotnet/maui/preview.12.json
+
+jobs:
+  buildmac:
+    runs-on: macos-11
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup .NET Core SDK ${{env.DOTNETVERSION}}
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version:  '${{env.DOTNETVERSION}}'
+          
+      - name: Install .NET MAUI
+        shell: bash
+        run: |
+          dotnet nuget locals all --clear 
+          dotnet workload install maui --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
+          dotnet workload install android ios maccatalyst tvos macos maui wasm-tools --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
+
+      - name: Restore nuget packages
+        run: dotnet restore src\WeatherTwentyOne.sln
+
+      - name: Build MacCatalyst App
+        shell: bash
+        run: |
+          cd src/WeatherTwentyOne
+          dotnet build -f net6.0-maccatalyst -c Release -o ./artifacts
+          dotnet publish -f net6.0-maccatalyst -c Release -p:BuildIpa=True -o ./artifacts
+
+      - uses: actions/upload-artifact@v2
+        if: ${{ false }}
+        with:
+          name: artifacts-mac
+          path: |
+            src/WeatherTwentyOne/bin/Debug/**/*.pkg
+            
