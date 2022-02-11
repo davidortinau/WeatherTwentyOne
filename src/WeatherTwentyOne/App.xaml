@@ -3,16 +3,17 @@
              xmlns:windows="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;assembly=Microsoft.Maui.Controls"
              xmlns:local="clr-namespace:WeatherTwentyOne"
              xmlns:page="clr-namespace:WeatherTwentyOne.Pages"
-             x:Class="WeatherTwentyOne.App"
-             windows:Application.ImageDirectory="Assets">
+             x:Class="WeatherTwentyOne.App">
     <Application.Resources>
         <ResourceDictionary Source="Resources/Styles/DefaultTheme.xaml"/>
     </Application.Resources>
 
     <Application.MainPage>
         <Shell 
-            FlyoutWidth="68"
-            FlyoutBehavior="{OnIdiom Phone=Disabled, Default=Locked}">
+          
+            FlyoutBehavior="{OnIdiom Phone=Disabled, Default=Locked}"
+            FlyoutBackground="Green"
+            >
 
             <!--<Shell.FlyoutHeaderTemplate>
                 <DataTemplate>
@@ -23,10 +24,10 @@
 
             <Shell.FlyoutFooterTemplate>
                 <DataTemplate>
-                    <GridLayout RowDefinitions="68">
-                        <GridLayout.GestureRecognizers>
+                    <Grid RowDefinitions="68">
+                        <Grid.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                        </GridLayout.GestureRecognizers>
+                        </Grid.GestureRecognizers>
                         <Image Source="tab_settings.png"
                                VerticalOptions="Center"
                                HorizontalOptions="Center"
@@ -34,7 +35,7 @@
                                HeightRequest="40"
                         />
 
-                    </GridLayout>
+                    </Grid>
                 </DataTemplate>
 
             </Shell.FlyoutFooterTemplate>
@@ -73,7 +74,7 @@
 
 
 
-            <Shell.ItemTemplate>
+            <!--<Shell.ItemTemplate>
                 <DataTemplate>
                     <Grid
                         RowDefinitions="68" HeightRequest="68">
@@ -84,7 +85,7 @@
                     </Grid>
                 </DataTemplate>
 
-            </Shell.ItemTemplate>
+            </Shell.ItemTemplate>-->
         </Shell>
     </Application.MainPage>
 </Application>

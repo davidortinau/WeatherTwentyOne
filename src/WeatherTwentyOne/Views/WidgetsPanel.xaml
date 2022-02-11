@@ -1,9 +1,9 @@
-<GridLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+<Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:m="clr-namespace:WeatherTwentyOne.Models"
              x:Class="WeatherTwentyOne.Views.WidgetsPanel"
             ColumnDefinitions="1,*">
-    <GridLayout.Resources>
+    <Grid.Resources>
         <DataTemplate x:Key="MetricTemplate">
             <Frame
                 HeightRequest="154"
@@ -78,10 +78,10 @@
                 </Grid>
             </Border>
         </DataTemplate>
-    </GridLayout.Resources>
+    </Grid.Resources>
 
      <CollectionView
-         GridLayout.Column="1"
+         Grid.Column="1"
          Margin="5"
          ItemTemplate="{StaticResource MetricTemplate}">
         <CollectionView.ItemsLayout>
@@ -109,4 +109,4 @@
             WidthRequest="1"
             HorizontalOptions="Start"/>
     
-</GridLayout>
+</Grid>

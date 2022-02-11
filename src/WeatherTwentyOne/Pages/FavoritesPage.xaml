@@ -16,7 +16,7 @@
                 HasShadow="False"
                 x:DataType="c:Location"
                 BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource Background_Mid}}">
-                <GridLayout
+                <Grid
                                 RowDefinitions="42,40,*"
                                 Padding="20">
                     <Image
@@ -31,14 +31,14 @@
 
                     <VerticalStackLayout
                                     Spacing="0"
-                                    GridLayout.RowSpan="3" 
+                                    Grid.RowSpan="3" 
                                     VerticalOptions="Center">
                         <Label Text="{Binding Name}" class="Subhead" />
                         <Label Text="{Binding WeatherStation}" class="SubContent"/>
                     </VerticalStackLayout>
 
                     <HorizontalStackLayout
-                                GridLayout.Row="2"
+                                Grid.Row="2"
                                 Spacing="10"
                                 VerticalOptions="End">
                         <Image Source="solid_umbrella.png" VerticalOptions="Center"
@@ -47,7 +47,7 @@
                     </HorizontalStackLayout>
 
                     <HorizontalStackLayout
-                                    GridLayout.Row="2"
+                                    Grid.Row="2"
                                     Spacing="10"
                                     HorizontalOptions="End"
                                     VerticalOptions="End">
@@ -55,7 +55,7 @@
                                        WidthRequest="20" HeightRequest="20"/>
                         <Label Text="45%" class="Small" VerticalOptions="Center"/>
                     </HorizontalStackLayout>
-                </GridLayout>
+                </Grid>
             </Frame>
 
             
@@ -77,7 +77,7 @@
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="40"/>
                 </Border.StrokeShape>
-                <GridLayout
+                <Grid
                                 RowDefinitions="42,40,*"
                                 Padding="20">
                     <Image
@@ -92,14 +92,14 @@
 
                     <VerticalStackLayout
                                     Spacing="0"
-                                    GridLayout.RowSpan="3" 
+                                    Grid.RowSpan="3" 
                                     VerticalOptions="Center">
                         <Label Text="{Binding Name}" class="Subhead" />
                         <Label Text="{Binding WeatherStation}" class="SubContent"/>
                     </VerticalStackLayout>
 
                     <HorizontalStackLayout
-                                GridLayout.Row="2"
+                                Grid.Row="2"
                                 Spacing="10"
                                 VerticalOptions="End">
                         <Image Source="solid_umbrella.png" VerticalOptions="Center"
@@ -108,7 +108,7 @@
                     </HorizontalStackLayout>
 
                     <HorizontalStackLayout
-                                    GridLayout.Row="2"
+                                    Grid.Row="2"
                                     Spacing="10"
                                     HorizontalOptions="End"
                                     VerticalOptions="End">
@@ -116,7 +116,7 @@
                                        WidthRequest="20" HeightRequest="20"/>
                         <Label Text="45%" class="Small" VerticalOptions="Center"/>
                     </HorizontalStackLayout>
-                </GridLayout>
+                </Grid>
             </Border>
         </DataTemplate>
     </ContentPage.Resources>

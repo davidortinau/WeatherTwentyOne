@@ -144,7 +144,7 @@
 
             <Image  HorizontalOptions="Center"
                         VerticalOptions="Center"
-                        GridLayout.Column="1"
+                        Grid.Column="1"
                         WidthRequest="75"
                         HeightRequest="75"
                         Aspect="AspectFill"
