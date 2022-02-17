@@ -8,13 +8,13 @@
     Title="Redmond, WA"
     x:Class="WeatherTwentyOne.Pages.HomePage">
 
-    <GridLayout
+    <Grid
         ColumnDefinitions="{OnIdiom Phone='*', Default='*,500'}"
         RowDefinitions="*"
         >
 
         <!-- Main content -->
-        <ScrollView GridLayout.Column="0">
+        <ScrollView Grid.Column="0">
             <VerticalStackLayout
                 Padding="{OnIdiom Phone='0,50',Default='0,50'}"
                 Spacing="{OnIdiom Phone=25,Default=50}">
@@ -45,9 +45,9 @@
         </ScrollView>
 
         <!-- Widget panel -->
-        <v:WidgetsPanel GridLayout.Column="{OnIdiom Phone=0, Default=1}"
+        <v:WidgetsPanel Grid.Column="{OnIdiom Phone=0, Default=1}"
                         IsVisible="{OnIdiom Phone=False, Default=True}"/>
 
-    </GridLayout>
+    </Grid>
 
 </ContentPage>

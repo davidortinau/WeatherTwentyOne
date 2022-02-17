@@ -23,10 +23,10 @@
 
             <Shell.FlyoutFooterTemplate>
                 <DataTemplate>
-                    <GridLayout RowDefinitions="68">
-                        <GridLayout.GestureRecognizers>
+                    <Grid RowDefinitions="68">
+                        <Grid.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                        </GridLayout.GestureRecognizers>
+                        </Grid.GestureRecognizers>
                         <Image Source="tab_settings.png"
                                VerticalOptions="Center"
                                HorizontalOptions="Center"
@@ -34,7 +34,7 @@
                                HeightRequest="40"
                         />
 
-                    </GridLayout>
+                    </Grid>
                 </DataTemplate>
 
             </Shell.FlyoutFooterTemplate>
