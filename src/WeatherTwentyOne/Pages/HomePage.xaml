@@ -5,7 +5,7 @@
     xmlns:v="clr-namespace:WeatherTwentyOne.Views"
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     ios:Page.UseSafeArea="True"
-    Title="Redmond, WA"
+    Title="St. Louis, Missouri USA"
     x:Class="WeatherTwentyOne.Pages.HomePage">
 
     <Grid
@@ -18,7 +18,7 @@
             <VerticalStackLayout
                 Padding="{OnIdiom Phone='0,50',Default='0,50'}"
                 Spacing="{OnIdiom Phone=25,Default=50}">
-
+                
                 <!-- Top widgets -->
                 <FlexLayout
                     IsVisible="{OnIdiom Phone=False, Default=True}"
@@ -28,9 +28,10 @@
                     JustifyContent="SpaceEvenly">
                     <v:CurrentWidget
                         WidthRequest="200" />
-                    <v:WindLiveWidget
+                    <v:WindLiveWidget 
                         x:Name="WindWidget"
                         WidthRequest="200" />
+                    
                 </FlexLayout>
 
                 <v:CurrentWidget

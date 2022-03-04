@@ -1,6 +1,6 @@
 ﻿namespace WeatherTwentyOne.Views;
 
-public partial class WindLiveWidget
+public partial class WindLiveWidget:VerticalStackLayout
 {
     Random rand;
     System.Timers.Timer aTimer;
@@ -12,7 +12,7 @@ public partial class WindLiveWidget
 
     public void OnTapped(object sender, EventArgs e)
     {
-        if (aTimer == null && Device.RuntimePlatform != Device.Android)
+        if (aTimer == null && DeviceInfo.Platform != DevicePlatform.Android)
             Start();
     }
 
@@ -37,9 +37,8 @@ public partial class WindLiveWidget
     {
         var direction = GetDirection();
 
-        Device.BeginInvokeOnMainThread(() =>
-        {
-            Needle.RotateTo(WindValues[direction], 200, Easing.SpringOut);
+        this.Dispatcher.Dispatch(() => {
+            Needle.RotateTo(WindValues[direction], 50, Easing.SpringOut);
         });
     }
 

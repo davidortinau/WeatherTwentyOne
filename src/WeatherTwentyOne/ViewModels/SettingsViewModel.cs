@@ -21,10 +21,10 @@ public class SettingsViewModel : INotifyPropertyChanged
 
     public bool IsDarkMode {
         get {
-            return App.Current.UserAppTheme == OSAppTheme.Dark;
+            return App.Current.UserAppTheme == AppTheme.Dark;
         }
         set {
-            App.Current.UserAppTheme = value ? OSAppTheme.Dark : OSAppTheme.Light;
+            App.Current.UserAppTheme = value ? AppTheme.Dark : AppTheme.Light;
             OnPropertyChanged();
         }
     }
@@ -51,7 +51,7 @@ public class SettingsViewModel : INotifyPropertyChanged
 
     private void OnChangeThemeMode(bool dark)
     {
-        App.Current.UserAppTheme = dark ? OSAppTheme.Dark : OSAppTheme.Light;
+        App.Current.UserAppTheme = dark ? AppTheme.Dark : AppTheme.Light;
         OnPropertyChanged(nameof(IsDarkMode));
     }
 

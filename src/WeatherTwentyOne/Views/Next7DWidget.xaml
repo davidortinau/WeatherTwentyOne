@@ -69,7 +69,9 @@
                                 HeightRequest="16"
                                 VerticalOptions="Center"/>
                             <Label
-                                Text="13%" class="SubContent" VerticalOptions="Center"/>
+                                Text="13%" 
+                                class="SubContent" 
+                                VerticalOptions="Center"/>
                         </StackLayout>
 
                     </VerticalStackLayout>
