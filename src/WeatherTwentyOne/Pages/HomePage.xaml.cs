@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
 using WeatherTwentyOne.Services;
+using WeatherTwentyOne.ViewModels;
 using Application = Microsoft.Maui.Controls.Application;
 using WindowsConfiguration = Microsoft.Maui.Controls.PlatformConfiguration.Windows;
 
@@ -10,9 +11,11 @@ public partial class HomePage : ContentPage
 {
     static bool isSetup = false;
 
-    public HomePage()
+    public HomePage(HomeViewModel vm)
     {
         InitializeComponent();
+
+        BindingContext = vm;
 
         if (!isSetup)
         {

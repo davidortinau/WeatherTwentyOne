@@ -8,6 +8,24 @@
     Title="St. Louis, Missouri USA"
     x:Class="WeatherTwentyOne.Pages.HomePage">
 
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="File">
+            <MenuFlyoutItem Text="Quit" Command="{Binding QuitCommand}"/>
+        </MenuBarItem>
+        <MenuBarItem Text="Locations">
+            <MenuFlyoutSubItem Text="Change Location">
+                <MenuFlyoutItem Text="Boston, MA"/>
+                <MenuFlyoutItem Text="Redmond, WA"/>
+                <MenuFlyoutItem Text="St. Louis, MO"/>
+            </MenuFlyoutSubItem>
+            <MenuFlyoutItem Text="Add a Location" Command="{Binding AddLocationCommand}"/>
+        </MenuBarItem>
+        <MenuBarItem Text="View">
+            <MenuFlyoutItem Text="Refresh" Command="{Binding RefreshCommand}"/>
+            <MenuFlyoutItem Text="Toggle Light/Dark Mode" Command="{Binding ToggleModeCommand}"/>
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+
     <Grid
         ColumnDefinitions="{OnIdiom Phone='*', Default='*,500'}"
         RowDefinitions="*"

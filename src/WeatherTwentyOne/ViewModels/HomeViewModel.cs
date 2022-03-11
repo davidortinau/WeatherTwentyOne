@@ -8,6 +8,26 @@ public class HomeViewModel
 
     public List<Forecast> Hours { get; set; }
 
+    public Command QuitCommand { get;set;} = new Command(() => {
+        Application.Current.Quit();
+    });
+
+    public Command AddLocationCommand { get;set;} = new Command(() => {
+        // nav to modal form
+    });
+
+    public Command<string> ChangeLocationCommand { get;set;} = new Command<string>((location) => {
+        // change primary location
+    });
+
+    public Command RefreshCommand { get;set;} = new Command(() => {
+        // fake a refresh call
+    });
+
+    public Command TogglemodeCommand { get;set;} = new Command(() => {
+        App.Current.UserAppTheme = App.Current.UserAppTheme == AppTheme.Light ? AppTheme.Dark : AppTheme.Light;
+    });
+
     public HomeViewModel()
     {
         InitData();
