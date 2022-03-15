@@ -1,36 +1,50 @@
-﻿using WeatherTwentyOne.Models;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using WeatherTwentyOne.Models;
 
 namespace WeatherTwentyOne.ViewModels;
 
-public class HomeViewModel
+public class HomeViewModel : INotifyPropertyChanged
 {
     public List<Forecast> Week { get; set; }
 
     public List<Forecast> Hours { get; set; }
 
-    public Command QuitCommand { get;set;} = new Command(() => {
+    public Command QuitCommand { get; set; } = new Command(() => {
         Application.Current.Quit();
     });
 
-    public Command AddLocationCommand { get;set;} = new Command(() => {
+    public Command AddLocationCommand { get; set; } = new Command(() => {
         // nav to modal form
     });
 
-    public Command<string> ChangeLocationCommand { get;set;} = new Command<string>((location) => {
+    public Command<string> ChangeLocationCommand { get; set; } = new Command<string>((location) => {
         // change primary location
     });
 
-    public Command RefreshCommand { get;set;} = new Command(() => {
+    public Command RefreshCommand { get; set; } = new Command(() => {
         // fake a refresh call
     });
 
-    public Command TogglemodeCommand { get;set;} = new Command(() => {
-        App.Current.UserAppTheme = App.Current.UserAppTheme == AppTheme.Light ? AppTheme.Dark : AppTheme.Light;
-    });
+    private Command toggleModeCommand;
+
+    public Command ToggleModeCommand {
+        get {
+            return toggleModeCommand;
+        }
+        set {
+            toggleModeCommand = value;
+            OnPropertyChanged();
+        }
+    }
 
     public HomeViewModel()
     {
         InitData();
+
+        ToggleModeCommand = new Command(() => {
+            App.Current.UserAppTheme = App.Current.UserAppTheme == AppTheme.Light ? AppTheme.Dark : AppTheme.Light;
+        });
     }
 
     private void InitData()
@@ -268,4 +282,14 @@ public class HomeViewModel
                 }
             };
     }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        PropertyChangedEventHandler handler = PropertyChanged;
+        if (handler != null)
+            handler(this, new PropertyChangedEventArgs(propertyName));
+    }
+
 }
