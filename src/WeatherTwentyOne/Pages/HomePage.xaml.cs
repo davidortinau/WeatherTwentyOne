@@ -44,6 +44,31 @@ public partial class HomePage : ContentPage
         }
     }
 
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+// TODO: Remove in RC1
+#if WINDOWS
+        var windowsWindow = this.GetParentWindow().Handler.PlatformView as MauiWinUIWindow;
+
+        if (windowsWindow is not null)
+        {
+            windowsWindow.ExtendsContentIntoTitleBar = true;
+
+            if (WindowExtensions.Hwnd == IntPtr.Zero)
+            {
+                var hwnd = (this.GetParentWindow().Handler.PlatformView as MauiWinUIWindow)?.WindowHandle;
+                if (hwnd is not null && hwnd.Value != IntPtr.Zero)
+                {
+                    WindowExtensions.Hwnd = hwnd.Value;
+                    WindowExtensions.SetIcon("Platforms/Windows/trayicon.ico");
+                }
+            }
+        }
+#endif
+    }
+
     private void SetupTrayIcon()
     {
         var trayService = ServiceProvider.GetService<ITrayService>();

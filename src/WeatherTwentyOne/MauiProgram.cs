@@ -18,21 +18,17 @@ public static class MauiProgram
             });
         builder.ConfigureLifecycleEvents(lifecycle => {
 #if WINDOWS
-        //lifecycle
-        //    .AddWindows(windows =>
-        //        windows.OnNativeMessage((app, args) => {
-        //            if (WindowExtensions.Hwnd == IntPtr.Zero)
-        //            {
-        //                WindowExtensions.Hwnd = args.Hwnd;
-        //                WindowExtensions.SetIcon("Platforms/Windows/trayicon.ico");
-        //            }
-        //        }));
-
-            lifecycle.AddWindows(windows => windows.OnWindowCreated((del) => {
-                del.ExtendsContentIntoTitleBar = true;
-            }));
+            // TODO: Fixed in RC1
+            //lifecycle.AddWindows(windows =>
+            //    windows.OnPlatformMessage((app, args) => {
+            //        if (WindowExtensions.Hwnd == IntPtr.Zero)
+            //        {
+            //            WindowExtensions.Hwnd = args.Hwnd;
+            //            WindowExtensions.SetIcon("Platforms/Windows/trayicon.ico");
+            //        }
+            //    }));
 #endif
-        });
+    });
 
         var services = builder.Services;
 #if WINDOWS
