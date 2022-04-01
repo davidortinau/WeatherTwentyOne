@@ -5,8 +5,26 @@
     xmlns:v="clr-namespace:WeatherTwentyOne.Views"
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     ios:Page.UseSafeArea="True"
-    Title="Redmond, WA"
+    Title="St. Louis, Missouri USA"
     x:Class="WeatherTwentyOne.Pages.HomePage">
+
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="File">
+            <MenuFlyoutItem Text="Quit" Command="{Binding QuitCommand}"/>
+        </MenuBarItem>
+        <MenuBarItem Text="Locations">
+            <MenuFlyoutSubItem Text="Change Location">
+                <MenuFlyoutItem Text="Boston, MA"/>
+                <MenuFlyoutItem Text="Redmond, WA"/>
+                <MenuFlyoutItem Text="St. Louis, MO"/>
+            </MenuFlyoutSubItem>
+            <MenuFlyoutItem Text="Add a Location" Command="{Binding AddLocationCommand}"/>
+        </MenuBarItem>
+        <MenuBarItem Text="View">
+            <MenuFlyoutItem Text="Refresh" Command="{Binding RefreshCommand}"/>
+            <MenuFlyoutItem Text="Toggle Light/Dark Mode" Command="{Binding ToggleModeCommand}"/>
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
 
     <Grid
         ColumnDefinitions="{OnIdiom Phone='*', Default='*,500'}"
@@ -18,7 +36,7 @@
             <VerticalStackLayout
                 Padding="{OnIdiom Phone='0,50',Default='0,50'}"
                 Spacing="{OnIdiom Phone=25,Default=50}">
-
+                
                 <!-- Top widgets -->
                 <FlexLayout
                     IsVisible="{OnIdiom Phone=False, Default=True}"
@@ -28,9 +46,10 @@
                     JustifyContent="SpaceEvenly">
                     <v:CurrentWidget
                         WidthRequest="200" />
-                    <v:WindLiveWidget
+                    <v:WindLiveWidget 
                         x:Name="WindWidget"
                         WidthRequest="200" />
+                    
                 </FlexLayout>
 
                 <v:CurrentWidget

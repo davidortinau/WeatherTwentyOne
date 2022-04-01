@@ -148,7 +148,7 @@
         <Setter Property="FontSize"
                 Value="14"/>
         <Setter Property="TextColor"
-                Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource TabOff}}"/>
+                Value="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource TabOff}}"/>
     </Style>
     <Style TargetType="Label"
             Class="Footnote">

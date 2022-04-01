@@ -10,7 +10,7 @@ public partial class App : Application
 
         //App.Current.UserAppTheme = OSAppTheme.Light;
 
-        if (Device.Idiom == TargetIdiom.Phone)
+        if (DeviceInfo.Idiom == DeviceIdiom.Phone)
             Shell.Current.CurrentItem = PhoneTabs;
 
         Routing.RegisterRoute("settings", typeof(SettingsPage));

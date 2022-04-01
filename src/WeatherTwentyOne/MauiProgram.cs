@@ -1,4 +1,6 @@
 ﻿using Microsoft.Maui.LifecycleEvents;
+using WeatherTwentyOne.Pages;
+using WeatherTwentyOne.ViewModels;
 
 namespace WeatherTwentyOne;
 
@@ -16,16 +18,19 @@ public static class MauiProgram
             });
         builder.ConfigureLifecycleEvents(lifecycle => {
 #if WINDOWS
-        lifecycle
-            .AddWindows(windows =>
-                windows.OnNativeMessage((app, args) => {
-                    if (WindowExtensions.Hwnd == IntPtr.Zero)
-                    {
-                        WindowExtensions.Hwnd = args.Hwnd;
-                        WindowExtensions.SetIcon("Platforms/Windows/trayicon.ico");
-                    }
-                    app.ExtendsContentIntoTitleBar = false;
-                }));
+        //lifecycle
+        //    .AddWindows(windows =>
+        //        windows.OnNativeMessage((app, args) => {
+        //            if (WindowExtensions.Hwnd == IntPtr.Zero)
+        //            {
+        //                WindowExtensions.Hwnd = args.Hwnd;
+        //                WindowExtensions.SetIcon("Platforms/Windows/trayicon.ico");
+        //            }
+        //        }));
+
+            lifecycle.AddWindows(windows => windows.OnWindowCreated((del) => {
+                del.ExtendsContentIntoTitleBar = true;
+            }));
 #endif
         });
 
@@ -37,6 +42,8 @@ public static class MauiProgram
             services.AddSingleton<ITrayService, MacCatalyst.TrayService>();
             services.AddSingleton<INotificationService, MacCatalyst.NotificationService>();
 #endif
+        services.AddSingleton<HomeViewModel>();
+        services.AddSingleton<HomePage>();
 
 
 
