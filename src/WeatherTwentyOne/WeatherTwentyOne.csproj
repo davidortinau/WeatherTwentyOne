@@ -62,10 +62,7 @@
 		<OutputType>WinExe</OutputType>
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	</PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">
-      <CodesignKey>Apple Development: Dave Ortinau %28W4L3MZPMK9%29</CodesignKey>
-      <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    </PropertyGroup>
+    
     <ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadGenericExceptionInfoBarWeatherTwentyOneHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>
