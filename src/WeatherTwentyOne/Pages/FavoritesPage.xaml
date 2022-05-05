@@ -147,7 +147,7 @@
 
                 <!-- Actual Content -->
             <CollectionView
-                Margin="8,0"
+                Margin="15"
                 ItemsSource="{Binding Favorites}"
                 ItemTemplate="{StaticResource FavTemplate}">
                 <CollectionView.ItemsLayout>

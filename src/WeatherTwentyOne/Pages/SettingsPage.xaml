@@ -151,9 +151,9 @@
                         Source="https://devblogs.microsoft.com/xamarin/wp-content/uploads/sites/44/2019/03/Screen-Shot-2017-01-03-at-3.35.53-PM-150x150.png">
                     <Image.Clip>
                         <EllipseGeometry 
-                                Center="75,75"
-                                RadiusX="75"
-                                RadiusY="75"/>
+                                Center="36,36"
+                                RadiusX="36"
+                                RadiusY="36"/>
                     </Image.Clip>
                 </Image>
 

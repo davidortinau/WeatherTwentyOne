@@ -1,4 +1,4 @@
-<Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+﻿<Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:m="clr-namespace:WeatherTwentyOne.Models"
              x:Class="WeatherTwentyOne.Views.WidgetsPanel"
@@ -82,7 +82,7 @@
 
      <CollectionView
          Grid.Column="1"
-         Margin="5" ItemSizingStrategy="MeasureFirstItem"
+         Margin="15" ItemSizingStrategy="MeasureFirstItem"
          ItemTemplate="{StaticResource MetricTemplate}">
         <CollectionView.ItemsLayout>
             <GridItemsLayout Orientation="Vertical"
