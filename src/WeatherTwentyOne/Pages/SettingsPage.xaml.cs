@@ -21,4 +21,13 @@ public partial class SettingsPage : ContentPage
         string action = await DisplayActionSheet("Get Help", "Cancel", null, "Email", "Chat", "Phone");
         await DisplayAlert("You Chose", action, "Okay");
     }
+
+    void RadioButton_CheckedChanged(System.Object sender, CheckedChangedEventArgs e)
+    {
+        AppTheme val = (AppTheme)((RadioButton)sender).Value;
+        if (App.Current.UserAppTheme == val)
+            return;
+
+        App.Current.UserAppTheme = val;
+    }
 }
