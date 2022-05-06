@@ -74,13 +74,17 @@
 
     <Style BasedOn="{StaticResource BaseStyle}"
            ApplyToDerivedTypes="True"
-           TargetType="FlyoutItem" />
+           TargetType="ShellItem" />
 
     <Style TargetType="TabBar">
         <Setter Property="Shell.TabBarBackgroundColor"
-            Value="{StaticResource Background_Mid}" />
+            Value="{AppThemeBinding 
+                                Light={StaticResource LightGray}, 
+                                Dark={StaticResource Background_Mid}}" />
         <Setter Property="Shell.TabBarTitleColor"
-            Value="{StaticResource Accent}" />
+            Value="{AppThemeBinding 
+                        Light={StaticResource DarkGray}, 
+                        Dark={StaticResource White}}" />
         <Setter Property="Shell.TabBarUnselectedColor"
             Value="{StaticResource TabOff}" />
         <Setter Property="Shell.TabBarForegroundColor"
