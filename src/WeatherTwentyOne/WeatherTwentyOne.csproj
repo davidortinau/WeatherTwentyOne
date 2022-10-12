@@ -36,6 +36,7 @@
     <MauiImage Include="Resources\Images\*" />
     <MauiFont Include="Resources\Fonts\*" />
 	<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	<MauiImage Include="Platforms\MacCatalyst\trayicon.png" />
   </ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
@@ -45,6 +46,7 @@
 
 	<ItemGroup>
 	  <None Remove="Platforms\Windows\trayicon.ico" />
+	  <None Remove="Platforms\MacCatalyst\trayicon.png" />
 	</ItemGroup>
 
 	<ItemGroup>
