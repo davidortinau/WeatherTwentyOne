@@ -1,58 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <Identity
-    Name="BA0275D4-73C9-4F0C-BF53-CAC4FAD28D12"
-    Publisher="CN=User Name"
-    Version="1.0.0.0" />
+	<Identity Name="maui-package-name-placeholder" Publisher="CN=User Name" Version="0.0.0.0" />
 
-  <Properties>
-    <DisplayName>WeatherTwentyOne</DisplayName>
-    <PublisherDisplayName>Microsoft</PublisherDisplayName>
-    <Logo>Assets\appiconStoreLogo.png</Logo>
-  </Properties>
+	<mp:PhoneIdentity PhoneProductId="D68D3559-9370-4705-8EDC-E65CD553C5EE" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
-  <Dependencies>
-    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
-  </Dependencies>
+	<Properties>
+		<DisplayName>$placeholder$</DisplayName>
+		<PublisherDisplayName>User Name</PublisherDisplayName>
+		<Logo>$placeholder$.png</Logo>
+	</Properties>
 
-  <Resources>
-    <Resource Language="x-generate"/>
-  </Resources>
+	<Dependencies>
+		<TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+		<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+	</Dependencies>
 
-  <Applications>
-    <Application Id="App"
-      Executable="$targetnametoken$.exe"
-      EntryPoint="$targetentrypoint$">
-      <uap:VisualElements
-        DisplayName="WeatherTwentyOne"
-        Description="WeatherTwentyOne"
-        BackgroundColor="transparent"
-        Square150x150Logo="appiconMediumTile.png"
-        Square44x44Logo="appiconLogo.png">
-        <uap:DefaultTile
-          Wide310x150Logo="appiconWideTile.png"
-          Square71x71Logo="appiconSmallTile.png"
-          Square310x310Logo="appiconLargeTile.png"
-          ShortName="WeatherTwentyOne">
-          <uap:ShowNameOnTiles>
-            <uap:ShowOn Tile="square150x150Logo"/>
-            <uap:ShowOn Tile="wide310x150Logo"/>
-          </uap:ShowNameOnTiles>
-        </uap:DefaultTile >
-        <uap:SplashScreen Image="appiconfgSplashScreen.png" />
-      </uap:VisualElements>
-    </Application>
-  </Applications>
+	<Resources>
+		<Resource Language="x-generate" />
+	</Resources>
 
-  <Capabilities>
-    <rescap:Capability Name="runFullTrust" />
-  </Capabilities>
+	<Applications>
+		<Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="$targetentrypoint$">
+			<uap:VisualElements
+			  DisplayName="$placeholder$"
+			  Description="$placeholder$"
+			  Square150x150Logo="$placeholder$.png"
+			  Square44x44Logo="$placeholder$.png"
+			  BackgroundColor="transparent">
+				<uap:DefaultTile Square71x71Logo="$placeholder$.png" Wide310x150Logo="$placeholder$.png" Square310x310Logo="$placeholder$.png" />
+				<uap:SplashScreen Image="$placeholder$.png" />
+			</uap:VisualElements>
+		</Application>
+	</Applications>
+
+	<Capabilities>
+		<rescap:Capability Name="runFullTrust" />
+	</Capabilities>
 
 </Package>
